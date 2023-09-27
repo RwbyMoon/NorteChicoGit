@@ -11,7 +11,7 @@
 -----------------------------------------------
 -- Types
 
--- This inserts the Unique Unit reference into the primary Data Types table as a recognised trait. This is mandatory, if configuring a custom trait for your civilization. The string listed under 'Type' must be used throughout the mod when referring to the TraitType. In addition, we are inserting the Unit itself (UNIT_RWB_VIAJANTELITURGICO) and defining the UnitAbility (ABILITY_WEREJAGUAR), which is then tied to this unit (and no others).
+-- This inserts the Unique Unit reference into the primary Data Types table as a recognised trait. This is mandatory, if configuring a custom trait for your civilization. The string listed under 'Type' must be used throughout the mod when referring to the TraitType. In addition, we are inserting the Unit itself (UNIT_RWB_APAQALLINM) and defining the UnitAbility (ABILITY_WEREJAGUAR), which is then tied to this unit (and no others).
 
 -- The standard naming convention follows: TRAIT_CIVILIZATION_UNIQUEUNITNAME
 
@@ -20,35 +20,35 @@
 	
 INSERT INTO Types
 		(Type,									Kind			)
-VALUES	('TRAIT_CIVILIZATION_RWB_VIAJANTELITURGICO',	'KIND_TRAIT'	),
-		('UNIT_RWB_VIAJANTELITURGICO',					'KIND_UNIT'		),
-		('ABILITY_RWB_VIAJANTELITURGICO',				'KIND_ABILITY'	);
+VALUES	('TRAIT_CIVILIZATION_RWB_APAQALLINM',	'KIND_TRAIT'	),
+		('UNIT_RWB_APAQALLINM',					'KIND_UNIT'		),
+		('ABILITY_RWB_APAQALLINM',				'KIND_ABILITY'	);
 
 -----------------------------------------------
 -- Tags
 
--- Certain game functions are aligned to groups of units (known as classes), rather than the individual unit-types themselves. For this reason, here we define the class (CLASS_RWB_VIAJANTELITURGICO) - we will later associate the unit to this class (as the only unit of that class) but also the UnitAbility to that same class. The below table INSERT paves the way for the special ability to be applied to our custom unit.
+-- Certain game functions are aligned to groups of units (known as classes), rather than the individual unit-types themselves. For this reason, here we define the class (CLASS_RWB_APAQALLINM) - we will later associate the unit to this class (as the only unit of that class) but also the UnitAbility to that same class. The below table INSERT paves the way for the special ability to be applied to our custom unit.
 -----------------------------------------------	
 	
 INSERT INTO Tags
 		(Tag,						Vocabulary		)
-VALUES	('CLASS_RWB_VIAJANTELITURGICO',		'ABILITY_CLASS'	);
+VALUES	('CLASS_RWB_APAQALLINM',		'ABILITY_CLASS'	);
 
 -----------------------------------------------
 -- TypeTags
 
--- As mentioned above, we now link the Unit itself (UNIT_RWB_VIAJANTELITURGICO) to our newly-defined class (CLASS_RWB_VIAJANTELITURGICO). The second set of values associate the newly-defined Unit Ability (ABILITY_RWB_VIAJANTELITURGICO) to all objects within that same class (CLASS_RWB_VIAJANTELITURGICO).
+-- As mentioned above, we now link the Unit itself (UNIT_RWB_APAQALLINM) to our newly-defined class (CLASS_RWB_APAQALLINM). The second set of values associate the newly-defined Unit Ability (ABILITY_RWB_APAQALLINM) to all objects within that same class (CLASS_RWB_APAQALLINM).
 
--- The second INSERT function ensures our new Unit (UNIT_RWB_VIAJANTELITURGICO) inherits the classes that the UNIT_SPEARMAN already has configured. This ensures that groups to which the UNIT_SPEARMAN belongs, the UNIT_RWB_VIAJANTELITURGICO also belongs. This ensures integration with other Unit Abilities and identifications and allows for a cohesive replacement.
+-- The second INSERT function ensures our new Unit (UNIT_RWB_APAQALLINM) inherits the classes that the UNIT_SPEARMAN already has configured. This ensures that groups to which the UNIT_SPEARMAN belongs, the UNIT_RWB_APAQALLINM also belongs. This ensures integration with other Unit Abilities and identifications and allows for a cohesive replacement.
 -----------------------------------------------		
 
 INSERT INTO TypeTags
 		(Type,						Tag						)
-VALUES	('UNIT_RWB_VIAJANTELITURGICO',		'CLASS_RWB_VIAJANTELITURGICO'	),
-		('ABILITY_RWB_VIAJANTELITURGICO',	'CLASS_RWB_VIAJANTELITURGICO'	);
+VALUES	('UNIT_RWB_APAQALLINM',		'CLASS_RWB_APAQALLINM'	),
+		('ABILITY_RWB_APAQALLINM',	'CLASS_RWB_APAQALLINM'	);
 
 INSERT INTO TypeTags (Type,		Tag)
-SELECT 	'UNIT_RWB_VIAJANTELITURGICO',	Tag
+SELECT 	'UNIT_RWB_APAQALLINM',	Tag
 FROM 	TypeTags
 WHERE 	Type = 'UNIT_SPEARMAN';
 
@@ -60,7 +60,7 @@ WHERE 	Type = 'UNIT_SPEARMAN';
 		
 INSERT INTO Traits
 		(TraitType,								Name,								Description								)
-VALUES	('TRAIT_CIVILIZATION_RWB_VIAJANTELITURGICO',	'LOC_UNIT_RWB_VIAJANTELITURGICO_NAME',		'LOC_UNIT_RWB_VIAJANTELITURGICO_DESCRIPTION'	);
+VALUES	('TRAIT_CIVILIZATION_RWB_APAQALLINM',	'LOC_UNIT_RWB_APAQALLINM_NAME',		'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION'	);
 
 -----------------------------------------------
 -- CivilizationTraits
@@ -70,16 +70,16 @@ VALUES	('TRAIT_CIVILIZATION_RWB_VIAJANTELITURGICO',	'LOC_UNIT_RWB_VIAJANTELITURG
 		
 INSERT INTO CivilizationTraits
 		(CivilizationType,				TraitType								)
-VALUES	('CIVILIZATION_RWB_NORTECHICO',		'TRAIT_CIVILIZATION_RWB_VIAJANTELITURGICO'		);
+VALUES	('CIVILIZATION_RWB_NORTECHICO',		'TRAIT_CIVILIZATION_RWB_APAQALLINM'		);
 
 -----------------------------------------------
 -- Units
 
 -- The below defines the core behaviour/configuration of our custom Unit. This is where we instruct the game to ensure it is unique (by setting the TraitType value), as well as tie together the various locally-defined elements in this mod (UnitType, Name, Description).
 
--- You will note that the full set of values is populated via a hybrid of methods - some are taken from the UNIT_SPEARMAN that UNIT_RWB_VIAJANTELITURGICO replaces, whilst others are brand-new values that we've defined in this mod.
+-- You will note that the full set of values is populated via a hybrid of methods - some are taken from the UNIT_SPEARMAN that UNIT_RWB_APAQALLINM replaces, whilst others are brand-new values that we've defined in this mod.
 
--- For integer values, it is possible to set a relative value by using simple mathematical operators - you'll note that we do this for the unit Cost and the Combat (Strength). What we're saying here is that the UNIT_RWB_VIAJANTELITURGICO has a Cost that is 15 higher than the UNIT_SPEARMAN, but it also has a Combat Strength of 5 more.
+-- For integer values, it is possible to set a relative value by using simple mathematical operators - you'll note that we do this for the unit Cost and the Combat (Strength). What we're saying here is that the UNIT_RWB_APAQALLINM has a Cost that is 15 higher than the UNIT_SPEARMAN, but it also has a Combat Strength of 5 more.
 
 -- It is, of course, possible to explicitly define every value - in which case, the SELECT command would be replaced by VALUES; whilst the FROM and WHERE commands can be removed. As a syntax note: remember that if you use VALUES, you will need to use open ( and close ) parentheses to achieve valid code. The SELECT command does not require these, hence they are not present here.
 
@@ -107,10 +107,10 @@ INSERT INTO Units	(
 		PrereqTech,
 		PrereqCivic
 		)
-SELECT	'UNIT_RWB_VIAJANTELITURGICO',	-- UnitType
-		'LOC_UNIT_RWB_VIAJANTELITURGICO_NAME',	-- Name
-		'LOC_UNIT_RWB_VIAJANTELITURGICO_DESCRIPTION', -- Description
-		'TRAIT_CIVILIZATION_RWB_VIAJANTELITURGICO', -- TraitType
+SELECT	'UNIT_RWB_APAQALLINM',	-- UnitType
+		'LOC_UNIT_RWB_APAQALLINM_NAME',	-- Name
+		'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION', -- Description
+		'TRAIT_CIVILIZATION_RWB_APAQALLINM', -- TraitType
 		BaseMoves,
 		Cost + 15,
 		PurchaseYield,
@@ -133,11 +133,11 @@ WHERE	UnitType = 'UNIT_SPEARMAN';
 -----------------------------------------------
 -- UnitUpgrades
 
--- This section defines the position in the UnitUpgrades chain that the custom UNIT_RWB_VIAJANTELITURGICO fits into. For this mod, we are simply replacing the UNIT_SPEARMAN, so this ensures the continuity of the UNIT_SPEARMAN chain for the UNIT_RWB_VIAJANTELITURGICO.
+-- This section defines the position in the UnitUpgrades chain that the custom UNIT_RWB_APAQALLINM fits into. For this mod, we are simply replacing the UNIT_SPEARMAN, so this ensures the continuity of the UNIT_SPEARMAN chain for the UNIT_RWB_APAQALLINM.
 -----------------------------------------------
 		
 INSERT INTO UnitUpgrades (Unit,	UpgradeUnit)
-SELECT 	'UNIT_RWB_VIAJANTELITURGICO',	UpgradeUnit
+SELECT 	'UNIT_RWB_APAQALLINM',	UpgradeUnit
 FROM 	UnitUpgrades
 WHERE	Unit = 'UNIT_SPEARMAN';
 
@@ -146,25 +146,25 @@ WHERE	Unit = 'UNIT_SPEARMAN';
 
 -- UnitAiInfos are used to help mould the AI behaviour for Units. They essentially link each UnitType to one or more types of AI behaviour - such as exploration, melee combat or ranged combat.
 
--- In the below example, we are simply inheriting the UNIT_SPEARMAN behaviour for our UNIT_RWB_VIAJANTELITURGICO.
+-- In the below example, we are simply inheriting the UNIT_SPEARMAN behaviour for our UNIT_RWB_APAQALLINM.
 
 -- A full list of UnitAiType entries can be found in Units.xml. A search for the string 'UnitAiType' will find the full list.
 -----------------------------------------------
 		
 INSERT INTO UnitAiInfos (UnitType,	AiType)
-SELECT 	'UNIT_RWB_VIAJANTELITURGICO',		AiType
+SELECT 	'UNIT_RWB_APAQALLINM',		AiType
 FROM 	UnitAiInfos
 WHERE 	UnitType = 'UNIT_SPEARMAN';
 		
 -----------------------------------------------
 -- UnitReplaces
 
--- This command tells the game about the replacement itself - this ensures that for any civilization to whom the UNIT_RWB_VIAJANTELITURGICO is available (which is only this custom civilization, thanks to the link to the TraitType), the UNIT_SPEARMAN will not be available; replaced instead by the UNIT_RWB_VIAJANTELITURGICO.
+-- This command tells the game about the replacement itself - this ensures that for any civilization to whom the UNIT_RWB_APAQALLINM is available (which is only this custom civilization, thanks to the link to the TraitType), the UNIT_SPEARMAN will not be available; replaced instead by the UNIT_RWB_APAQALLINM.
 -----------------------------------------------
 		
 INSERT INTO UnitReplaces
 		(CivUniqueUnitType,		ReplacesUnitType	)
-VALUES	('UNIT_RWB_VIAJANTELITURGICO',	'UNIT_SPEARMAN'		);
+VALUES	('UNIT_RWB_APAQALLINM',	'UNIT_SPEARMAN'		);
 
 -----------------------------------------------
 -- UnitAbilities
@@ -176,7 +176,7 @@ VALUES	('UNIT_RWB_VIAJANTELITURGICO',	'UNIT_SPEARMAN'		);
 
 INSERT INTO UnitAbilities
 		(UnitAbilityType,			Name,								Description						)
-VALUES	('ABILITY_RWB_VIAJANTELITURGICO',	'LOC_UNIT_RWB_VIAJANTELITURGICO_NAME',		'LOC_ABILITY_RWB_VIAJANTELITURGICO'		);
+VALUES	('ABILITY_RWB_APAQALLINM',	'LOC_UNIT_RWB_APAQALLINM_NAME',		'LOC_ABILITY_RWB_APAQALLINM'		);
 
 -----------------------------------------------
 -- Modifiers
@@ -185,7 +185,7 @@ VALUES	('ABILITY_RWB_VIAJANTELITURGICO',	'LOC_UNIT_RWB_VIAJANTELITURGICO_NAME',	
 
 -- This particular Modifier is a little different - as it references an OwnerRequirementSetId. This instructs the game to implement this Modifier only when the requirements are met - but these requirements pertain to an OwnerRequirementSetId.
 
--- We are using this kind of requirement due to the nature of the ability. We are giving a particular unit a combat boost during a Golden Age. Golden Ages are granted to a civilization and the civilization is the owner of the unit in question. In this case, context is important. The use of OwnerRequirementSetId ensures it is only when the custom civilization, that has the UNIT_RWB_VIAJANTELITURGICO, is in a Golden Age will the effect apply. SubjectRequirementSetId would be used in cases where we want to check a variable is true in the context of the unit - for example, that it is in a certain terrain, or that it has a particular type of opponent in combat.
+-- We are using this kind of requirement due to the nature of the ability. We are giving a particular unit a combat boost during a Golden Age. Golden Ages are granted to a civilization and the civilization is the owner of the unit in question. In this case, context is important. The use of OwnerRequirementSetId ensures it is only when the custom civilization, that has the UNIT_RWB_APAQALLINM, is in a Golden Age will the effect apply. SubjectRequirementSetId would be used in cases where we want to check a variable is true in the context of the unit - for example, that it is in a certain terrain, or that it has a particular type of opponent in combat.
 
 -- Compatibility note: Golden Ages were introduced in Rise & Fall. This particular unit ability requires that expansion to function. Specifically, the requirement creates the dependency on the expansion.
 -----------------------------------------------
@@ -215,14 +215,14 @@ VALUES	('MODIFIER_WEREJAGUAR_GOLDEN_AGE_STRENGTH',			'Amount',					5		);
 
 -- In order to link the UnitAbility and the Modifier we have set up, we need to use the UnitAbilityModifiers table.
 
--- This simply ties the two elements together - it ensures that any unit that has the ABILITY_RWB_VIAJANTELITURGICO UnitAbilityType will receive the bonus granted by the MODIFIER_WEREJAGUAR_GOLDEN_AGE_STRENGTH Modifier.
+-- This simply ties the two elements together - it ensures that any unit that has the ABILITY_RWB_APAQALLINM UnitAbilityType will receive the bonus granted by the MODIFIER_WEREJAGUAR_GOLDEN_AGE_STRENGTH Modifier.
 
--- We specified the CLASS_RWB_VIAJANTELITURGICO as being the only one linked to the ABILITY_RWB_VIAJANTELITURGICO earlier in this document (using the TypeTags table). This way, we ensure that the only unit to get this ability is, in fact, the Werejaguar.
+-- We specified the CLASS_RWB_APAQALLINM as being the only one linked to the ABILITY_RWB_APAQALLINM earlier in this document (using the TypeTags table). This way, we ensure that the only unit to get this ability is, in fact, the Werejaguar.
 -----------------------------------------------
 
 INSERT INTO UnitAbilityModifiers
 		(UnitAbilityType,				ModifierId									)
-VALUES	('ABILITY_RWB_VIAJANTELITURGICO',		'MODIFIER_WEREJAGUAR_GOLDEN_AGE_STRENGTH'	);
+VALUES	('ABILITY_RWB_APAQALLINM',		'MODIFIER_WEREJAGUAR_GOLDEN_AGE_STRENGTH'	);
 
 -----------------------------------------------
 -- ModifierStrings
@@ -236,4 +236,4 @@ VALUES	('ABILITY_RWB_VIAJANTELITURGICO',		'MODIFIER_WEREJAGUAR_GOLDEN_AGE_STRENG
 
 INSERT INTO ModifierStrings
 		(ModifierId,									Context,		Text							)
-VALUES	('MODIFIER_WEREJAGUAR_GOLDEN_AGE_STRENGTH',		'Preview',		'LOC_ABILITY_RWB_VIAJANTELITURGICO'		);
+VALUES	('MODIFIER_WEREJAGUAR_GOLDEN_AGE_STRENGTH',		'Preview',		'LOC_ABILITY_RWB_APAQALLINM'		);

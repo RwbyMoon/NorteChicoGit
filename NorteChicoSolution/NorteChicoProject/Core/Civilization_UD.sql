@@ -1,4 +1,5 @@
--- Civilization_UD
--- Author: Matt
--- DateCreated: 10/21/2021 12:06:35 PM
+-- Unique cheap district that cannot be placed adjacent to the city center, used for stability and growth endeavors. It possesses 3 unique buildings (the Sunken Plaza, the Pirámide and the Huenca), buildable in any order.
+-- One of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds".
+-- +1 Faith, +2 Loyalty, +1 Population, +2 Food upon construction of this District and for every of its Buildings.
+-- Great Prophets may found a religion on a Ciudad Sagrada instead of a Holy Site.
 --------------------------------------------------------------

@@ -1,0 +1,3 @@
+-- Huenca : +3 Faith, +3 Great Prophet Points per Turn.
+-- Sunken Plaza : +3 Culture. +1 Culture +1 Tourism for every Great Works in this city, doubled for Great Works of Music.
+-- Pirámide : +3 Housing. +1 Gold +1 Production per Citizen in this city.

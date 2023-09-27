@@ -21,58 +21,52 @@ VALUES
 -- Defines the text strings that identify your custom civilization by name.
 -----------------------------------------------
 
-	('en_US',	'LOC_CIVILIZATION_RWB_NORTECHICO_NAME',			'Olmec'			),
-	('en_US',	'LOC_CIVILIZATION_RWB_NORTECHICO_DESCRIPTION',	'Olmec Empire'	),
-	('en_US',	'LOC_CIVILIZATION_RWB_NORTECHICO_ADJECTIVE',  	'Olmec'			),
+	('en_US',	'LOC_CIVILIZATION_RWB_NORTECHICO_NAME',			'Norte Chico'			),
+	('en_US',	'LOC_CIVILIZATION_RWB_NORTECHICO_DESCRIPTION',	'Norte Chico Empire'	),
+	('en_US',	'LOC_CIVILIZATION_RWB_NORTECHICO_ADJECTIVE',  	'Norte Chican'			),
 	
 -----------------------------------------------
 -- Civilization Unique Ability
-
--- Defines the text strings that name and describe your custom civilization's Unique Ability.
-
--- Please note: The display of in-game icons in text is achieved by using [ICON_Type].
 -----------------------------------------------
 
-	('en_US',	'LOC_TRAIT_CIVILIZATION_MC_LET_THE_GODS_FEED_US_NAME',				'Let the Gods feed us!'				),
-	('en_US',	'LOC_TRAIT_CIVILIZATION_MC_LET_THE_GODS_FEED_US_DESCRIPTION',	
-	'Holy Site buildings will yield an additional +2 [ICON_Food] Food, alongside their usual [ICON_Faith] Faith.'	),
+	('en_US',	'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_NAME',				'Kamachiq Vara Dioskuna'				),
+	('en_US',	'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_DESCRIPTION',	
+	'For every Economic Policy Cards in your Government, units with [ICON_Charges] Build Charges gain +1 of it when built. Builders however do not gain bonus Build Charges anymore from any other methods.[NEWLINE][NEWLINE]Civilian, Religious and Anti-Cavalry units starting their turn within two tiles of Holy Sites receive +1 [ICON_Movement] Movement.'),
 
 -----------------------------------------------
--- Civilization Unique Infrastructure (Improvement)
-
--- Defines the text strings that name and describe your custom civilization's Unique Infrastructure (in this case, Improvement) and its capability.
-
--- Please note: The display of in-game icons in text is achieved by using [ICON_Type].
+-- Civilization Unique Infrastructure
 -----------------------------------------------
 
-	('en_US',	'LOC_IMPROVEMENT_OLMEC_COLOSSAL_HEAD_NAME',				'Colossal Head'								),
+    -- Ciudad Sagrada
+	('en_US',	'LOC_IMPROVEMENT_OLMEC_COLOSSAL_HEAD_NAME',				'Ciudad Sagrada'								),
 	('en_US',	'LOC_IMPROVEMENT_OLMEC_COLOSSAL_HEAD_DESCRIPTION',
-	'Unlocks the Builder ability to construct a Colossal Head, unique to the Olmec. [NEWLINE][NEWLINE] +1 [ICON_Faith] Faith, +1 [ICON_SCIENCE] Science. +1 [ICON_Faith] Faith if adjacent to a Campus, +1 [ICON_Science] Science if adjacent to a Holy Site. Cities with at least four Colossal heads provide a [ICON_GreatArtist] Great Artist Point. May be built on Rainforest. Cannot be constructed adjacent to another Colossal Head.'	),
+	'Unique cheap district of Norte Chico that cannot be placed adjacent to the city center, used for stability and growth endeavors. It possesses 3 unique buildings (the Sunken Plaza, the Pirámide and the Huenca), buildable in any order.[NEWLINE][NEWLINE]One of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds".[NEWLINE][NEWLINE]• +1 [ICON_Faith] Faith, +2 [ICON_PressureUp] Loyalty, +1 [ICON_Citizen] Population, +2 [ICON_Food] Food upon construction of this District and for every of its Buildings.[NEWLINE][NEWLINE]• Great Prophets may found a religion on a Ciudad Sagrada instead of a Holy Site.'	),
+
+    -- Huenca
+    ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_HUENCA_NAME',				'Huenca'								),
+    ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_HUENCA_DESCRIPTION',
+     'Unique building of the Ciudad Sagrada district, useful for religious endeavors. [NEWLINE][NEWLINE]Only one of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds".[NEWLINE][NEWLINE]• +3 [ICON_Faith] Faith[NEWLINE][NEWLINE]• +3 [ICON_GreatProphet] Great Prophet Points per Turn.'	),
+
+    -- Sunken Plaza
+    ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_NAME',		'Sunken Plaza'								),
+    ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_DESCRIPTION',
+     'Unique building of the Ciudad Sagrada district, useful for cultural and touristic endeavors. [NEWLINE][NEWLINE]Only one of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds".[NEWLINE][NEWLINE]• +3 [ICON_Culture] Culture.[NEWLINE][NEWLINE]• +1 [ICON_Culture] Culture, +1 [ICON_Tourism] Tourism for every [ICON_GreatWork_Landscape] Great Works in this city, doubled for [ICON_GreatWork_Music] Great Works of Music.'	),
+
+    -- Pirámide
+    ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_PIRAMIDE_NAME',			'Pirámide'								),
+    ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_PIRAMIDE_DESCRIPTION',
+     'Unique building of the Ciudad Sagrada district, useful for growing large productive and richer cities. [NEWLINE][NEWLINE]Only one of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds".[NEWLINE][NEWLINE]• +3 [ICON_Housing] Housing[NEWLINE][NEWLINE]• +1 [ICON_Gold] Gold +1 [ICON_Production] Production per [ICON_Citizen] Citizen in this city.'	),
 
 -----------------------------------------------
 -- Civilization Unique Unit
-
--- Defines the text strings that name and describe your custom civilization's Unique Unit and its capability. Where this replaces an existing unit, it's customary to mention this.
-
--- The LOC_ABILITY_UNITNAME is a brief description that appears in a separate Civilopedia entry, as well as part of a hover 'tooltip' in-game (I think).
-
--- Please note: The display of in-game icons in text is achieved by using [ICON_Type].
 -----------------------------------------------
 
-	('en_US',	'LOC_UNIT_RWB_VIAJANTELITURGICO_NAME',	'Werejaguar'	),
-	('en_US',	'LOC_UNIT_RWB_VIAJANTELITURGICO_DESCRIPTION',	 
-	'The elite warriors of the Olmec military, these fearsome, masked warriors replace the Spearman and receive a [ICON_Strength] Combat Strength boost during [ICON_Glory_Golden_Age] Golden Ages.'	),
-
-	('en_US',	'LOC_ABILITY_RWB_VIAJANTELITURGICO',  '+5 [ICON_Strength] Combat Strength during a [ICON_Glory_Golden_Age] Golden Age.'	),
+	('en_US',	'LOC_UNIT_RWB_APAQALLINM_NAME',	'Apaq Allinm'	),
+	('en_US',	'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION',	 
+	'Unique religious craftsman of Norte Chico, which is a more expensive replacement of the Missionary with +1 Sight having 1 [ICON_Charges] Build Charge, allowing it to build improvements identical to Builders.'	),
 
 -----------------------------------------------
--- Mountains
-
--- Defines the text strings to be used for the custom mountain range names that were defined in Civilization_Config.sql.
-
--- These entries need only be here if custom mountain range names were defined.
-
--- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
+-- Mountains --------------------------------------------------- STILL TO DO STARTING HERE
 -----------------------------------------------
 
 	('en_US',	'LOC_NAMED_MOUNTAIN_CORDILLERA_NEOVOLCANICA',		'Cordillera Neovolcanica'	),
@@ -85,12 +79,6 @@ VALUES
 
 -----------------------------------------------
 -- Rivers
-
--- Defines the text strings to be used for the custom river names that were defined in Civilization_Config.sql.
-
--- These entries need only be here if custom river names were defined.
-
--- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
 -----------------------------------------------
 
 	('en_US',	'LOC_NAMED_RIVER_GRANDE',				'Río Grande'				),
@@ -106,12 +94,6 @@ VALUES
 
 -----------------------------------------------
 -- Lakes
-
--- Defines the text strings to be used for the custom lake names that were defined in Civilization_Config.sql.
-
--- These entries need only be here if custom lake names were defined.
-
--- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
 -----------------------------------------------
 
 	('en_US',	'LOC_NAMED_LAKE_CHAPALA',				'Chapala'			),
@@ -122,12 +104,6 @@ VALUES
 
 -----------------------------------------------
 -- Deserts
-
--- Defines the text strings to be used for the custom desert names that were defined in Civilization_Config.sql.
-
--- These entries need only be here if custom desert names were defined.
-
--- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
 -----------------------------------------------
 
 	('en_US',	'LOC_NAMED_DESERT_SONORA',		'Desierto de Soñora'		),
@@ -136,12 +112,6 @@ VALUES
 
 -----------------------------------------------
 -- Volcanoes
-
--- Defines the text strings to be used for the custom volcano names that were defined in Civilization_Config.sql. As per the note in that file, these should only be present if you are developing a mod that will leverage/require Gathering Storm (Expansion2) functionality.
-
--- These entries need only be here if custom volcano names were defined.
-
--- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
 -----------------------------------------------
 
 	('en_US',	'LOC_NAMED_VOLCANO_PICO_DE_ORIZABA',	'Pico de Orizaba'			),
@@ -152,10 +122,6 @@ VALUES
 
 -----------------------------------------------
 -- Cities
-
--- Defines the text strings to be used for city names by the custom civilization, that were defined in Civilization_Config.sql.
-
--- The order in which city names for a civilization appear is partly affected by the value set for the RandomCityNameDepth within the Civilizations table (again, in Civilization_Config.sql).
 -----------------------------------------------
 
 	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_1',  'San Lorenzo'),

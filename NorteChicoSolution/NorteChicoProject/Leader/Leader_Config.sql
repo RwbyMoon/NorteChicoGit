@@ -19,17 +19,17 @@
 --		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
 --		'LOC_CIVILIZATION_RWB_NORTECHICO_NAME', -- CivilizationName
 --		'ICON_CIVILIZATION_RWB_NORTECHICO', -- CivilizationIcon
---		'LOC_TRAIT_CIVILIZATION_MC_LET_THE_GODS_FEED_US_NAME', -- CivilizationAbilityName
---		'LOC_TRAIT_CIVILIZATION_MC_LET_THE_GODS_FEED_US_DESCRIPTION', -- CivilizationAbilityDescription
+--		'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_NAME', -- CivilizationAbilityName
+--		'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_DESCRIPTION', -- CivilizationAbilityDescription
 --		'ICON_CIVILIZATION_RWB_NORTECHICO', -- CivilizationAbilityIcon
 		
 		-- Leader
---		'LEADER_MC_PO_NGBE', -- LeaderType
---		'LOC_LEADER_MC_PO_NGBE_NAME', -- LeaderName
---		'ICON_LEADER_MC_PO_NGBE', -- LeaderIcon (Portrait)
+--		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
+--		'LOC_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_NAME', -- LeaderName
+--		'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderIcon (Portrait)
 --		'LOC_TRAIT_LEADER_MC_FEAR_NOT_EXPLORATION_NAME', -- LeaderAbilityName
 --		'LOC_TRAIT_LEADER_MC_FEAR_NOT_EXPLORATION_DESCRIPTION', -- LeaderAbilityDescription
---		'ICON_LEADER_MC_PO_NGBE' -- LeaderAbilityIcon
+--		'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS' -- LeaderAbilityIcon
 --		);
 
 -----------------------------------------------
@@ -49,17 +49,17 @@
 --		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
 --		'LOC_CIVILIZATION_RWB_NORTECHICO_NAME', -- CivilizationName
 --		'ICON_CIVILIZATION_RWB_NORTECHICO', -- CivilizationIcon
---		'LOC_TRAIT_CIVILIZATION_MC_LET_THE_GODS_FEED_US_NAME', -- CivilizationAbilityName
---		'LOC_TRAIT_CIVILIZATION_MC_LET_THE_GODS_FEED_US_DESCRIPTION', -- CivilizationAbilityDescription
+--		'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_NAME', -- CivilizationAbilityName
+--		'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_DESCRIPTION', -- CivilizationAbilityDescription
 --		'ICON_CIVILIZATION_RWB_NORTECHICO', -- CivilizationAbilityIcon
 		
 		-- Leader
---		'LEADER_MC_PO_NGBE', -- LeaderType
---		'LOC_LEADER_MC_PO_NGBE_NAME', -- LeaderName
---		'ICON_LEADER_MC_PO_NGBE', -- LeaderIcon (Portrait)
+--		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
+--		'LOC_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_NAME', -- LeaderName
+--		'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderIcon (Portrait)
 --		'LOC_TRAIT_LEADER_MC_FEAR_NOT_EXPLORATION_NAME', -- LeaderAbilityName
 --		'LOC_TRAIT_LEADER_MC_FEAR_NOT_EXPLORATION_DESCRIPTION', -- LeaderAbilityDescription
---		'ICON_LEADER_MC_PO_NGBE' -- LeaderAbilityIcon
+--		'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS' -- LeaderAbilityIcon
 --		);
 
 -----------------------------------------------
@@ -77,17 +77,17 @@ VALUES	(
 		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
 		'LOC_CIVILIZATION_RWB_NORTECHICO_NAME', -- CivilizationName
 		'ICON_CIVILIZATION_RWB_NORTECHICO', -- CivilizationIcon
-		'LOC_TRAIT_CIVILIZATION_MC_LET_THE_GODS_FEED_US_NAME', -- CivilizationAbilityName
-		'LOC_TRAIT_CIVILIZATION_MC_LET_THE_GODS_FEED_US_DESCRIPTION', -- CivilizationAbilityDescription
+		'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_NAME', -- CivilizationAbilityName
+		'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_DESCRIPTION', -- CivilizationAbilityDescription
 		'ICON_CIVILIZATION_RWB_NORTECHICO', -- CivilizationAbilityIcon
 		
 		-- Leader
-		'LEADER_MC_PO_NGBE', -- LeaderType
-		'LOC_LEADER_MC_PO_NGBE_NAME', -- LeaderName
-		'ICON_LEADER_MC_PO_NGBE', -- LeaderIcon (Portrait)
+		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
+		'LOC_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_NAME', -- LeaderName
+		'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderIcon (Portrait)
 		'LOC_TRAIT_LEADER_MC_FEAR_NOT_EXPLORATION_NAME', -- LeaderAbilityName
 		'LOC_TRAIT_LEADER_MC_FEAR_NOT_EXPLORATION_DESCRIPTION', -- LeaderAbilityDescription
-		'ICON_LEADER_MC_PO_NGBE' -- LeaderAbilityIcon
+		'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS' -- LeaderAbilityIcon
 		);
 
 -----------------------------------------------
@@ -102,17 +102,17 @@ VALUES	(
 --		(CivilizationType, LeaderType, Type, Icon, Name, Description, SortIndex	)
 --VALUES	(
 --		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
---		'LEADER_MC_PO_NGBE', -- LeaderType
---		'UNIT_RWB_VIAJANTELITURGICO', -- Type
---		'ICON_UNIT_RWB_VIAJANTELITURGICO', -- Icon
---		'LOC_UNIT_RWB_VIAJANTELITURGICO_NAME', -- Name
---		'LOC_UNIT_RWB_VIAJANTELITURGICO_DESCRIPTION', -- Description
+--		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
+--		'UNIT_RWB_APAQALLINM', -- Type
+--		'ICON_UNIT_RWB_APAQALLINM', -- Icon
+--		'LOC_UNIT_RWB_APAQALLINM_NAME', -- Name
+--		'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION', -- Description
 --		10	-- SortIndex
 --		),
 --		
 --		(
 --		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
---		'LEADER_MC_PO_NGBE', -- LeaderType
+--		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
 --		'IMPROVEMENT_COLOSSAL_HEAD', -- Type
 --		'ICON_IMPROVEMENT_COLOSSAL_HEAD', -- Icon
 --		'LOC_IMPROVEMENT_OLMEC_COLOSSAL_HEAD_NAME', -- Name
@@ -135,18 +135,18 @@ VALUES	(
 --VALUES	(
 --		'Players:Expansion1_Players', -- Domain
 --		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
---		'LEADER_MC_PO_NGBE', -- LeaderType
---		'UNIT_RWB_VIAJANTELITURGICO', -- Type
---		'ICON_UNIT_RWB_VIAJANTELITURGICO', -- Icon
---		'LOC_UNIT_RWB_VIAJANTELITURGICO_NAME', -- Name
---		'LOC_UNIT_RWB_VIAJANTELITURGICO_DESCRIPTION', -- Description
+--		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
+--		'UNIT_RWB_APAQALLINM', -- Type
+--		'ICON_UNIT_RWB_APAQALLINM', -- Icon
+--		'LOC_UNIT_RWB_APAQALLINM_NAME', -- Name
+--		'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION', -- Description
 --		10	-- SortIndex
 --		),
 --		
 --		(
 --		'Players:Expansion1_Players', -- Domain
 --		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
---		'LEADER_MC_PO_NGBE', -- LeaderType
+--		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
 --		'IMPROVEMENT_COLOSSAL_HEAD', -- Type
 --		'ICON_IMPROVEMENT_COLOSSAL_HEAD', -- Icon
 --		'LOC_IMPROVEMENT_OLMEC_COLOSSAL_HEAD_NAME', -- Name
@@ -167,18 +167,18 @@ INSERT INTO PlayerItems
 VALUES	(
 		'Players:Expansion2_Players', -- Domain
 		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
-		'LEADER_MC_PO_NGBE', -- LeaderType
-		'UNIT_RWB_VIAJANTELITURGICO', -- Type
-		'ICON_UNIT_RWB_VIAJANTELITURGICO', -- Icon
-		'LOC_UNIT_RWB_VIAJANTELITURGICO_NAME', -- Name
-		'LOC_UNIT_RWB_VIAJANTELITURGICO_DESCRIPTION', -- Description
+		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
+		'UNIT_RWB_APAQALLINM', -- Type
+		'ICON_UNIT_RWB_APAQALLINM', -- Icon
+		'LOC_UNIT_RWB_APAQALLINM_NAME', -- Name
+		'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION', -- Description
 		10	-- SortIndex
 		),
 		
 		(
 		'Players:Expansion2_Players', -- Domain
 		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
-		'LEADER_MC_PO_NGBE', -- LeaderType
+		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
 		'IMPROVEMENT_COLOSSAL_HEAD', -- Type
 		'ICON_IMPROVEMENT_COLOSSAL_HEAD', -- Icon
 		'LOC_IMPROVEMENT_OLMEC_COLOSSAL_HEAD_NAME', -- Name

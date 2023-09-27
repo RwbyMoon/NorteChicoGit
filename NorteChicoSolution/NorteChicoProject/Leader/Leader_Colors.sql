@@ -13,7 +13,7 @@
 
 INSERT INTO	PlayerColors (Type, Usage, PrimaryColor, SecondaryColor, Alt1PrimaryColor, Alt1SecondaryColor, Alt2PrimaryColor, Alt2SecondaryColor, Alt3PrimaryColor, Alt3SecondaryColor )
 VALUES	(
-		'LEADER_MC_PO_NGBE', -- Type
+		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- Type
 		'Unique', -- Usage
 		'COLOR_RWB_NORTECHICO_A_PRIMARY', -- PrimaryColor
 		'COLOR_RWB_NORTECHICO_A_SECONDARY', -- SecondaryColor
