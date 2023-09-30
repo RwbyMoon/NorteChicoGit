@@ -18,7 +18,7 @@ VALUES
 -----------------------------------------------
 -- Leader Name
 -----------------------------------------------	
-	
+
 	('en_US',	'LOC_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_NAME',  'Lady of the Four Tupus'	),
 	
 -----------------------------------------------
@@ -26,8 +26,7 @@ VALUES
 -----------------------------------------------	
 
 	('en_US',	'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_NAME',	'Economía Teocrática Nisqa'	),
-	('en_US',	'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_DESCRIPTION',		'Has immediate access to all Economic Policy Cards from the Norte Chico people''s current civic research era and the previous ones.
-Every specialty districts in cities with a Ciudad Sagrada grant access to unique "Huenca" variants of their district projects. Each of them cost 300% more Production, but has doubled rentability compared to the usual ones. Accomplishing one of these Projects permanently grant +5% [ICON_Production] Production toward Projects and +5% [ICON_Faith] Faith generation in this city.'	),
+	('en_US',	'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_DESCRIPTION',		'Has immediate access to all Economic Policy Cards from the Norte Chico people''s current civic research era and the previous ones.[NEWLINE][NEWLINE]Civilian, Religious and Anti-Cavalry units starting their turn within two tiles of Holy Sites receive +1 [ICON_Movement] Movement.'	),
 
 -----------------------------------------------
 -- Leader Agenda --------------------------------------------------- STILL TO DO STARTING HERE

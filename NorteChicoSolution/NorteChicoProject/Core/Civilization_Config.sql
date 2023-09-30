@@ -1,37 +1,16 @@
-/*
-	Main Civilization Configuration
-	Authors: MC
-*/
-
 -----------------------------------------------
 -- Types
-
--- This inserts the civilization reference into the primary Data Types table as a playable Civilization. This is mandatory. The string listed under 'Type' must be used throughout the mod when referring to the CivilizationType.
-
--- It is customary for this to take the following format: CIVILIZATION_PREFIX_CIVNAME
-
--- PREFIX: A 'unique', brief string of characters - often derived from the modder's initials, name or other alias (e.g. MC, MATT or MYALIAS). This is used to differentiate from other mods, primarily.
--- CIVNAME: The name of the civilization itself (e.g. FRANCE, GERMANY or RUSSIA).
 -----------------------------------------------
 
-INSERT INTO	Types
+INSERT OR REPLACE INTO	Types
 			(Type,							Kind					)
 VALUES		('CIVILIZATION_RWB_NORTECHICO',		'KIND_CIVILIZATION'		);
 		
 -----------------------------------------------
 -- Civilizations
-
--- This inserts some basic configuration into the list of Civilizations that the game recognises. The below entry contains all seven columns required for this table to be fully populated - no fields are ommitted in the below example.
-
--- Locally-referenced values (i.e. those defined in this mod): CivilizationType, Name, Description, Adjective
--- Game-referenced values (i.e. those drawn from the base game):
-
--- StartingCivilizationLevelType: For a playable civilization, this must always be: CIVILIZATION_LEVEL_FULL_CIV. The game utilises this string to differentiate between playable civilizations and city-states (and any other lesser entities).
--- RandomCityNameDepth: An integer value, this is the size of the pool of city names from which the game chooses the next built city's name. The capital will always be built first; after which, the game will pick randomly from the next X cities listed (where X = value).
--- Ethnicity: Picked from an explicit list of defined ethnicities, this must be one of ETHNICITY_AFRICAN, ETHNICITY_ASIAN, ETHNICITY_EURO, ETHNICITY_MEDIT or ETHNICITY_SOUTHAM
 -----------------------------------------------
 
-INSERT INTO	Civilizations
+INSERT OR REPLACE INTO	Civilizations
 			(
 			CivilizationType,
 			Name,
@@ -64,7 +43,23 @@ VALUES		(
 -- Compatibility: NamedMountains were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
-REPLACE INTO NamedMountains
+
+
+-- GS NAMED ZONES ARE CURRENTLY BROKEN, EVEN WITHOUT THE TABLE CREATION IT'S WEIRD AF !
+
+
+
+
+
+/*
+
+CREATE TABLE IF NOT EXISTS NamedMountains
+(
+    NamedMountainType TEXT not null
+        primary key,
+    Name           TEXT not null
+);
+INSERT OR IGNORE INTO NamedMountains
 		(NamedMountainType,							Name											)
 VALUES	('NAMED_MOUNTAIN_CORDILLERA_NEOVOLCANICA',	'LOC_NAMED_MOUNTAIN_CORDILLERA_NEOVOLCANICA'	),
 		('NAMED_MOUNTAIN_MEXICAN_PLATEAU',			'LOC_NAMED_MOUNTAIN_MEXICAN_PLATEAU'			),
@@ -82,7 +77,17 @@ VALUES	('NAMED_MOUNTAIN_CORDILLERA_NEOVOLCANICA',	'LOC_NAMED_MOUNTAIN_CORDILLERA
 -- Compatibility: NamedMountainCivilizations were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
-INSERT INTO NamedMountainCivilizations
+CREATE TABLE IF NOT EXISTS NamedMountainCivilizations
+(
+    NamedMountainType TEXT not null
+        references NamedMountains
+            on update cascade on delete cascade,
+    CivilizationType  TEXT not null
+        references Civilizations
+            on update cascade on delete cascade,
+    primary key (NamedMountainType, CivilizationType)
+);
+INSERT OR IGNORE INTO NamedMountainCivilizations
 		(CivilizationType,			NamedMountainType							)
 VALUES	('CIVILIZATION_RWB_NORTECHICO',	'NAMED_MOUNTAIN_CORDILLERA_NEOVOLCANICA'	),
 		('CIVILIZATION_RWB_NORTECHICO',	'NAMED_MOUNTAIN_MEXICAN_PLATEAU'			),
@@ -104,7 +109,13 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',	'NAMED_MOUNTAIN_CORDILLERA_NEOVOLCANICA'	
 -- Compatibility: NamedRivers were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
-REPLACE INTO NamedRivers
+CREATE TABLE IF NOT EXISTS NamedRivers
+(
+    NamedRiverType TEXT not null
+        primary key,
+    Name           TEXT not null
+);
+INSERT OR IGNORE INTO NamedRivers
 		(NamedRiverType,					Name									)
 VALUES	('NAMED_RIVER_GRANDE',				'LOC_NAMED_RIVER_GRANDE'				),
 		('NAMED_RIVER_USUMACINTA',			'LOC_NAMED_RIVER_USUMACINTA'			),
@@ -124,9 +135,18 @@ VALUES	('NAMED_RIVER_GRANDE',				'LOC_NAMED_RIVER_GRANDE'				),
 
 -- Compatibility: NamedRiverCivilizations were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
-
-INSERT INTO NamedRiverCivilizations
-		(CivilizationType,			NamedRiverType					)
+CREATE TABLE IF NOT EXISTS NamedRiverCivilizations
+(
+    NamedMountainType TEXT not null
+        references NamedRivers
+            on update cascade on delete cascade,
+    CivilizationType  TEXT not null
+        references Civilizations
+            on update cascade on delete cascade,
+    primary key (NamedMountainType, CivilizationType)
+);
+INSERT OR IGNORE INTO NamedRiverCivilizations
+		(CivilizationType,			    NamedRiverType					)
 VALUES	('CIVILIZATION_RWB_NORTECHICO',	'NAMED_RIVER_GRANDE'			),
 		('CIVILIZATION_RWB_NORTECHICO',	'NAMED_RIVER_USUMACINTA'		),
 		('CIVILIZATION_RWB_NORTECHICO',	'NAMED_RIVER_NAZAS'				),
@@ -149,8 +169,13 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',	'NAMED_RIVER_GRANDE'			),
 
 -- Compatibility: NamedLakes were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
-
-INSERT OR REPLACE INTO NamedLakes
+CREATE TABLE IF NOT EXISTS NamedLakes
+(
+    NamedLakeType TEXT not null
+        primary key,
+    Name           TEXT not null
+);
+INSERT OR IGNORE INTO NamedLakes
 		(NamedLakeType,						Name								)
 VALUES	('NAMED_LAKE_CHAPALA',				'LOC_NAMED_LAKE_CHAPALA'			),
 		('NAMED_LAKE_PATZCUARO',			'LOC_NAMED_LAKE_PATZCUARO'			),
@@ -165,8 +190,17 @@ VALUES	('NAMED_LAKE_CHAPALA',				'LOC_NAMED_LAKE_CHAPALA'			),
 
 -- Compatibility: NamedLakeCivilizations were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
-
-INSERT INTO NamedLakeCivilizations
+CREATE TABLE IF NOT EXISTS NamedLakeCivilizations
+(
+    NamedMountainType TEXT not null
+        references NamedLakes
+            on update cascade on delete cascade,
+    CivilizationType  TEXT not null
+        references Civilizations
+            on update cascade on delete cascade,
+    primary key (NamedMountainType, CivilizationType)
+);
+INSERT OR IGNORE INTO NamedLakeCivilizations
 		(CivilizationType,			NamedLakeType					)
 VALUES	('CIVILIZATION_RWB_NORTECHICO',	'NAMED_LAKE_LAKE_TEXCOCO'		),
 		('CIVILIZATION_RWB_NORTECHICO',	'NAMED_LAKE_CHAPALA'			),
@@ -188,7 +222,12 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',	'NAMED_LAKE_LAKE_TEXCOCO'		),
 
 -- Compatibility: NamedSeas were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
-
+CREATE TABLE IF NOT EXISTS NamedSeas
+(
+    NamedSeaType TEXT not null
+        primary key,
+    Name           TEXT not null
+);
 INSERT OR IGNORE INTO NamedSeas
 		(NamedSeaType,						Name										)
 VALUES	('NAMED_SEA_GULF_OF_CALIFORNIA',	'LOC_NAMED_SEA_GULF_OF_CALIFORNIA_NAME'		),
@@ -201,8 +240,17 @@ VALUES	('NAMED_SEA_GULF_OF_CALIFORNIA',	'LOC_NAMED_SEA_GULF_OF_CALIFORNIA_NAME'	
 
 -- Compatibility: NamedSeaCivilizations were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
-
-INSERT INTO NamedSeaCivilizations
+CREATE TABLE IF NOT EXISTS NamedSeaCivilizations
+(
+    NamedMountainType TEXT not null
+        references NamedSeas
+            on update cascade on delete cascade,
+    CivilizationType  TEXT not null
+        references Civilizations
+            on update cascade on delete cascade,
+    primary key (NamedMountainType, CivilizationType)
+);
+INSERT OR IGNORE INTO NamedSeaCivilizations
 		(CivilizationType,			NamedSeaType					)
 VALUES	('CIVILIZATION_RWB_NORTECHICO',	'NAMED_SEA_GULF_OF_CALIFORNIA'	),
 		('CIVILIZATION_RWB_NORTECHICO',	'NAMED_SEA_GULF_OF_MEXICO'		);
@@ -222,8 +270,13 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',	'NAMED_SEA_GULF_OF_CALIFORNIA'	),
 
 -- Compatibility: NamedDeserts were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
-
-REPLACE INTO NamedDeserts
+CREATE TABLE IF NOT EXISTS NamedDeserts
+(
+    NamedDesertType TEXT not null
+        primary key,
+    Name           TEXT not null
+);
+INSERT OR IGNORE INTO NamedDeserts
 		(NamedDesertType,			Name							)
 VALUES	('NAMED_DESERT_SONORAN',	'LOC_NAMED_DESERT_SONORA'		),
 		('NAMED_DESERT_LA_GUAJIRA',	'LOC_NAMED_DESERT_LA_GUAJIRA'	),
@@ -236,8 +289,17 @@ VALUES	('NAMED_DESERT_SONORAN',	'LOC_NAMED_DESERT_SONORA'		),
 
 -- Compatibility: NamedDeserts were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
-
-INSERT INTO NamedDesertCivilizations
+CREATE TABLE IF NOT EXISTS NamedDesertCivilizations
+(
+    NamedMountainType TEXT not null
+        references NamedDeserts
+            on update cascade on delete cascade,
+    CivilizationType  TEXT not null
+        references Civilizations
+            on update cascade on delete cascade,
+    primary key (NamedMountainType, CivilizationType)
+);
+INSERT OR IGNORE INTO NamedDesertCivilizations
 		(CivilizationType,			NamedDesertType				)
 VALUES	('CIVILIZATION_RWB_NORTECHICO',	'NAMED_DESERT_SONORAN'		),
 		('CIVILIZATION_RWB_NORTECHICO',	'NAMED_DESERT_LA_GUAJIRA'	),
@@ -254,8 +316,13 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',	'NAMED_DESERT_SONORAN'		),
 
 -- Compatibility: Volcanoes were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
-
-REPLACE INTO NamedVolcanoes
+CREATE TABLE IF NOT EXISTS NamedVolcanoes
+(
+    NamedVolcanoType TEXT not null
+        primary key,
+    Name           TEXT not null
+);
+INSERT OR IGNORE INTO NamedVolcanoes
 		(NamedVolcanoType,					Name								)
 VALUES	('NAMED_VOLCANO_PICO_DE_ORIZABA',	'LOC_NAMED_VOLCANO_PICO_DE_ORIZABA'	),
 		('NAMED_VOLCANO_TAJUMULCO',			'LOC_NAMED_VOLCANO_TAJUMULCO'		),
@@ -270,14 +337,24 @@ VALUES	('NAMED_VOLCANO_PICO_DE_ORIZABA',	'LOC_NAMED_VOLCANO_PICO_DE_ORIZABA'	),
 
 -- Compatibility: Volcanoes were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
-
-INSERT INTO NamedVolcanoCivilizations
+CREATE TABLE IF NOT EXISTS NamedVolcanoCivilizations
+(
+    NamedVolcanoType TEXT not null
+        references NamedLakes
+            on update cascade on delete cascade,
+    CivilizationType  TEXT not null
+        references Civilizations
+            on update cascade on delete cascade,
+    primary key (NamedVolcanoType, CivilizationType)
+);
+INSERT OR IGNORE INTO NamedVolcanoCivilizations
 		(CivilizationType,			NamedVolcanoType				)
 VALUES	('CIVILIZATION_RWB_NORTECHICO',	'NAMED_VOLCANO_PICO_DE_ORIZABA'	),
 		('CIVILIZATION_RWB_NORTECHICO',	'NAMED_VOLCANO_TAJUMULCO'		),
 		('CIVILIZATION_RWB_NORTECHICO',	'NAMED_VOLCANO_TACANA'			),
 		('CIVILIZATION_RWB_NORTECHICO',	'NAMED_VOLCANO_SANTIAGUITO'		),
 		('CIVILIZATION_RWB_NORTECHICO',	'NAMED_VOLCANO_CHAPARRASTIQUE'	);
+*/
 
 -----------------------------------------------
 -- CityNames
@@ -287,7 +364,7 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',	'NAMED_VOLCANO_PICO_DE_ORIZABA'	),
 -- All CityName references have a corresponding entry in Civilization_Localisation.sql. I have named them using a simple, sequential numbering system - however, it is generally accepted/common to give them more descriptive names (e.g. LOC_CITY_NAME_MC_SAN_LORENZO).
 -----------------------------------------------
 
-INSERT INTO	CityNames
+INSERT OR REPLACE INTO	CityNames
 		(CivilizationType,			CityName						)
 VALUES	('CIVILIZATION_RWB_NORTECHICO',	'LOC_CITY_NAME_RWB_NORTECHICO_1'		),
 		('CIVILIZATION_RWB_NORTECHICO',	'LOC_CITY_NAME_RWB_NORTECHICO_2'		),
@@ -317,7 +394,7 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',	'LOC_CITY_NAME_RWB_NORTECHICO_1'		),
 -- All CitizenName references have a corresponding entry in Civilization_Localisation.sql.
 -----------------------------------------------
 
-INSERT INTO	CivilizationCitizenNames
+INSERT OR REPLACE INTO	CivilizationCitizenNames
 		(CivilizationType,			CitizenName,						Female	)
 VALUES	('CIVILIZATION_RWB_NORTECHICO',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_1',		0 		),
 		('CIVILIZATION_RWB_NORTECHICO',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_2',		0 		),
@@ -350,7 +427,7 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_1',		0 	
 -- All Header and Caption references have a corresponding entry in Civilization_Localisation.sql.
 -----------------------------------------------
 
-INSERT INTO	CivilizationInfo
+INSERT OR REPLACE INTO	CivilizationInfo
 		(CivilizationType,			Header,						Caption,								SortIndex	)
 VALUES	('CIVILIZATION_RWB_NORTECHICO',	'LOC_CIVINFO_LOCATION',		'LOC_CIVINFO_RWB_NORTECHICO_LOCATION',		10			),
 		('CIVILIZATION_RWB_NORTECHICO',	'LOC_CIVINFO_SIZE',			'LOC_CIVINFO_RWB_NORTECHICO_SIZE',			20			),
@@ -369,19 +446,19 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',	'LOC_CIVINFO_LOCATION',		'LOC_CIVINFO_RWB
 -- ResourceType: This must be an explicit value from the list defined in Resrouces.xml (base game) and Expansion1_Resources.xml (Rise & Fall). The use of a resource from Expansion1 will dictate compatibility for your mod.
 -----------------------------------------------
 
-INSERT INTO	StartBiasTerrains
+INSERT OR REPLACE INTO	StartBiasTerrains
 		(CivilizationType,			TerrainType,			Tier	)
 VALUES	('CIVILIZATION_RWB_NORTECHICO',	'TERRAIN_PLAINS',		1		),
 		('CIVILIZATION_RWB_NORTECHICO',	'TERRAIN_GRASS',		5		);
 
-INSERT INTO	StartBiasFeatures
+INSERT OR REPLACE INTO	StartBiasFeatures
 		(CivilizationType,			FeatureType,			Tier	)
 VALUES	('CIVILIZATION_RWB_NORTECHICO',	'FEATURE_FLOODPLAINS',	4		);
 
-INSERT INTO	StartBiasResources
+INSERT OR REPLACE INTO	StartBiasResources
 		(CivilizationType,			ResourceType,			Tier	)
 VALUES	('CIVILIZATION_RWB_NORTECHICO',	'RESOURCE_JADE',		3		);
 
-INSERT INTO	StartBiasRivers
+INSERT OR REPLACE INTO	StartBiasRivers
 		(CivilizationType,				Tier	)
 VALUES	('CIVILIZATION_RWB_NORTECHICO',		2		);

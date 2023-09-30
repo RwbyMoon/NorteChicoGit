@@ -1,5 +1,5 @@
--- For every Economic Policy Cards in your Government, Builders and Apaq Allinms gain +1 Charges when built. 
--- Builders do not gain bonus Builder Charges anymore from other methods.
+-- For every Economic Policy Cards in your Government, Builders, Military Engineers and Apaq Allinms gain +1 [ICON_Charges] Build Charges when built
+-- Builders and Military Engineers do not gain bonus Builder Charges anymore from other methods and start at 1 Charge.
 -- Civilian, Religious and Anti-Cavalry units starting their turn within two tiles of Holy Sites receive +1 Movement.
 
 
@@ -37,7 +37,7 @@ INSERT OR REPLACE INTO Rwb_EcoPolicyAmountReference_UA (Size) SELECT val FROM t;
 
 -----------------------------------------------
 
-INSERT INTO	Types
+INSERT OR REPLACE INTO	Types
 		(Type,												    Kind			)
 VALUES	('TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA',		'KIND_TRAIT'	);
 
@@ -45,17 +45,15 @@ VALUES	('TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA',		'KIND_TRAIT'	);
 -- Traits
 -----------------------------------------------
 
-INSERT INTO	Traits	
+INSERT OR REPLACE INTO	Traits	
 		(TraitType,											    Name,														    Description														)
 VALUES	('TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA',		'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_NAME',		'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_DESCRIPTION'	);
 		
 -----------------------------------------------
 -- CivilizationTraits
-
--- This defines the civilization to which the TraitType is applied (i.e. which civilization gets the Unique Ability). This is a simple matter of referencing the custom CivilizationType defined in Civilization_Config.sql and using the TraitType defined at the head of this document.
 -----------------------------------------------
 
-INSERT INTO	CivilizationTraits
+INSERT OR REPLACE INTO	CivilizationTraits
 		(CivilizationType,				    TraitType										)
 VALUES	('CIVILIZATION_RWB_NORTECHICO',		'TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA'	);
 
@@ -63,10 +61,12 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',		'TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DI
 -- TraitModifiers
 -----------------------------------------------
 
-INSERT INTO	TraitModifiers	
+INSERT OR REPLACE INTO	TraitModifiers	
 		(TraitType,											ModifierId											)
-VALUES	('TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA',		'MODIFIER_RWB_KAMACHIQ_VARA_DIOSKUNA_SHRINE_YIELD'		),
-		('TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA',		'MODIFIER_RWB_KAMACHIQ_VARA_DIOSKUNA_TEMPLE_YIELD'		);
+VALUES	('TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA',    'RWB_NORTECHICO_NEGATIVE_BUILDER_MALUS_CHARGE_MALUS'),    
+        ('TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA',    'RWB_NORTECHICO_NEGATIVE_MIL_ENGINEER_CHARGE_MALUS'),
+        ('TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA',    'RWB_NORTECHICO_BUILDER_PRODUCTION_COST_MALUS'),
+        ('TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA',    'RWB_NORTECHICO_BUILDER_PURCHASE_COST_MALUS');
 
 -----------------------------------------------
 -- Modifiers
@@ -76,12 +76,27 @@ INSERT OR REPLACE INTO Modifiers
             (ModifierId,
              ModifierType,
              OwnerRequirementSetId,
-             SubjectRequirementSetId)
-SELECT      'RWB_BUILDER_CHARGE_FROM_ECO_POLICY_AMOUNT_'||a.PolicyType,
+             SubjectRequirementSetId,
+             Permanent,
+			 RunOnce,
+             SubjectStackLimit)
+SELECT      'RWB_BUILD_CHARGE_FROM_ECO_POLICY_AMOUNT_'||a.PolicyType,
             'MODIFIER_PLAYER_UNITS_ADJUST_BUILDER_CHARGES',
             'REQSET_PLAYER_IS_LADY_OF_THE_FOUR_TUPUS',
-            'UNIT_IS_BUILDER_OR_APAQALLINM'
-FROM Policies a WHERE GovernmentSlotType = 'SLOT_ECONOMIC';
+            'REQSET_UNIT_IS_BUILDER_MIL_ENGINEER_OR_APAQALLINM',
+            1,
+			1,
+			1
+            FROM Policies a WHERE GovernmentSlotType = 'SLOT_ECONOMIC';
+
+-- +100% cost to Builders
+INSERT OR REPLACE INTO Modifiers
+        (ModifierId,                                        ModifierType,                                           SubjectRequirementSetId)
+VALUES  ('RWB_NORTECHICO_BUILDER_PRODUCTION_COST_MALUS',    'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',         null),
+        ('RWB_NORTECHICO_BUILDER_PURCHASE_COST_MALUS',      'MODIFIER_PLAYER_CITIES_ADJUST_UNITS_PURCHASE_COST',    'REQSET_RWB_UNIT_IS_BUILDER');
+-- MODIFIER_PLAYER_CITIES_ADJUST_UNITS_PURCHASE_COST carthage
+-- MODIFIER_SINGLE_CITY_ADJUST_ALL_UNITS_PURCHASE_COST mali (specific city)
+-- MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION
 
 -- CANCEL CHARGES
 INSERT OR REPLACE INTO Modifiers
@@ -91,9 +106,15 @@ INSERT OR REPLACE INTO Modifiers
  SubjectRequirementSetId)
 SELECT 'RWB_NORTECHICO_NEGATIVE_'||ModifierId,
        ModifierType,
-       OwnerRequirementSetId,
+       'REQSET_PLAYER_IS_NORTECHICO',
        SubjectRequirementSetId
 FROM Rwb_Builder_ChargeSources_UA;
+
+-- CHARGE MALUSES
+INSERT OR REPLACE INTO Modifiers
+          (ModifierId,                                              ModifierType,                                              OwnerRequirementSetId,      SubjectRequirementSetId)
+VALUES    ('RWB_NORTECHICO_NEGATIVE_BUILDER_MALUS_CHARGE_MALUS',    'MODIFIER_PLAYER_TRAINED_UNITS_ADJUST_BUILDER_CHARGES',    null,                       'REQSET_RWB_UNIT_IS_BUILDER'),
+          ('RWB_NORTECHICO_NEGATIVE_MIL_ENGINEER_CHARGE_MALUS',     'MODIFIER_PLAYER_TRAINED_UNITS_ADJUST_BUILDER_CHARGES',    null,                       'REQSET_RWB_UNIT_IS_MIL_ENGINEER');
 
 -----------------------------------------------
 -- X-Modifiers
@@ -103,7 +124,7 @@ INSERT OR REPLACE INTO PolicyModifiers
 (PolicyType,
  ModifierId)
 SELECT      a.PolicyType,
-            'RWB_BUILDER_CHARGE_FROM_ECO_POLICY_AMOUNT_'||a.PolicyType
+            'RWB_BUILD_CHARGE_FROM_ECO_POLICY_AMOUNT_'||a.PolicyType
 FROM Policies a WHERE GovernmentSlotType = 'SLOT_ECONOMIC';
 
 
@@ -124,44 +145,71 @@ FROM TraitModifiers a, Rwb_Builder_ChargeSources_UA b WHERE a.ModifierId LIKE b.
 -- ModifierArguments
 -----------------------------------------------
 
-INSERT INTO	ModifierArguments
+INSERT OR REPLACE INTO	ModifierArguments
 		(ModifierId,												        Name,							Value)
-SELECT  'RWB_BUILDER_CHARGE_FROM_ECO_POLICY_AMOUNT_'||a.PolicyType,			'Amount',						1										
+SELECT  'RWB_BUILD_CHARGE_FROM_ECO_POLICY_AMOUNT_'||a.PolicyType,			'Amount',						1										
 FROM Policies a WHERE GovernmentSlotType = 'SLOT_ECONOMIC';
 
--- it's broken, mhhhh
-INSERT INTO	ModifierArguments
+-- CANCEL CHARGES
+INSERT OR REPLACE INTO ModifierArguments
         (ModifierId,										Name,		    Value)
 SELECT 'RWB_NORTECHICO_NEGATIVE_'||a.ModifierId,           'Amount',	    Value-Value*2
-FROM Rwb_Builder_ChargeSources_UA a, ModifierArguments b WHERE b.ModifierId LIKE a.ModifierId;
+FROM Rwb_Builder_ChargeSources_UA a, ModifierArguments b WHERE b.ModifierId LIKE a.ModifierId AND b.Value IS NOT 0;
+
+-- CHARGE MALUSES
+INSERT OR REPLACE INTO ModifierArguments
+		(ModifierId,										        Name,		    Value)
+VALUES	('RWB_NORTECHICO_NEGATIVE_MIL_ENGINEER_CHARGE_MALUS',       'Amount',		'-1'),
+		('RWB_NORTECHICO_NEGATIVE_BUILDER_MALUS_CHARGE_MALUS',	    'Amount',		'-2'),
+		('RWB_NORTECHICO_BUILDER_PRODUCTION_COST_MALUS',	        'UnitType',		'UNIT_BUILDER'),
+		('RWB_NORTECHICO_BUILDER_PRODUCTION_COST_MALUS',	        'Amount',		'-50'),
+		('RWB_NORTECHICO_BUILDER_PURCHASE_COST_MALUS',	            'Amount',		'-100');
 
 -------------------------------------
 -- RequirementSets
 -------------------------------------
-INSERT INTO RequirementSets
-        (RequirementSetId,						                RequirementSetType				)
-VALUES	('REQSET_PLAYER_IS_LADY_OF_THE_FOUR_TUPUS',				'REQUIREMENTSET_TEST_ALL'		);
+INSERT OR REPLACE INTO RequirementSets
+        (RequirementSetId,						                        RequirementSetType				)
+VALUES	('REQSET_PLAYER_IS_LADY_OF_THE_FOUR_TUPUS',				        'REQUIREMENTSET_TEST_ALL'		),
+    	('REQSET_PLAYER_IS_NORTECHICO',				                    'REQUIREMENTSET_TEST_ALL'		),
+    	('REQSET_RWB_UNIT_IS_BUILDER',				                    'REQUIREMENTSET_TEST_ALL'		),
+    	('REQSET_RWB_UNIT_IS_MIL_ENGINEER',				                'REQUIREMENTSET_TEST_ALL'		),
+    	('REQSET_UNIT_IS_BUILDER_MIL_ENGINEER_OR_APAQALLINM',			'REQUIREMENTSET_TEST_ANY'		);
 
 -------------------------------------
 -- RequirementSetRequirements
 -------------------------------------
-INSERT INTO RequirementSetRequirements
-        (RequirementSetId,						    RequirementId									)
-VALUES	('REQSET_PLAYER_IS_LADY_OF_THE_FOUR_TUPUS',	'RWB_NORTECHICO_IS_LADY_OF_THE_FOUR_TUPUS_REQUIREMENT'				);
+INSERT OR REPLACE INTO RequirementSetRequirements
+        (RequirementSetId,						                        RequirementId									)
+VALUES	('REQSET_PLAYER_IS_LADY_OF_THE_FOUR_TUPUS',	                    'RWB_NORTECHICO_IS_LADY_OF_THE_FOUR_TUPUS_REQUIREMENT'				),
+    	('REQSET_PLAYER_IS_NORTECHICO',	                                'RWB_NORTECHICO_IS_NORTECHICO_REQUIREMENT'				),
+    	('REQSET_RWB_UNIT_IS_BUILDER',	                                'RWB_NORTECHICO_UNIT_IS_BUILDER'				),
+    	('REQSET_RWB_UNIT_IS_MIL_ENGINEER',                             'RWB_NORTECHICO_UNIT_IS_MILITARY_ENGINEER'				),
+    	('REQSET_UNIT_IS_BUILDER_MIL_ENGINEER_OR_APAQALLINM',	        'RWB_NORTECHICO_UNIT_IS_BUILDER'				),
+    	('REQSET_UNIT_IS_BUILDER_MIL_ENGINEER_OR_APAQALLINM',	        'RWB_NORTECHICO_UNIT_IS_MILITARY_ENGINEER'				),
+    	('REQSET_UNIT_IS_BUILDER_MIL_ENGINEER_OR_APAQALLINM',	        'RWB_NORTECHICO_UNIT_IS_APAQALLINM'				);
 
 -------------------------------------
 -- Requirements
 -------------------------------------
-INSERT INTO Requirements
+INSERT OR REPLACE INTO Requirements
         (RequirementId, 									            RequirementType									)
-VALUES	('RWB_NORTECHICO_IS_LADY_OF_THE_FOUR_TUPUS_REQUIREMENT',		'REQUIREMENT_PLAYER_TYPE_MATCHES'		);
+VALUES	('RWB_NORTECHICO_IS_LADY_OF_THE_FOUR_TUPUS_REQUIREMENT',		'REQUIREMENT_PLAYER_TYPE_MATCHES'		),
+    	('RWB_NORTECHICO_IS_NORTECHICO_REQUIREMENT',		            'REQUIREMENT_PLAYER_TYPE_MATCHES'		),
+    	('RWB_NORTECHICO_UNIT_IS_BUILDER',			                    'REQUIREMENT_UNIT_TYPE_MATCHES'		),
+    	('RWB_NORTECHICO_UNIT_IS_MILITARY_ENGINEER',	                'REQUIREMENT_UNIT_TYPE_MATCHES'		),
+    	('RWB_NORTECHICO_UNIT_IS_APAQALLINM',			                'REQUIREMENT_UNIT_TYPE_MATCHES'		);
 
 -------------------------------------
 -- RequirementArguments
 -------------------------------------
-INSERT INTO RequirementArguments
+INSERT OR REPLACE INTO RequirementArguments
 (RequirementId, 								                            Name,						Value							)
-VALUES	('RWB_NORTECHICO_IS_LADY_OF_THE_FOUR_TUPUS_REQUIREMENT', 			'LeaderType',			    'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS'	);
+VALUES	('RWB_NORTECHICO_IS_NORTECHICO_REQUIREMENT', 			            'CivilizationType',			'CIVILIZATION_RWB_NORTECHICO'	),
+    	('RWB_NORTECHICO_IS_LADY_OF_THE_FOUR_TUPUS_REQUIREMENT', 			'LeaderType',			    'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS'	),
+    	('RWB_NORTECHICO_UNIT_IS_BUILDER',			 			            'UnitType',			        'UNIT_BUILDER'	),
+    	('RWB_NORTECHICO_UNIT_IS_MILITARY_ENGINEER', 			            'UnitType',			        'UNIT_MILITARY_ENGINEER'	),
+    	('RWB_NORTECHICO_UNIT_IS_APAQALLINM',		 			            'UnitType',			        'UNIT_RWB_APAQALLINM'	);
 
 -------------------------------------
 -- Table Dropping (Trashcan)

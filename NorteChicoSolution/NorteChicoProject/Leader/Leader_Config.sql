@@ -13,7 +13,7 @@
 -- Please note: this is commented-out, as this example is only compatible with Gathering Storm and above. I've left this in as an example.
 -----------------------------------------------
 
---INSERT INTO Players (CivilizationType, CivilizationName, CivilizationIcon, CivilizationAbilityName, CivilizationAbilityDescription, CivilizationAbilityIcon, LeaderType, LeaderName, LeaderIcon, LeaderAbilityName, LeaderAbilityDescription, LeaderAbilityIcon)
+--INSERT OR REPLACE INTO Players (CivilizationType, CivilizationName, CivilizationIcon, CivilizationAbilityName, CivilizationAbilityDescription, CivilizationAbilityIcon, LeaderType, LeaderName, LeaderIcon, LeaderAbilityName, LeaderAbilityDescription, LeaderAbilityIcon)
 --VALUES	(	
 		-- Civilization
 --		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
@@ -27,8 +27,8 @@
 --		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
 --		'LOC_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_NAME', -- LeaderName
 --		'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderIcon (Portrait)
---		'LOC_TRAIT_LEADER_MC_FEAR_NOT_EXPLORATION_NAME', -- LeaderAbilityName
---		'LOC_TRAIT_LEADER_MC_FEAR_NOT_EXPLORATION_DESCRIPTION', -- LeaderAbilityDescription
+--		'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_NAME', -- LeaderAbilityName
+--		'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_DESCRIPTION', -- LeaderAbilityDescription
 --		'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS' -- LeaderAbilityIcon
 --		);
 
@@ -42,25 +42,25 @@
 -- Please note: this is commented-out, as this example is only compatible with Gathering Storm and above. I've left this in as an example.
 -----------------------------------------------
 
---INSERT INTO Players (Domain, CivilizationType, CivilizationName, CivilizationIcon, CivilizationAbilityName, CivilizationAbilityDescription, CivilizationAbilityIcon, LeaderType, LeaderName, LeaderIcon, LeaderAbilityName, LeaderAbilityDescription, LeaderAbilityIcon)
---VALUES	(	
-		-- Civilization
---		'Players:Expansion1_Players', -- Domain
---		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
---		'LOC_CIVILIZATION_RWB_NORTECHICO_NAME', -- CivilizationName
---		'ICON_CIVILIZATION_RWB_NORTECHICO', -- CivilizationIcon
---		'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_NAME', -- CivilizationAbilityName
---		'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_DESCRIPTION', -- CivilizationAbilityDescription
---		'ICON_CIVILIZATION_RWB_NORTECHICO', -- CivilizationAbilityIcon
-		
-		-- Leader
---		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
---		'LOC_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_NAME', -- LeaderName
---		'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderIcon (Portrait)
---		'LOC_TRAIT_LEADER_MC_FEAR_NOT_EXPLORATION_NAME', -- LeaderAbilityName
---		'LOC_TRAIT_LEADER_MC_FEAR_NOT_EXPLORATION_DESCRIPTION', -- LeaderAbilityDescription
---		'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS' -- LeaderAbilityIcon
---		);
+INSERT OR REPLACE INTO Players (Domain, CivilizationType, CivilizationName, CivilizationIcon, CivilizationAbilityName, CivilizationAbilityDescription, CivilizationAbilityIcon, LeaderType, LeaderName, LeaderIcon, LeaderAbilityName, LeaderAbilityDescription, LeaderAbilityIcon)
+VALUES	(
+              -- Civilization
+              'Players:Expansion1_Players', -- Domain
+              'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
+              'LOC_CIVILIZATION_RWB_NORTECHICO_NAME', -- CivilizationName
+              'ICON_CIVILIZATION_RWB_NORTECHICO', -- CivilizationIcon
+              'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_NAME', -- CivilizationAbilityName
+              'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_DESCRIPTION', -- CivilizationAbilityDescription
+              'ICON_CIVILIZATION_RWB_NORTECHICO', -- CivilizationAbilityIcon
+
+              -- Leader
+              'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
+              'LOC_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_NAME', -- LeaderName
+              'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderIcon (Portrait)
+              'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_NAME', -- LeaderAbilityName
+              'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_DESCRIPTION', -- LeaderAbilityDescription
+              'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS' -- LeaderAbilityIcon
+          );
 
 -----------------------------------------------
 -- Players (Gathering Storm)
@@ -70,7 +70,7 @@
 -- This is identical to the Rise & Fall entry, directly above - though in this case, the Domain is Players:Expansion2_Players, which refers to Gathering Storm.
 -----------------------------------------------
 
-INSERT INTO Players (Domain, CivilizationType, CivilizationName, CivilizationIcon, CivilizationAbilityName, CivilizationAbilityDescription, CivilizationAbilityIcon, LeaderType, LeaderName, LeaderIcon, LeaderAbilityName, LeaderAbilityDescription, LeaderAbilityIcon)
+INSERT OR REPLACE INTO Players (Domain, CivilizationType, CivilizationName, CivilizationIcon, CivilizationAbilityName, CivilizationAbilityDescription, CivilizationAbilityIcon, LeaderType, LeaderName, LeaderIcon, LeaderAbilityName, LeaderAbilityDescription, LeaderAbilityIcon)
 VALUES	(	
 		-- Civilization
 		'Players:Expansion2_Players', -- Domain
@@ -85,8 +85,8 @@ VALUES	(
 		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
 		'LOC_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_NAME', -- LeaderName
 		'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderIcon (Portrait)
-		'LOC_TRAIT_LEADER_MC_FEAR_NOT_EXPLORATION_NAME', -- LeaderAbilityName
-		'LOC_TRAIT_LEADER_MC_FEAR_NOT_EXPLORATION_DESCRIPTION', -- LeaderAbilityDescription
+		'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_NAME', -- LeaderAbilityName
+		'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_DESCRIPTION', -- LeaderAbilityDescription
 		'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS' -- LeaderAbilityIcon
 		);
 
@@ -98,7 +98,7 @@ VALUES	(
 -- As above, I have commented-out this section as this template requires the Gathering Storm expansion.
 -----------------------------------------------
 
---INSERT INTO PlayerItems
+--INSERT OR REPLACE INTO PlayerItems
 --		(CivilizationType, LeaderType, Type, Icon, Name, Description, SortIndex	)
 --VALUES	(
 --		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
@@ -130,29 +130,29 @@ VALUES	(
 -- Again, this is commented-out as this template requires the Gathering Storm expansion.
 -----------------------------------------------
 
---INSERT INTO PlayerItems
---		(Domain, CivilizationType, LeaderType, Type, Icon, Name, Description, SortIndex	)
---VALUES	(
---		'Players:Expansion1_Players', -- Domain
---		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
---		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
---		'UNIT_RWB_APAQALLINM', -- Type
---		'ICON_UNIT_RWB_APAQALLINM', -- Icon
---		'LOC_UNIT_RWB_APAQALLINM_NAME', -- Name
---		'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION', -- Description
---		10	-- SortIndex
---		),
---		
---		(
---		'Players:Expansion1_Players', -- Domain
---		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
---		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
---		'IMPROVEMENT_COLOSSAL_HEAD', -- Type
---		'ICON_IMPROVEMENT_COLOSSAL_HEAD', -- Icon
---		'LOC_IMPROVEMENT_OLMEC_COLOSSAL_HEAD_NAME', -- Name
---		'LOC_IMPROVEMENT_OLMEC_COLOSSAL_HEAD_DESCRIPTION', -- Description
---		20 -- SortIndex
---		);
+INSERT OR REPLACE INTO PlayerItems
+(Domain, CivilizationType, LeaderType, Type, Icon, Name, Description, SortIndex	)
+VALUES	(
+              'Players:Expansion1_Players', -- Domain
+              'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
+              'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
+              'UNIT_RWB_APAQALLINM', -- Type
+              'ICON_UNIT_RWB_APAQALLINM', -- Icon
+              'LOC_UNIT_RWB_APAQALLINM_NAME', -- Name
+              'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION', -- Description
+              10	-- SortIndex
+          ),
+
+          (
+              'Players:Expansion2_Players', -- Domain
+              'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
+              'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
+              'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA', -- Type
+              'ICON_IMPROVEMENT_COLOSSAL_HEAD', -- Icon
+              'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_NAME', -- Name
+              'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_DESCRIPTION', -- Description
+              20 -- SortIndex
+          );
 
 -----------------------------------------------
 -- PlayerItems (Gathering Storm)
@@ -162,7 +162,7 @@ VALUES	(
 -- Identical to the base-game version, except for the added Domain property that indicates the ruleset of the active Expansion.
 -----------------------------------------------
 
-INSERT INTO PlayerItems
+INSERT OR REPLACE INTO PlayerItems
 		(Domain, CivilizationType, LeaderType, Type, Icon, Name, Description, SortIndex	)
 VALUES	(
 		'Players:Expansion2_Players', -- Domain
@@ -179,9 +179,9 @@ VALUES	(
 		'Players:Expansion2_Players', -- Domain
 		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
 		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
-		'IMPROVEMENT_COLOSSAL_HEAD', -- Type
+		'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA', -- Type
 		'ICON_IMPROVEMENT_COLOSSAL_HEAD', -- Icon
-		'LOC_IMPROVEMENT_OLMEC_COLOSSAL_HEAD_NAME', -- Name
-		'LOC_IMPROVEMENT_OLMEC_COLOSSAL_HEAD_DESCRIPTION', -- Description
+		'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_NAME', -- Name
+		'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_DESCRIPTION', -- Description
 		20 -- SortIndex
 		);

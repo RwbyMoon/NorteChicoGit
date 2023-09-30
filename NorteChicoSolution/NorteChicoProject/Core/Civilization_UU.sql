@@ -18,7 +18,7 @@
 -- Configuring a Unique Unit for your custom civilization is entirely optional, but it is typically considered appropriate for balance to configure at least one, such that your custom civilization matches those from the base games in terms of complexity, both for flavour and gameplay balance (in my opinion).
 -----------------------------------------------	
 	
-INSERT INTO Types
+INSERT OR REPLACE INTO Types
 		(Type,									Kind			)
 VALUES	('TRAIT_CIVILIZATION_RWB_APAQALLINM',	'KIND_TRAIT'	),
 		('UNIT_RWB_APAQALLINM',					'KIND_UNIT'		),
@@ -30,7 +30,7 @@ VALUES	('TRAIT_CIVILIZATION_RWB_APAQALLINM',	'KIND_TRAIT'	),
 -- Certain game functions are aligned to groups of units (known as classes), rather than the individual unit-types themselves. For this reason, here we define the class (CLASS_RWB_APAQALLINM) - we will later associate the unit to this class (as the only unit of that class) but also the UnitAbility to that same class. The below table INSERT paves the way for the special ability to be applied to our custom unit.
 -----------------------------------------------	
 	
-INSERT INTO Tags
+INSERT OR REPLACE INTO Tags
 		(Tag,						Vocabulary		)
 VALUES	('CLASS_RWB_APAQALLINM',		'ABILITY_CLASS'	);
 
@@ -42,12 +42,12 @@ VALUES	('CLASS_RWB_APAQALLINM',		'ABILITY_CLASS'	);
 -- The second INSERT function ensures our new Unit (UNIT_RWB_APAQALLINM) inherits the classes that the UNIT_SPEARMAN already has configured. This ensures that groups to which the UNIT_SPEARMAN belongs, the UNIT_RWB_APAQALLINM also belongs. This ensures integration with other Unit Abilities and identifications and allows for a cohesive replacement.
 -----------------------------------------------		
 
-INSERT INTO TypeTags
+INSERT OR REPLACE INTO TypeTags
 		(Type,						Tag						)
 VALUES	('UNIT_RWB_APAQALLINM',		'CLASS_RWB_APAQALLINM'	),
 		('ABILITY_RWB_APAQALLINM',	'CLASS_RWB_APAQALLINM'	);
 
-INSERT INTO TypeTags (Type,		Tag)
+INSERT OR REPLACE INTO TypeTags (Type,		Tag)
 SELECT 	'UNIT_RWB_APAQALLINM',	Tag
 FROM 	TypeTags
 WHERE 	Type = 'UNIT_SPEARMAN';
@@ -58,7 +58,7 @@ WHERE 	Type = 'UNIT_SPEARMAN';
 -- With the TraitType defined (above), the below then inserts it into the overall Traits table. This allows it to exist in its own right, alongside other TraitType elements and ties it to the locally-referenced Name and Description text strings that name and describe the trait, respectively.
 -----------------------------------------------
 		
-INSERT INTO Traits
+INSERT OR REPLACE INTO Traits
 		(TraitType,								Name,								Description								)
 VALUES	('TRAIT_CIVILIZATION_RWB_APAQALLINM',	'LOC_UNIT_RWB_APAQALLINM_NAME',		'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION'	);
 
@@ -68,7 +68,7 @@ VALUES	('TRAIT_CIVILIZATION_RWB_APAQALLINM',	'LOC_UNIT_RWB_APAQALLINM_NAME',		'L
 -- This defines the civilization to which the TraitType is applied (i.e. which civilization gets the Unique Unit). This is a simple matter of referencing the custom CivilizationType defined in Civilization_Config.sql and using the TraitType defined in this document.
 -----------------------------------------------
 		
-INSERT INTO CivilizationTraits
+INSERT OR REPLACE INTO CivilizationTraits
 		(CivilizationType,				TraitType								)
 VALUES	('CIVILIZATION_RWB_NORTECHICO',		'TRAIT_CIVILIZATION_RWB_APAQALLINM'		);
 
@@ -85,7 +85,7 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',		'TRAIT_CIVILIZATION_RWB_APAQALLINM'		);
 
 -----------------------------------------------	
 	
-INSERT INTO Units	(
+INSERT OR REPLACE INTO Units	(
 		UnitType,
 		Name,
 		Description,
@@ -136,7 +136,7 @@ WHERE	UnitType = 'UNIT_SPEARMAN';
 -- This section defines the position in the UnitUpgrades chain that the custom UNIT_RWB_APAQALLINM fits into. For this mod, we are simply replacing the UNIT_SPEARMAN, so this ensures the continuity of the UNIT_SPEARMAN chain for the UNIT_RWB_APAQALLINM.
 -----------------------------------------------
 		
-INSERT INTO UnitUpgrades (Unit,	UpgradeUnit)
+INSERT OR REPLACE INTO UnitUpgrades (Unit,	UpgradeUnit)
 SELECT 	'UNIT_RWB_APAQALLINM',	UpgradeUnit
 FROM 	UnitUpgrades
 WHERE	Unit = 'UNIT_SPEARMAN';
@@ -151,7 +151,7 @@ WHERE	Unit = 'UNIT_SPEARMAN';
 -- A full list of UnitAiType entries can be found in Units.xml. A search for the string 'UnitAiType' will find the full list.
 -----------------------------------------------
 		
-INSERT INTO UnitAiInfos (UnitType,	AiType)
+INSERT OR REPLACE INTO UnitAiInfos (UnitType,	AiType)
 SELECT 	'UNIT_RWB_APAQALLINM',		AiType
 FROM 	UnitAiInfos
 WHERE 	UnitType = 'UNIT_SPEARMAN';
@@ -162,7 +162,7 @@ WHERE 	UnitType = 'UNIT_SPEARMAN';
 -- This command tells the game about the replacement itself - this ensures that for any civilization to whom the UNIT_RWB_APAQALLINM is available (which is only this custom civilization, thanks to the link to the TraitType), the UNIT_SPEARMAN will not be available; replaced instead by the UNIT_RWB_APAQALLINM.
 -----------------------------------------------
 		
-INSERT INTO UnitReplaces
+INSERT OR REPLACE INTO UnitReplaces
 		(CivUniqueUnitType,		ReplacesUnitType	)
 VALUES	('UNIT_RWB_APAQALLINM',	'UNIT_SPEARMAN'		);
 
@@ -174,7 +174,7 @@ VALUES	('UNIT_RWB_APAQALLINM',	'UNIT_SPEARMAN'		);
 -- It is worth noting that applying an ability to the unit is optional - it's an extra layer on top of any 'standard' variables that are common to all units. This particular ability enables this template to showcase the way that a Modifier can be used to change the effectiveness of our custom unit in certain situations. These kind of unit abilities are granted to units by class in the base-game on many occasions - for example, granting Anti-Cavalry units a bonus versus Cavalry units. The logic is identical.
 -----------------------------------------------
 
-INSERT INTO UnitAbilities
+INSERT OR REPLACE INTO UnitAbilities
 		(UnitAbilityType,			Name,								Description						)
 VALUES	('ABILITY_RWB_APAQALLINM',	'LOC_UNIT_RWB_APAQALLINM_NAME',		'LOC_ABILITY_RWB_APAQALLINM'		);
 
@@ -190,7 +190,7 @@ VALUES	('ABILITY_RWB_APAQALLINM',	'LOC_UNIT_RWB_APAQALLINM_NAME',		'LOC_ABILITY_
 -- Compatibility note: Golden Ages were introduced in Rise & Fall. This particular unit ability requires that expansion to function. Specifically, the requirement creates the dependency on the expansion.
 -----------------------------------------------
 	
-INSERT INTO Modifiers	
+INSERT OR REPLACE INTO Modifiers	
 		(ModifierId,									ModifierType,									OwnerRequirementSetId		)
 VALUES	('MODIFIER_WEREJAGUAR_GOLDEN_AGE_STRENGTH',		'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',			'PLAYER_HAS_GOLDEN_AGE'		);
 
@@ -206,7 +206,7 @@ VALUES	('MODIFIER_WEREJAGUAR_GOLDEN_AGE_STRENGTH',		'MODIFIER_UNIT_ADJUST_COMBAT
 -- This is what makes the ModifierType so important - this is one of the key parts of the game where the entries you configure are not all explicitly listed. In isolation, the below ModifierArgument could mean (or apply to) a number of things. However, the context of the ModifierType dictates that this Amount is, in fact, a Combat Strength increase.
 -----------------------------------------------
 
-INSERT INTO ModifierArguments		
+INSERT OR REPLACE INTO ModifierArguments		
 		(ModifierId,										Name,						Value	)
 VALUES	('MODIFIER_WEREJAGUAR_GOLDEN_AGE_STRENGTH',			'Amount',					5		);
 
@@ -220,7 +220,7 @@ VALUES	('MODIFIER_WEREJAGUAR_GOLDEN_AGE_STRENGTH',			'Amount',					5		);
 -- We specified the CLASS_RWB_APAQALLINM as being the only one linked to the ABILITY_RWB_APAQALLINM earlier in this document (using the TypeTags table). This way, we ensure that the only unit to get this ability is, in fact, the Werejaguar.
 -----------------------------------------------
 
-INSERT INTO UnitAbilityModifiers
+INSERT OR REPLACE INTO UnitAbilityModifiers
 		(UnitAbilityType,				ModifierId									)
 VALUES	('ABILITY_RWB_APAQALLINM',		'MODIFIER_WEREJAGUAR_GOLDEN_AGE_STRENGTH'	);
 
@@ -234,6 +234,6 @@ VALUES	('ABILITY_RWB_APAQALLINM',		'MODIFIER_WEREJAGUAR_GOLDEN_AGE_STRENGTH'	);
 -- We tie this to the Modifier, as the ability is triggered based on certain criteria being met. This is essentially what makes it an 'ability' rather than a staple part of that unit. Other ModifierStrings can be cross-referenced from UnitAbilities.xml.
 -----------------------------------------------
 
-INSERT INTO ModifierStrings
+INSERT OR REPLACE INTO ModifierStrings
 		(ModifierId,									Context,		Text							)
 VALUES	('MODIFIER_WEREJAGUAR_GOLDEN_AGE_STRENGTH',		'Preview',		'LOC_ABILITY_RWB_APAQALLINM'		);
