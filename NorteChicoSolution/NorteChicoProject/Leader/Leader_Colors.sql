@@ -11,7 +11,7 @@
 -- These eight colour references are locally-defined values, taken straight from the code section above. Again, as we only have one leader, we simply match the order.
 -----------------------------------------------
 
-INSERT INTO	PlayerColors (Type, Usage, PrimaryColor, SecondaryColor, Alt1PrimaryColor, Alt1SecondaryColor, Alt2PrimaryColor, Alt2SecondaryColor, Alt3PrimaryColor, Alt3SecondaryColor )
+INSERT OR REPLACE INTO	PlayerColors (Type, Usage, PrimaryColor, SecondaryColor, Alt1PrimaryColor, Alt1SecondaryColor, Alt2PrimaryColor, Alt2SecondaryColor, Alt3PrimaryColor, Alt3SecondaryColor )
 VALUES	(
 		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- Type
 		'Unique', -- Usage

@@ -15,7 +15,7 @@
 -- In this example, we also define a new ability, which this particular Unique Ability will leverage. You'll note this is denoted under KIND_ABILITY, which ensures the game is acknowledging this item in the right way.
 -----------------------------------------------
 
-INSERT INTO	Types
+INSERT OR REPLACE INTO	Types
 		(Type,												Kind			)
 VALUES	('TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA',			'KIND_TRAIT'	),
 		('ABILITY_MC_BUILDER_SETTLER_IGNORE_TERRAIN_COST',	'KIND_ABILITY'	);
@@ -26,7 +26,7 @@ VALUES	('TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA',			'KIND_TRAIT'	),
 -- The Unique Ability this example creates will be applied to two specific UnitType entities - the Builder and the Settler. As such, because these two - and no others - do not exist as their own class of unit, we need to ring-fence them accordingly. The below section does this for us, by inserting our new CLASS_MC_BUILDER_SETTLER class as an ABILITY_CLASS - such that we can tie the new Ability to them.
 -----------------------------------------------
 
-INSERT INTO Tags
+INSERT OR REPLACE INTO Tags
 		(Tag,							Vocabulary		)
 VALUES	('CLASS_MC_BUILDER_SETTLER',	'ABILITY_CLASS'	);
 
@@ -40,7 +40,7 @@ VALUES	('CLASS_MC_BUILDER_SETTLER',	'ABILITY_CLASS'	);
 -- Secondly, we link the UnitAbilityType to that same class. By doing this, we ensure the UnitAbilityType is only applied to the two units in question - which make up all of the members of the new class.
 -----------------------------------------------
 
-INSERT INTO TypeTags
+INSERT OR REPLACE INTO TypeTags
 		(Type,												Tag								)
 VALUES	('UNIT_BUILDER',									'CLASS_MC_BUILDER_SETTLER'		),
 		('UNIT_SETTLER',									'CLASS_MC_BUILDER_SETTLER'		),
@@ -54,7 +54,7 @@ VALUES	('UNIT_BUILDER',									'CLASS_MC_BUILDER_SETTLER'		),
 -- We also assign the Inactive boolean, here - though with 100% confidence I cannot explain why, in this case, this is the right value. An 'Inactive' ability is one that is considered 'not in use' normally; though this particular ability is always applied. As there are only two values, I personally just try to toggle these as part of troubleshooting when I am certain all other mod-parts are configured correctly.
 -----------------------------------------------
 
-INSERT INTO UnitAbilities
+INSERT OR REPLACE INTO UnitAbilities
 		(UnitAbilityType,									Name,												Description,												Inactive	)
 VALUES	('ABILITY_MC_BUILDER_SETTLER_IGNORE_TERRAIN_COST',	'LOC_TRAIT_LEADER_OLMEC_ABILITY_NAME',	'LOC_TRAIT_LEADER_OLMEC_ABILITY_DESCRIPTION',		1			);
 
@@ -70,7 +70,7 @@ VALUES	('ABILITY_MC_BUILDER_SETTLER_IGNORE_TERRAIN_COST',	'LOC_TRAIT_LEADER_OLME
 -- Learning point: There are numerous ways to unfurl the logic that follows below. For me, the most effective way was a combination of following the base game data, trial and error and (admittedly) a healthy dose of asking for help.
 -----------------------------------------------
 
-INSERT INTO UnitAbilityModifiers
+INSERT OR REPLACE INTO UnitAbilityModifiers
 		(UnitAbilityType,									ModifierId							)
 VALUES	('ABILITY_MC_BUILDER_SETTLER_IGNORE_TERRAIN_COST',	'ALTITUDE_TRAINING_IGNORE_HILLS'	);
 
@@ -80,7 +80,7 @@ VALUES	('ABILITY_MC_BUILDER_SETTLER_IGNORE_TERRAIN_COST',	'ALTITUDE_TRAINING_IGN
 -- With the TraitType defined (above), the below then inserts it into the overall Traits table. This allows it to exist in its own right, alongside other TraitType elements and ties it to the locally-referenced Name and Description text strings that name and describe the trait, respectively.
 -----------------------------------------------
 
-INSERT INTO	Traits
+INSERT OR REPLACE INTO	Traits
 		(TraitType,									Name,												Description												)
 VALUES	('TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA',	'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_NAME',	'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_DESCRIPTION'	);
 		
@@ -90,7 +90,7 @@ VALUES	('TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA',	'LOC_TRAIT_LEADER_RWB_ECON
 -- This defines the leader to which the TraitType is applied (i.e. which leader gets the Unique Ability). This is a simple matter of referencing the custom LeaderType defined in Leader_Config.sql and using the TraitType defined at the head of this document.
 -----------------------------------------------
 
-INSERT INTO	LeaderTraits
+INSERT OR REPLACE INTO	LeaderTraits
 		(LeaderType,			TraitType								)
 VALUES	('LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	'TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA'	);
 
@@ -100,7 +100,7 @@ VALUES	('LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	'TRAIT_LEADER_RWB_ECONOMIA_TEOCRATI
 -- In this section, we apply the Ability we defined earlier via the use of another Modifier. In this case, our ModifierId is defined and it is defined with the ModifierType that allows us to grant an ability. We set it as Permanent, as we want this application of the Ability to happen once (at the very start of the game when our custom leader is in-play).
 -----------------------------------------------
 
-INSERT INTO Modifiers
+INSERT OR REPLACE INTO Modifiers
 		(ModifierId,											ModifierType,								Permanent	)
 VALUES	('TRAIT_GRANT_SETTLERS_BUILDERS_ALTITUDE_TRAINING',		'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',		1			);
 
@@ -112,7 +112,7 @@ VALUES	('TRAIT_GRANT_SETTLERS_BUILDERS_ALTITUDE_TRAINING',		'MODIFIER_PLAYER_UNI
 -- Without this, there's no mechanism for us to apply the UnitAbilityType to anything - so this is required to get the ability to the units we specified earlier.
 -----------------------------------------------
 
-INSERT INTO TraitModifiers 
+INSERT OR REPLACE INTO TraitModifiers 
 		(TraitType,									ModifierId											)
 VALUES	('TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA',	'TRAIT_GRANT_SETTLERS_BUILDERS_ALTITUDE_TRAINING'	);
 
@@ -132,6 +132,6 @@ VALUES	('TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA',	'TRAIT_GRANT_SETTLERS_BUIL
 -- The applied unit ability has a (different) Modifier attached to it, which changes the way those units (individually) behave
 -----------------------------------------------
 
-INSERT INTO ModifierArguments 
+INSERT OR REPLACE INTO ModifierArguments 
 		(ModifierId,										Name,				Value												)
 VALUES	('TRAIT_GRANT_SETTLERS_BUILDERS_ALTITUDE_TRAINING',	'AbilityType',		'ABILITY_MC_BUILDER_SETTLER_IGNORE_TERRAIN_COST'	);

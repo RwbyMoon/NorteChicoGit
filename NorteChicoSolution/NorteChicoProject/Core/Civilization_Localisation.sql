@@ -7,8 +7,12 @@ VALUES
 -----------------------------------------------
 
 	('en_US',	'LOC_CIVILIZATION_RWB_NORTECHICO_NAME',			'Norte Chico'			),
-	('en_US',	'LOC_CIVILIZATION_RWB_NORTECHICO_DESCRIPTION',	'Norte Chico Empire'	),
+	('en_US',	'LOC_CIVILIZATION_RWB_NORTECHICO_DESCRIPTION',	'Norte Chico people'	),
 	('en_US',	'LOC_CIVILIZATION_RWB_NORTECHICO_ADJECTIVE',  	'Norte Chican'			),
+    
+	('fr_FR',	'LOC_CIVILIZATION_RWB_NORTECHICO_NAME',			'Norte Chico'			),
+	('fr_FR',	'LOC_CIVILIZATION_RWB_NORTECHICO_DESCRIPTION',	'Peuple de Norte Chico'	),
+	('fr_FR',	'LOC_CIVILIZATION_RWB_NORTECHICO_ADJECTIVE',  	'Norte Chican'			),
 	
 -----------------------------------------------
 -- Civilization Unique Ability
@@ -16,7 +20,9 @@ VALUES
 
 	('en_US',	'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_NAME',				'Kamachiq Vara Dioskuna'				),
 	('en_US',	'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_DESCRIPTION',	
-	'+1 [ICON_Charges] Build Charge to Builders, Military Engineers and Apaq Allinms every time you slot a new Economic Policy Cards in your Government they haven''t already benefited from. Builders and Military Engineers do not gain bonus Builder Charges anymore from other methods and start at 1 Charge. -50% [ICON_Production] Production toward Builders, which are also 100% more expensive to purchase.'),
+	'+1 [ICON_Charges] Build Charge to Builders, Military Engineers and Apaq Allinms when you change policies for every slotted Economic Policy Card in your Government that they haven''t already benefited from. Builders and Military Engineers do not gain bonus Builder Charges anymore from other methods and start at 1 Charge. -75% [ICON_Production] Production toward Builders, which are also 200% more expensive to purchase.'),
+	('fr_FR',	'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_DESCRIPTION',	
+	'+1 [ICON_Charges] Charge de Construction aux Bâtisseurs, Ingénieurs Militaires et Apaq Allinms lorsque vous changez de doctrines pour chaque Carte de Doctrine Économique dans votre gouvernement de laquelle ils n''ont pas déjà bénéficiés. Les Bâtisseurs et Ingénieurs Militaires ne gagnent pas de Charge de Construction supplémentaires d''aucune autre méthode et commencent à 1 Charge. -75% [ICON_Production] Production envers les Bâtisseurs, qui sont aussi 200% plus cher à acheter.'),
 
 -----------------------------------------------
 -- Civilization Unique Infrastructure
@@ -25,22 +31,31 @@ VALUES
     -- Ciudad Sagrada
 	('en_US',	'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_NAME',				'Ciudad Sagrada'								),
 	('en_US',	'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_DESCRIPTION',
-	'Unique cheap district of Norte Chico that cannot be placed adjacent to the city center, used for stability and growth endeavors. It possesses 3 unique buildings (the Sunken Plaza, the Pirámide and the Huenca), buildable in any order.[NEWLINE][NEWLINE]One of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds".[NEWLINE][NEWLINE]• +1 [ICON_Faith] Faith, +2 [ICON_PressureUp] Loyalty, +1 [ICON_Citizen] Population upon construction of this District and for every of its Buildings.[NEWLINE][NEWLINE]• Great Prophets may found a religion on a Ciudad Sagrada instead of a Holy Site.'	),
+	'Unique district of Norte Chico that cannot be placed adjacent to the city center, used for stability and growth endeavors. It possesses 3 unique buildings (the Sunken Plaza, the Pirámide and the Huenca), buildable in any order.[NEWLINE][NEWLINE]One of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds".[NEWLINE][NEWLINE]+1 [ICON_Citizen] Population upon construction of this District and for every of its Buildings.[NEWLINE][NEWLINE]Great Prophets may found a religion on a Ciudad Sagrada instead of a Holy Site.'	),
+	('fr_FR',	'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_DESCRIPTION',
+	'Destiné à des fins de stabilisation de ville et de croissance, ce quartier exclusif du peuple de Norte Chico dispose de 3 bâtiments uniques (la Place Submergée, la Pirámide et le Huenca), constructible dans n''importe quel ordre.[NEWLINE][NEWLINE]Un seul de ces bâtiments peut être construit dans chaque Ciudad Sagrada une fois le dogme "Premier Empire" a été recherché, le second à "Théologie" et le dernier à "Guildes".[NEWLINE][NEWLINE]+1 [ICON_Citizen] Population lors de la construction du Quartier et de chacun de ses bâtiments.[NEWLINE][NEWLINE]Les Prophètes Illustres peuvent fonder une religion sur une Ciudad Sagrada au lieu d''un Lieu Saint.'	),
 
     -- Huenca
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_HUENCA_NAME',				'Huenca'								),
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_HUENCA_DESCRIPTION',
-     'Unique building of the Ciudad Sagrada district, useful for religious endeavors. [NEWLINE][NEWLINE]Only one of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds". This building do not grant Era Score for first completion.[NEWLINE][NEWLINE]• +3 [ICON_Faith] Faith[NEWLINE][NEWLINE]• +3 [ICON_GreatProphet] Great Prophet Points per Turn.'	),
+     'Unique building of the Ciudad Sagrada district, useful for religious endeavors. [NEWLINE][NEWLINE]Only one of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds". This building do not grant Era Score for first completion.'	),
+    ('fr_FR',	'LOC_BUILDING_RWB_NORTECHICO_HUENCA_DESCRIPTION',
+     'Bâtiment unique de la Ciudad Sagrada, utile à des fonctions religieuses. [NEWLINE][NEWLINE]Un seul bâtiment de la Ciudad Sagrada peut être construit dans chaque Ciudad Sagrada une fois le dogme "Premier Empire" a été recherché, le second à "Théologie" et le dernier à "Guildes". Ce bâtiment unique ne confère pas de Score d''Ère à la première construction.'	),
 
     -- Sunken Plaza
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_NAME',		'Sunken Plaza'								),
+    ('fr_FR',	'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_NAME',		'Place Submergée'								),
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_DESCRIPTION',
-     'Unique building of the Ciudad Sagrada district, useful for cultural and touristic endeavors. [NEWLINE][NEWLINE]Only one of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds". This building do not grant Era Score for first completion.[NEWLINE][NEWLINE]• +3 [ICON_Culture] Culture.[NEWLINE][NEWLINE]• +1 [ICON_Culture] Culture, +1 [ICON_Tourism] Tourism for every [ICON_GreatWork_Landscape] Great Works in this city, doubled for [ICON_GreatWork_Music] Great Works of Music.'	),
+     'Unique building of the Ciudad Sagrada district, useful for cultural and touristic endeavors. [NEWLINE][NEWLINE]Only one of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds". This building do not grant Era Score for first completion.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture, +1 [ICON_Tourism] Tourism for every [ICON_GreatWork_Landscape] Great Works in this city, doubled for [ICON_GreatWork_Music] Great Works of Music.'	),
+    ('fr_FR',	'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_DESCRIPTION',
+     'Bâtiment unique de la Ciudad Sagrada, clé pour un apport culturel et touristique. [NEWLINE][NEWLINE]Un seul bâtiment de la Ciudad Sagrada peut être construit dans chaque Ciudad Sagrada une fois le dogme "Premier Empire" a été recherché, le second à "Théologie" et le dernier à "Guildes". Ce bâtiment unique ne confère pas de Score d''Ère à la première construction.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture, +1 [ICON_Tourism] Tourisme pour chaque [ICON_GreatWork_Landscape] Chefs-d''Oeuvres dans la ville, doublé pour les [ICON_GreatWork_Music] Chefs-d''Oeuvres de Musique.'	),
 
     -- Pirámide
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_PIRAMIDE_NAME',			'Pirámide'								),
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_PIRAMIDE_DESCRIPTION',
-     'Unique building of the Ciudad Sagrada district, useful for housing large productive and richer cities. [NEWLINE][NEWLINE]Only one of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds". This building do not grant Era Score for first completion.[NEWLINE][NEWLINE]• +3 [ICON_Housing] Housing[NEWLINE][NEWLINE]• +1 [ICON_Gold] Gold +1 [ICON_Production] Production per [ICON_Citizen] Citizen in this city.'	),
+     'Unique building of the Ciudad Sagrada district, useful for housing large productive and richer cities. [NEWLINE][NEWLINE]Only one of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds". This building do not grant Era Score for first completion.[NEWLINE][NEWLINE]+0.5 [ICON_Gold] Gold, +0.5 [ICON_Production] Production per [ICON_Citizen] Citizen in this city.'	),
+    ('fr_FR',	'LOC_BUILDING_RWB_NORTECHICO_PIRAMIDE_DESCRIPTION',
+     'Bâtiment unique de la Ciudad Sagrada, permettant l''hébergement de villes peuplées productives et plus riches.[NEWLINE][NEWLINE]Un seul bâtiment de la Ciudad Sagrada peut être construit dans chaque Ciudad Sagrada une fois le dogme "Premier Empire" a été recherché, le second à "Théologie" et le dernier à "Guildes". Ce bâtiment unique ne confère pas de Score d''Ère à la première construction.[NEWLINE][NEWLINE]+0.5 [ICON_Gold] Or +0.5 [ICON_Production] Production par [ICON_Citizen] Citoyen dans la ville.'	),
 
 -----------------------------------------------
 -- Civilization Unique Unit
@@ -49,6 +64,8 @@ VALUES
 	('en_US',	'LOC_UNIT_RWB_APAQALLINM_NAME',	'Apaq Allinm'	),
 	('en_US',	'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION',	 
 	'Unique religious craftsman of Norte Chico, which is a more expensive replacement of the Apostle with +1 Sight having 1 [ICON_Charges] Build Charge, allowing it to build improvements identical to Builders.'	),
+	('en_US',	'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION',	 
+	'Artisan religieux exclusif au peuple de Norte Chico remplaçant l''Apôtre, disposant de +1 Vision et d''1 [ICON_Charges] Charge de Construction, lui permettant de construire des aménagements identiques aux Bâtisseurs.'	),
 
 -----------------------------------------------
 -- Mountains --------------------------------------------------- STILL TO DO STARTING HERE

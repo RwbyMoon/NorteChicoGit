@@ -11,7 +11,7 @@
 -- In all cases, localisation strings always start with LOC_ - such that we can easily tell them apart from game code.
 -----------------------------------------------
 
-INSERT INTO LocalizedText
+INSERT OR REPLACE INTO LocalizedText
 			(Language, Tag, Text)
 VALUES
 
@@ -20,13 +20,15 @@ VALUES
 -----------------------------------------------	
 
 	('en_US',	'LOC_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_NAME',  'Lady of the Four Tupus'	),
+	('fr_FR',	'LOC_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_NAME',  'Dame aux Quatre Tupus'	),
 	
 -----------------------------------------------
 -- Leader Unique Ability
 -----------------------------------------------	
 
 	('en_US',	'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_NAME',	'Economía Teocrática Nisqa'	),
-	('en_US',	'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_DESCRIPTION',		'Has immediate access to all Economic Policy Cards from the Norte Chico people''s current civic research era and the previous ones.[NEWLINE][NEWLINE]Civilian, Religious and Anti-Cavalry units starting their turn within two tiles of Holy Sites receive +1 [ICON_Movement] Movement.'	),
+	('en_US',	'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_DESCRIPTION',		'When you research the civic of a new era for the first time, you gain access to all Economic Policy Cards of this era.[NEWLINE][NEWLINE]Civilian, Religious and Anti-Cavalry units starting their turn within two tiles of Holy Sites receive +1 [ICON_Movement] Movement.'	),
+	('fr_FR',	'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_DESCRIPTION',		'Lorsque vous recherchez un dogme d''une nouvelle ère pour la première fois, vous obtenez l''accès à toutes les Cartes de Doctrines Économiques de cette ère.[NEWLINE][NEWLINE]+1 [ICON_Movement] Mouvement aux unités Civiles, Religieuses ou d''Anti-Cavalerie débutant leur tour à 2 cases ou moins d''un Lieu Saint.'	),
 
 -----------------------------------------------
 -- Leader Agenda --------------------------------------------------- STILL TO DO STARTING HERE
@@ -34,6 +36,8 @@ VALUES
 
 	('en_US',	'LOC_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS_NAME',	'Steward of the Sacred City'	),
 	('en_US',	'LOC_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS_DESCRIPTION',	'Will try to build up large and productive cities with religious infrastructure. Considers trading allies with appreciation in addition to those sharing the same amount of holy investment, but dislikes those with a large standing army and even more those warmongering with it.'	),
+	('fr_FR',	'LOC_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS_NAME',	'Intendante de la Cité Sacrée'	),
+	('fr_FR',	'LOC_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS_DESCRIPTION',	'Essaie de construire des grandes villes productives disposant d''infrastructure religieuse. Considère avec appréciation ceux qui envoient des routes commerciales vers ses villes ainsi que ceux égalant son investissement religieux, mais n''apprécie pas les dirigeants avec une grande force militaire et encore moins ceux en guerre.'	),
 	
 	('en_US',	'LOC_DIPLO_KUDO_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_ANY',	'(You have religious infrastructure and are trading with them.)'	),
 	('en_US',	'LOC_DIPLO_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',	'me happi'	),

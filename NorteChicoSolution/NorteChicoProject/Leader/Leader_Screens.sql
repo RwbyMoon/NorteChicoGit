@@ -15,7 +15,7 @@
 -- PlayDawnOfManAudio is a boolean value - with 0 disabling the audio speech and 1 enabling it.
 -----------------------------------------------
 
-INSERT INTO LoadingInfo
+INSERT OR REPLACE INTO LoadingInfo
 			(LeaderType,			ForegroundImage,					BackgroundImage,					PlayDawnOfManAudio	)
 VALUES		('LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_NEUTRAL',		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_BACKGROUND',		0					);
 
@@ -28,6 +28,6 @@ VALUES		('LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS
 
 -- Please note: the foreground image of the leader, on the Diplomacy Screen, is configured via an ArtDef file and does not require any associated code.
 --------------------------------------------------------------------------------------------------------------------------			
-INSERT INTO DiplomacyInfo			
+INSERT OR REPLACE INTO DiplomacyInfo			
 			(Type,						BackgroundImage					)
 VALUES		('LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',		'LEADER_PO_NGBE_DIPLO_BG'		);

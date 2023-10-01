@@ -14,7 +14,7 @@
 -- LEADERNAME: The name of the leader themselves (e.g. CLEOPATRA, GANDHI or VICTORIA).
 -----------------------------------------------
 
-INSERT INTO	Types
+INSERT OR REPLACE INTO	Types
 			(Type,					Kind			)
 VALUES		('LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	'KIND_LEADER'	);
 		
@@ -29,7 +29,7 @@ VALUES		('LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	'KIND_LEADER'	);
 -- SceneLayers: Similar to the above, this matches the other base-game leaders. This can be left unchanged.
 -----------------------------------------------
 
-INSERT INTO	Leaders
+INSERT OR REPLACE INTO	Leaders
 			(LeaderType,			Name,							InheritFrom,		SceneLayers		)
 VALUES		('LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	'LOC_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_NAME',	'LEADER_DEFAULT', 	4				);
 
@@ -41,7 +41,7 @@ VALUES		('LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	'LOC_LEADER_RWB_LADY_OF_THE_FOUR_T
 -- The CapitalName field can have a different value - but typically for the first leader you are creating (alongside your custom civilization), you can reference the first CityName reference, defined in Civilization_Config.sql (specifically, the CityNames table).
 -----------------------------------------------
 
-INSERT INTO	CivilizationLeaders
+INSERT OR REPLACE INTO	CivilizationLeaders
 			(CivilizationType,				    LeaderType,				CapitalName					)
 VALUES		('CIVILIZATION_RWB_NORTECHICO',		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	'LOC_CITY_NAME_RWB_NORTECHICO_1'	);
 		
@@ -51,7 +51,7 @@ VALUES		('CIVILIZATION_RWB_NORTECHICO',		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	'L
 -- This 'flavour' item ties the Quote - which appears in the Civilopedia on the Leader page - to the custom leader. As with all text entries, the LOC_PEDIA_LEADERS_PAGE_RWB_LADY_OF_THE_FOUR_TUPUS_QUOTE string is defined in Leader_Localisation.sql.
 -----------------------------------------------
 
-INSERT INTO	LeaderQuotes
+INSERT OR REPLACE INTO	LeaderQuotes
 			(LeaderType,			Quote										)
 VALUES		('LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	'LOC_PEDIA_LEADERS_PAGE_RWB_LADY_OF_THE_FOUR_TUPUS_QUOTE'	);
 
@@ -65,7 +65,7 @@ VALUES		('LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	'LOC_PEDIA_LEADERS_PAGE_RWB_LADY_O
 -- However, I have left this here to illustrate how variations can be achieved on a per-leader basis within a civilization.
 -----------------------------------------------
 
-INSERT INTO	CityNames
+INSERT OR REPLACE INTO	CityNames
 			(CivilizationType,				LeaderType,				SortIndex,	CityName						)
 VALUES		('CIVILIZATION_RWB_NORTECHICO',		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	-1,			'LOC_CITY_NAME_RWB_NORTECHICO_1'		),
 			('CIVILIZATION_RWB_NORTECHICO',		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	-1,			'LOC_CITY_NAME_RWB_NORTECHICO_2'		),

@@ -95,7 +95,6 @@ end
 function OnCivicCompletedEraCheck(playerID,civicIndex,isCancelled)
 	if isCancelled then return end
 	local player = Players[playerID]
-	local playerConfig = PlayerConfigurations[playerID]
 	if not tValidCiv[playerID] then return end
     
     iCivicEra = GameInfo.Civics[civicIndex].EraType
@@ -104,7 +103,7 @@ function OnCivicCompletedEraCheck(playerID,civicIndex,isCancelled)
     for k, v in pairs(tPolicyEras) do
         local iPolicy = v.iPolicyType
         print("Checking for " .. iPolicy .. "'s Era Appropriateness since it's from the " .. v.iPolicyEraType .. " Era")
-        if v.iPolicyEraType ~= iCivicEra do
+        if v.iPolicyEraType == iCivicEra then
 			print(iPolicy .. " is valid !")
         
 			if not player:GetCulture():IsPolicyUnlocked(GameInfo.Policies[iPolicy].Index) then
@@ -115,9 +114,6 @@ function OnCivicCompletedEraCheck(playerID,civicIndex,isCancelled)
         
     end
 	print("We are here")
-
-	print(GameInfo.Players())
-
 end
 
 

@@ -11,7 +11,7 @@
 -- It is customary for this to take the following format: TRAIT_AGENDA_PREFIX_LEADERNAME
 -----------------------------------------------
 
-INSERT INTO Types
+INSERT OR REPLACE INTO Types
 			(Type,							Kind			)
 VALUES		('TRAIT_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',		'KIND_TRAIT'	);
 
@@ -23,7 +23,7 @@ VALUES		('TRAIT_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',		'KIND_TRAIT'	);
 -- All leaders are assigned at least one unique, known agenda, which is a mechanism the game uses to control their personality/behaviour.
 -----------------------------------------------
 
-INSERT INTO Agendas
+INSERT OR REPLACE INTO Agendas
 			(AgendaType,			Name,							Description								)
 VALUES 		('AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',	'LOC_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS_NAME',	'LOC_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS_DESCRIPTION'		);
 
@@ -33,7 +33,7 @@ VALUES 		('AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',	'LOC_AGENDA_RWB_LADY_OF_THE_FOUR_
 -- With the TraitType defined (above), the below then inserts it into the overall Traits table. This allows it to exist in its own right, alongside other TraitType elements and ties it to the locally-referenced Name and Description text strings that name and describe the trait, respectively.
 -----------------------------------------------
 
-INSERT INTO Traits				
+INSERT OR REPLACE INTO Traits				
 			(TraitType,						Name,							Description								)
 VALUES		('TRAIT_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',		'LOC_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS_NAME',	'LOC_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS_DESCRIPTION'		);
 
@@ -45,7 +45,7 @@ VALUES		('TRAIT_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',		'LOC_AGENDA_RWB_LADY_OF_THE
 -- We'll use the TraitType, later in this document, to apply some modifiers that influence the leader's behaviour.
 -----------------------------------------------
 
-INSERT INTO AgendaTraits
+INSERT OR REPLACE INTO AgendaTraits
 			(AgendaType,			TraitType					)
 VALUES 		('AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',	'TRAIT_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS'	);
 
@@ -55,7 +55,7 @@ VALUES 		('AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',	'TRAIT_AGENDA_RWB_LADY_OF_THE_FOU
 -- In this section, we assign our custom leader the AgendaType we've defined. This ensures that our leader's behaviour (when controlled by the AI) is influenced by the factors we'll specify (further down in this file).
 -----------------------------------------------
 
-INSERT INTO HistoricalAgendas
+INSERT OR REPLACE INTO HistoricalAgendas
 			(LeaderType,			AgendaType				)
 VALUES 		('LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	'AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS'		);
 
@@ -69,7 +69,7 @@ VALUES 		('LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	'AGENDA_RWB_LADY_OF_THE_FOUR_TUPU
 -- The list of base-game hidden agendas can be found in Agendas.xml (lins 250-273).
 -----------------------------------------------
 
-INSERT INTO ExclusiveAgendas
+INSERT OR REPLACE INTO ExclusiveAgendas
 			(AgendaOne,				AgendaTwo					)
 VALUES 		('AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',	'AGENDA_INDUSTRIALIST'		);
 
@@ -81,7 +81,7 @@ VALUES 		('AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',	'AGENDA_INDUSTRIALIST'		);
 -- We'll flesh these out further in the sections below - but the general principle is that we will modify the 'happiness' value dependent on certain circumstances. This has the effect of adjusting the leader's opinion of you, over time, depending on the factors stipulated by the Requirement Sets.
 -----------------------------------------------
 
-INSERT INTO TraitModifiers
+INSERT OR REPLACE INTO TraitModifiers
 			(TraitType,						ModifierId								)
 VALUES		('TRAIT_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',		'AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY'	),
 			('TRAIT_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',		'AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY'		);
@@ -94,7 +94,7 @@ VALUES		('TRAIT_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',		'AGENDA_MODIFIER_RWB_LADY_O
 -- The ModifierType is important - it governs the sphere of application of the effect(s) in question. Again, in the case of Diplomacy interactions, we leverage existing modifiers that exist in the game - which are configured to adjust a leader's stance from a diplomacy perspective. The SubjectRequirementSetId entries will be defined by us, further down in this file.
 -----------------------------------------------
 
-INSERT INTO Modifiers	
+INSERT OR REPLACE INTO Modifiers	
 			(ModifierId,								ModifierType,									SubjectRequirementSetId			)
 VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',		'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',	'REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY'		),
 			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',		'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',	'REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY'		);
@@ -106,7 +106,7 @@ VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',		'MODIFIER_PLAYER
 
 -- It is recommended not to amend these entries, except to ensure the ModifierId values match the ones you are configuring.
 -----------------------------------------------	
-INSERT INTO ModifierStrings
+INSERT OR REPLACE INTO ModifierStrings
 			(ModifierId,								Context,	Text								)
 VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',		'Sample',	'LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL'	),
 			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',		'Sample',	'LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL'	);
@@ -128,7 +128,7 @@ VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',		'Sample',	'LOC_T
 -- The values used here are just examples. It is worth exploring the existing Agendas (via Agendas.xml) to get a sense of the types of values used by the game, for balance purposes.
 -----------------------------------------------
 
-INSERT INTO ModifierArguments
+INSERT OR REPLACE INTO ModifierArguments
 			(ModifierId,							Name,							Value												)
 VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'InitialValue',					-5													),
 			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'IncrementValue',				-1													),
@@ -157,7 +157,7 @@ VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'InitialValue',		
 -- In this section, we are specifying two different Requirement Sets - which set up the conditions to trigger either an UNHAPPY or HAPPY change to the leader's attitude.
 -----------------------------------------------
 
-INSERT INTO RequirementSets
+INSERT OR REPLACE INTO RequirementSets
 			(RequirementSetId,				RequirementSetType			)
 VALUES		('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'REQUIREMENTSET_TEST_ALL'	),
 			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',		'REQUIREMENTSET_TEST_ALL'	);
@@ -177,7 +177,7 @@ VALUES		('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'REQUIREMENTSET_TEST_ALL'	
 -- There are plenty of existing diplomacy-affecting requirements that can be found in Agendas.xml - I would recommend taking a look there and piecing together a personality for your custom leader accordingly.
 -----------------------------------------------
 
-INSERT INTO RequirementSetRequirements
+INSERT OR REPLACE INTO RequirementSetRequirements
 			(RequirementSetId,				RequirementId						)
 VALUES		('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'REQUIRES_MAJOR_CIV_OPPONENT'		),
 			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'REQUIRES_MET_10_TURNS_AGO'			),

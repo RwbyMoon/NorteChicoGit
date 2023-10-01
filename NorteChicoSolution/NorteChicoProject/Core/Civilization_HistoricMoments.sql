@@ -15,7 +15,7 @@
 
 -- Please note: For the below code to be used, Rise & Fall (Expansion1) is required.
 -----------------------------------------------
-INSERT INTO MomentIllustrations
+INSERT OR REPLACE INTO MomentIllustrations
 		(MomentIllustrationType,					MomentDataType,					GameDataType,						            Texture	)
 VALUES	('MOMENT_ILLUSTRATION_UNIQUE_UNIT',			'MOMENT_DATA_UNIT',				'UNIT_RWB_APAQALLINM',				            'null.dds'	),
 		('MOMENT_ILLUSTRATION_UNIQUE_DISTRICT',	    'MOMENT_DATA_DISTRICT',		    'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA',		'null.dds'	);
