@@ -68,59 +68,58 @@ VALUES
 	'Artisan religieux exclusif au peuple de Norte Chico remplaçant l''Apôtre, disposant de +1 Vision et d''1 [ICON_Charges] Charge de Construction, lui permettant de construire des aménagements identiques aux Bâtisseurs.'	),
 
 -----------------------------------------------
--- Mountains --------------------------------------------------- STILL TO DO STARTING HERE
------------------------------------------------
-
-	('en_US',	'LOC_NAMED_MOUNTAIN_CORDILLERA_NEOVOLCANICA',		'Cordillera Neovolcanica'	),
-	('en_US',	'LOC_NAMED_MOUNTAIN_MEXICAN_PLATEAU',				'Mexican Plateau'			),
-	('en_US',	'LOC_NAMED_MOUNTAIN_SIERRA_MADRE_OCCIDENTAL',		'Sierra Madre Occidental'	),
-	('en_US',	'LOC_NAMED_MOUNTAIN_SIERRA_MADRE_DEL_SUR',			'Sierra Madre del Sur'		),
-	('en_US',	'LOC_NAMED_MOUNTAIN_SIERRA_MADRE_ORIENTAL',			'Sierra Madre Oriental'		),
-	('en_US',	'LOC_NAMED_MOUNTAIN_CHIAPAS',						'Chiapas'					),
-	('en_US',	'LOC_NAMED_MOUNTAIN_MONTANAS_GUATEMALA',			'Montañas Guatemala'		),
-
------------------------------------------------
 -- Rivers
 -----------------------------------------------
 
-	('en_US',	'LOC_NAMED_RIVER_GRANDE',				'Río Grande'				),
-	('en_US',	'LOC_NAMED_RIVER_USUMACINTA',			'Río Usumacinta'			),
-	('en_US',	'LOC_NAMED_RIVER_NAZAS',				'Río Nazas'					),
-	('en_US',	'LOC_NAMED_RIVER_AGUANAVAL',			'Río Aguanaval'				),
-	('en_US',	'LOC_NAMED_RIVER_BALSAS',				'Río Balsas'				),
-	('en_US',	'LOC_NAMED_RIVER_CULIACAN',				'Río Culiacan'				),
-	('en_US',	'LOC_NAMED_RIVER_LERMA',				'Río Lerma'					),
-	('en_US',	'LOC_NAMED_RIVER_GRANDE_DE_SANTIAGO',	'Río Grande de Santiago'	),
-	('en_US',	'LOC_NAMED_RIVER_FUERTE',				'Río Fuerte'				),
-	('en_US',	'LOC_NAMED_RIVER_CONCHOS',				'Río Conchos'				),
+	('en_US',	'LOC_NAMED_RIVER_RWB_FORTALEZA',	'Fortaleza'		),
+	('en_US',	'LOC_NAMED_RIVER_RWB_PATIVILCA',	'Río Pativilca'	),
+	('en_US',	'LOC_NAMED_RIVER_RWB_SUPE',			'Supe'			),
+	('en_US',	'LOC_NAMED_RIVER_RWB_HUAURA',		'Río Huaura'	),
+
 
 -----------------------------------------------
 -- Lakes
 -----------------------------------------------
 
-	('en_US',	'LOC_NAMED_LAKE_CHAPALA',				'Chapala'			),
-	('en_US',	'LOC_NAMED_LAKE_PATZCUARO',				'Pátzcuaro'			),
-	('en_US',	'LOC_NAMED_LAKE_BACALAR',				'Bacalar'			),
-	('en_US',	'LOC_NAMED_LAKE_LAGUNA_CATEMACO',		'Laguna Catemaco'	),
-	('en_US',	'LOC_NAMED_LAKE_EL_CARACOL',			'El Caracol'		),
+	('en_US',	'LOC_NAMED_LAKE_RWB_WINAYMARKA',				'Wiñaymarka'			),
+	('en_US',	'LOC_NAMED_LAKE_RWB_LAGO_POOPO',				'Lago Poopó'			),
+	('en_US',	'LOC_NAMED_LAKE_RWB_LAGO_URU_URU',				'Lago Uru Uru'			),
+	('en_US',	'LOC_NAMED_LAKE_RWB_LAGO_CHINCHAYCOCHA',		'Lago Chinchaycocha'	),
+	('en_US',	'LOC_NAMED_LAKE_RWB_LAGO_SALAR_DE_ARIZARO',		'Lago Salar de Arizaro'	),
 
 -----------------------------------------------
--- Deserts
+-- Seas
 -----------------------------------------------
 
-	('en_US',	'LOC_NAMED_DESERT_SONORA',		'Desierto de Soñora'		),
-	('en_US',	'LOC_NAMED_DESERT_LA_GUAJIRA',	'Desierto La Guajira'		),
-	('en_US',	'LOC_NAMED_DESERT_SECHURA',		'Desierto de Sechura'		),
+	('en_US',	'LOC_NAMED_SEA_RWB_MAR_DE_GRAU',			'Mar de Grau'			),
+
+-----------------------------------------------
+-- Mountains
+-----------------------------------------------
+
+	('en_US',	'LOC_NAMED_MOUNTAIN_RWB_CORDILLERA_BLANCA',		 'Cordillera Blanca'		),
+	('en_US',	'LOC_NAMED_MOUNTAIN_RWB_CORDILLERA_HUAYHUASH',	 'Cordillera Huayhuash'		),
+	('en_US',	'LOC_NAMED_MOUNTAIN_RWB_CORDILLERA_VILCANOTA',	 'Cordillera Vilcanota'		),
+	('en_US',	'LOC_NAMED_MOUNTAIN_RWB_CORDILLERA_VILCABAMBA',	 'Cordillera Vilcabamba'	),
+	('en_US',	'LOC_NAMED_MOUNTAIN_RWB_CORDILLERA_APOLOBAMBA',	 'Cordillera Apolobamba'	),
 
 -----------------------------------------------
 -- Volcanoes
 -----------------------------------------------
 
-	('en_US',	'LOC_NAMED_VOLCANO_PICO_DE_ORIZABA',	'Pico de Orizaba'			),
-	('en_US',	'LOC_NAMED_VOLCANO_TAJUMULCO',			'Tajumulco'					),
-	('en_US',	'LOC_NAMED_VOLCANO_TACANA',				'Volcan Tacana'				),
-	('en_US',	'LOC_NAMED_VOLCANO_SANTIAGUITO',		'Santiaguito'				),
-	('en_US',	'LOC_NAMED_VOLCANO_CHAPARRASTIQUE',		'Chaparrastique'			),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_HUAYNAPUTINA',	'Huaynaputina'		),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_YUCAMANE',		'Yucamane'			),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_TUTUPACA',		'Tutupaca'			),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_AMPATO',			'Ampato'			),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_COROPUNA',		'Coropuna'			),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_SOLIMANA',		'Solimana'			),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_AUQUIHUATO',		'Auquihuato'		),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_SABANCAYA',		'Sabancaya'			),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_SARASARA',		'Sara Sara'			),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_PURUPURUNI',		'Purupuruni'		),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_TICSANI',		'Ticsani'			),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_UBINAS',			'Ubinas'			),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_MISTI',			'Misti'				),
 
 -----------------------------------------------
 -- Cities
