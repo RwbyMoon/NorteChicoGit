@@ -31,9 +31,9 @@ VALUES		(
 			'ETHNICITY_SOUTHAM' -- Ethnicity
 			);
 
-------
---MC--
-------
+--------
+---MC---
+--------
 
 -----------------------------------------------
 -- NamedRivers
@@ -169,9 +169,9 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_HUAYNAPUTINA'				)
 		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_UBINAS'						),
 		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_MISTI'						);
 
-------
---MC--
-------
+--------
+---MC---
+--------
 
 -----------------------------------------------
 -- NamedMountains
