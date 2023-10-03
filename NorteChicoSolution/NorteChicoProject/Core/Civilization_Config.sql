@@ -31,6 +31,148 @@ VALUES		(
 			'ETHNICITY_SOUTHAM' -- Ethnicity
 			);
 
+------
+--MC--
+------
+
+-----------------------------------------------
+-- NamedRivers
+-----------------------------------------------
+
+REPLACE INTO NamedRivers
+		(NamedRiverType,								Name											)
+VALUES	('NAMED_RIVER_RWB_FORTALEZA',					'LOC_NAMED_RIVER_RWB_FORTALEZA'					),
+		('NAMED_RIVER_RWB_PATIVILCA',					'LOC_NAMED_RIVER_RWB_PATIVILCA'					),
+		('NAMED_RIVER_RWB_SUPE',						'LOC_NAMED_RIVER_RWB_SUPE'						),
+		('NAMED_RIVER_RWB_HUAURA',						'LOC_NAMED_RIVER_RWB_HUAURA'					);
+
+-----------------------------------------------
+-- NamedRiverCivilizations
+-----------------------------------------------
+
+INSERT INTO NamedRiverCivilizations
+		(CivilizationType,								NamedRiverType									)
+VALUES	('CIVILIZATION_RWB_NORTECHICO',					'NAMED_RIVER_RWB_FORTALEZA'						),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_RIVER_RWB_PATIVILCA'						),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_RIVER_RWB_SUPE'							),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_RIVER_RWB_HUAURA'						);
+
+-----------------------------------------------
+-- NamedLakes
+-----------------------------------------------
+
+REPLACE INTO NamedLakes
+		(NamedLakeType,									Name											)
+VALUES	('NAMED_LAKE_RWB_WINAYMARKA',					'LOC_NAMED_LAKE_RWB_WINAYMARKA'					),
+		('NAMED_LAKE_RWB_LAGO_POOPO',					'LOC_NAMED_LAKE_RWB_LAGO_POOPO'					),
+		('NAMED_LAKE_RWB_LAGO_URU_URU',					'LOC_NAMED_LAKE_RWB_LAGO_URU_URU'				),
+		('NAMED_LAKE_RWB_LAGO_CHINCHAYCOCHA',			'LOC_NAMED_LAKE_RWB_LAGO_CHINCHAYCOCHA'			),
+		('NAMED_LAKE_RWB_LAGO_SALAR_DE_ARIZARO',		'LOC_NAMED_LAKE_RWB_LAGO_SALAR_DE_ARIZARO'		);
+
+-----------------------------------------------
+-- NamedLakeCivilizations
+-----------------------------------------------
+
+INSERT INTO NamedLakeCivilizations
+		(CivilizationType,								NamedLakeType									)
+VALUES	('CIVILIZATION_RWB_NORTECHICO',					'NAMED_LAKE_LAKE_TITIQAQA'						),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_LAKE_RWB_WINAYMARKA'						),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_LAKE_RWB_LAGO_POOPO'						),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_LAKE_RWB_LAGO_URU_URU'					),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_LAKE_RWB_LAGO_CHINCHAYCOCHA'				),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_LAKE_RWB_LAGO_SALAR_DE_ARIZARO'			);
+		
+-----------------------------------------------
+-- NamedSeas
+-----------------------------------------------
+
+REPLACE INTO NamedSea
+		(NamedSeaType,									Name											)
+VALUES	('NAMED_SEA_RWB_MAR_DE_GRAU',					'LOC_NAMED_SEA_RWB_MAR_DE_GRAU'					);
+
+-----------------------------------------------
+-- NamedSeaCivilizations
+-----------------------------------------------
+
+INSERT INTO NamedSeaCivilizations
+		(CivilizationType,								NamedSeaType									)
+VALUES	('CIVILIZATION_RWB_NORTECHICO',					'NAMED_SEA_RWB_MAR_DE_GRAU'						);
+
+-----------------------------------------------
+-- NamedDesertCivilizations
+-----------------------------------------------
+
+INSERT INTO NamedDesertCivilizations
+		(CivilizationType,								NamedDesertType									)
+VALUES	('CIVILIZATION_RWB_NORTECHICO',					'NAMED_DESERT_ATACAMA'							);
+
+-----------------------------------------------
+-- NamedMountains
+-----------------------------------------------
+
+REPLACE INTO NamedMountains
+		(NamedMountainType,								Name											)
+VALUES	('NAMED_MOUNTAIN_RWB_CORDILLERA_BLANCA',		'LOC_NAMED_MOUNTAIN_RWB_CORDILLERA_BLANCA'		),
+		('NAMED_MOUNTAIN_RWB_CORDILLERA_HUAYHUASH',		'LOC_NAMED_MOUNTAIN_RWB_CORDILLERA_HUAYHUASH'	),
+		('NAMED_MOUNTAIN_RWB_CORDILLERA_VILCANOTA',		'LOC_NAMED_MOUNTAIN_RWB_CORDILLERA_VILCANOTA'	),
+		('NAMED_MOUNTAIN_RWB_CORDILLERA_VILCABAMBA',	'LOC_NAMED_MOUNTAIN_RWB_CORDILLERA_VILCABAMBA'	),
+		('NAMED_MOUNTAIN_RWB_CORDILLERA_APOLOBAMBA',	'LOC_NAMED_MOUNTAIN_RWB_CORDILLERA_APOLOBAMBA'	);
+
+-----------------------------------------------
+-- NamedMountainCivilizations
+-----------------------------------------------
+
+INSERT INTO NamedMountainCivilizations
+		(CivilizationType,								NamedMountainType								)
+VALUES	('CIVILIZATION_RWB_NORTECHICO',					'NAMED_MOUNTAIN_RWB_CORDILLERA_BLANCA'			),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_MOUNTAIN_RWB_CORDILLERA_HUAYHUASH'		),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_MOUNTAIN_RWB_CORDILLERA_VILCANOTA'		),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_MOUNTAIN_RWB_CORDILLERA_VILCABAMBA'		),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_MOUNTAIN_RWB_CORDILLERA_APOLOBAMBA'		);
+
+-----------------------------------------------
+-- NamedVolcanoes
+-----------------------------------------------
+
+REPLACE INTO NamedVolcanoes
+		(NamedVolcanoType,								Name											)
+VALUES	('NAMED_VOLCANO_RWB_YUCAMANE',					'LOC_NAMED_VOLCANO_RWB_YUCAMANE'				),
+		('NAMED_VOLCANO_RWB_TUTUPACA',					'LOC_NAMED_VOLCANO_RWB_TUTUPACA'				),
+		('NAMED_VOLCANO_RWB_AMPATO',					'LOC_NAMED_VOLCANO_RWB_AMPATO'					),
+		('NAMED_VOLCANO_RWB_COROPUNA',					'LOC_NAMED_VOLCANO_RWB_COROPUNA'				),
+		('NAMED_VOLCANO_RWB_SOLIMANA',					'LOC_NAMED_VOLCANO_RWB_SOLIMANA'				),
+		('NAMED_VOLCANO_RWB_AUQUIHUATO',				'LOC_NAMED_VOLCANO_RWB_AUQUIHUATO'				),
+		('NAMED_VOLCANO_RWB_SABANCAYA',					'LOC_NAMED_VOLCANO_RWB_SABANCAYA'				),
+		('NAMED_VOLCANO_RWB_SARASARA',					'LOC_NAMED_VOLCANO_RWB_SARASARA'				),
+		('NAMED_VOLCANO_RWB_PURUPURUNI',				'LOC_NAMED_VOLCANO_RWB_PURUPURUNI'				),
+		('NAMED_VOLCANO_RWB_TICSANI',					'LOC_NAMED_VOLCANO_RWB_TICSANI'					),
+		('NAMED_VOLCANO_RWB_UBINAS',					'LOC_NAMED_VOLCANO_RWB_UBINAS'					),
+		('NAMED_VOLCANO_RWB_MISTI',						'LOC_NAMED_VOLCANO_RWB_MISTI'					);
+
+-----------------------------------------------
+-- NamedVolcanoCivilizations
+-----------------------------------------------
+
+INSERT INTO NamedVolcanoCivilizations
+		(CivilizationType,								NamedVolcanoType								)
+VALUES	('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_HUAYNAPUTINA'				),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_YUCAMANE'					),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_TUTUPACA'					),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_AMPATO'						),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_COROPUNA'					),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_SOLIMANA'					),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_AUQUIHUATO'					),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_SABANCAYA'					),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_SARASARA'					),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_PURUPURUNI'					),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_TICSANI'						),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_UBINAS'						),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_MISTI'						);
+
+------
+--MC--
+------
+
 -----------------------------------------------
 -- NamedMountains
 
