@@ -135,3 +135,89 @@ VALUES	('TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA',	'TRAIT_GRANT_SETTLERS_BUIL
 INSERT OR REPLACE INTO ModifierArguments 
 		(ModifierId,										Name,				Value												)
 VALUES	('TRAIT_GRANT_SETTLERS_BUILDERS_ALTITUDE_TRAINING',	'AbilityType',		'ABILITY_MC_BUILDER_SETTLER_IGNORE_TERRAIN_COST'	);
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------
+-- DistrictModifiers
+---------------------------------------------------------------------------------------------------------------
+
+INSERT OR REPLACE INTO Modifiers
+(ModifierId,                                                            ModifierType,                               SubjectRequirementSetId)
+VALUES      ('TRAIT_CIVILIZATION_RWB_PILIAKALNIS_COMBAT_STRENGTH_GIVE_MODIFIER',         'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',      'REQSET_RWB_PLOT_WITHIN_RANGE_OF_PILIAKALNIS'),
+            ('TRAIT_CIVILIZATION_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_GIVE_MODIFIER',      'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',      'REQSET_RWB_PLOT_WITHIN_RANGE_OF_PILIAKALNIS');
+
+INSERT OR REPLACE INTO ModifierArguments
+(ModifierId,                                                            Name,                   Value)
+VALUES      ('TRAIT_CIVILIZATION_RWB_PILIAKALNIS_COMBAT_STRENGTH_GIVE_MODIFIER',    'AbilityType',          'ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH'),
+            ('TRAIT_CIVILIZATION_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_GIVE_MODIFIER', 'AbilityType',          'ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH');
+
+INSERT OR REPLACE INTO TraitModifiers
+(TraitType, ModifierId)
+VALUES      ('TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS', 'TRAIT_CIVILIZATION_RWB_PILIAKALNIS_COMBAT_STRENGTH_GIVE_MODIFIER') ,
+            ('TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS', 'TRAIT_CIVILIZATION_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_GIVE_MODIFIER') ;
+
+INSERT OR REPLACE INTO Types
+(Type, Kind)
+VALUES      ('ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH',       'KIND_ABILITY'),
+            ('ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH',    'KIND_ABILITY');
+
+INSERT OR REPLACE INTO TypeTags
+(Type, Tag)
+VALUES      ('ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH',       'CLASS_ALL_COMBAT_UNITS'),
+            ('ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH',    'CLASS_RELIGIOUS_ALL');
+
+INSERT OR REPLACE INTO UnitAbilities
+(UnitAbilityType,
+ Name,
+ Description,
+ Inactive)
+VALUES      ('ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH',
+             'LOC_ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH_NAME',
+             'LOC_ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH_DESCRIPTION',
+             '1'),
+            ('ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH',
+             'LOC_ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_NAME',
+             'LOC_ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_DESCRIPTION',
+             '1');
+
+INSERT OR REPLACE INTO Modifiers
+(ModifierId,                                                        ModifierType)
+VALUES      ('RWB_MODIFIER_PILIAKALNIS_COMBAT_STRENGTH',               'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH'),
+            ('RWB_MODIFIER_PILIAKALNIS_RELIGIOUS_STRENGTH',            'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH');
+
+INSERT OR REPLACE INTO ModifierArguments
+(ModifierId,                                                Name,                   Value)
+VALUES      ('RWB_MODIFIER_PILIAKALNIS_COMBAT_STRENGTH',       'Amount',               '3'),
+            ('RWB_MODIFIER_PILIAKALNIS_RELIGIOUS_STRENGTH',    'Amount',               '3');
+
+INSERT OR REPLACE INTO UnitAbilityModifiers
+(UnitAbilityType,                                                   ModifierId)
+VALUES      ('ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH',            'RWB_MODIFIER_PILIAKALNIS_COMBAT_STRENGTH'),
+            ('ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH',         'RWB_MODIFIER_PILIAKALNIS_RELIGIOUS_STRENGTH');
+
+INSERT OR REPLACE INTO ModifierStrings
+(ModifierId,                                       Context,           Text)
+VALUES      ('RWB_MODIFIER_PILIAKALNIS_COMBAT_STRENGTH',       'Preview',          'LOC_ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH_BONUS_DESCRIPTION'),
+            ('RWB_MODIFIER_PILIAKALNIS_RELIGIOUS_STRENGTH',    'Preview',          'LOC_ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_BONUS_DESCRIPTION');
+
+INSERT OR REPLACE INTO RequirementSets
+(RequirementSetId,                                                   RequirementSetType)
+VALUES      ('REQSET_RWB_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',          'REQUIREMENTSET_TEST_ALL');
+
+INSERT OR REPLACE INTO RequirementSetRequirements
+(RequirementSetId,                                             RequirementId)
+VALUES      ('REQSET_RWB_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',    'RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS');
+
+INSERT OR REPLACE INTO Requirements
+(RequirementId,                                                         RequirementType)
+VALUES      ('RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',    'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES');
+
+INSERT OR REPLACE INTO RequirementArguments
+(RequirementId,                                    Name,               Value)
+VALUES      ('RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',  'DistrictType',     'DISTRICT_RWB_PILIAKALNIS'),
+            ('RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',  'MinRange',         '0'),
+            ('RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',  'MaxRange',         '4');
