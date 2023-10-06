@@ -145,80 +145,94 @@ VALUES	('TRAIT_GRANT_SETTLERS_BUILDERS_ALTITUDE_TRAINING',	'AbilityType',		'ABIL
 -- DistrictModifiers
 ---------------------------------------------------------------------------------------------------------------
 
-/*
 INSERT OR REPLACE INTO Modifiers
-(ModifierId,                                                            ModifierType,                               SubjectRequirementSetId)
-VALUES      ('TRAIT_CIVILIZATION_RWB_PILIAKALNIS_COMBAT_STRENGTH_GIVE_MODIFIER',         'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',      'REQSET_RWB_PLOT_WITHIN_RANGE_OF_PILIAKALNIS'),
-            ('TRAIT_CIVILIZATION_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_GIVE_MODIFIER',      'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',      'REQSET_RWB_PLOT_WITHIN_RANGE_OF_PILIAKALNIS');
+            (ModifierId,                                                                        ModifierType,                               SubjectRequirementSetId)
+VALUES      ('RWB_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT_GIVE_MODIFIER',         'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',      'REQSET_RWB_PLOT_WITHIN_RANGE_OF_HOLY_SITE');
 
 INSERT OR REPLACE INTO ModifierArguments
-(ModifierId,                                                            Name,                   Value)
-VALUES      ('TRAIT_CIVILIZATION_RWB_PILIAKALNIS_COMBAT_STRENGTH_GIVE_MODIFIER',    'AbilityType',          'ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH'),
-            ('TRAIT_CIVILIZATION_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_GIVE_MODIFIER', 'AbilityType',          'ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH');
+            (ModifierId,                                                                    Name,                   Value)
+VALUES      ('RWB_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT_GIVE_MODIFIER',    'AbilityType',          'ABILITY_RWB_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT');
 
 INSERT OR REPLACE INTO TraitModifiers
 (TraitType, ModifierId)
-VALUES      ('TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS', 'TRAIT_CIVILIZATION_RWB_PILIAKALNIS_COMBAT_STRENGTH_GIVE_MODIFIER') ,
-            ('TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS', 'TRAIT_CIVILIZATION_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_GIVE_MODIFIER') ;
+VALUES      ('TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA', 'RWB_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT_GIVE_MODIFIER');
 
 INSERT OR REPLACE INTO Types
 (Type, Kind)
-VALUES      ('ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH',       'KIND_ABILITY'),
-            ('ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH',    'KIND_ABILITY');
+VALUES      ('ABILITY_RWB_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT',       'KIND_ABILITY');
+
+INSERT OR REPLACE INTO Tags
+(Tag,						Vocabulary		)
+VALUES	('CLASS_RWB_ECONOMIA_TEOCRATICA_NISQA_UNITS',		'ABILITY_CLASS'	);
 
 INSERT OR REPLACE INTO TypeTags
 (Type, Tag)
-VALUES      ('ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH',       'CLASS_ALL_COMBAT_UNITS'),
-            ('ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH',    'CLASS_RELIGIOUS_ALL');
+VALUES      ('ABILITY_RWB_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT',      'CLASS_RWB_ECONOMIA_TEOCRATICA_NISQA_UNITS'),
+            ('UNIT_BUILDER',                                        'CLASS_RWB_ECONOMIA_TEOCRATICA_NISQA_UNITS'),
+            ('UNIT_MILITARY_ENGINEER',                              'CLASS_RWB_ECONOMIA_TEOCRATICA_NISQA_UNITS') UNION
+SELECT      Type,                                                   'CLASS_RWB_ECONOMIA_TEOCRATICA_NISQA_UNITS'
+FROM TypeTags WHERE Tag LIKE 'CLASS_ANTI_CAVALRY' AND Type LIKE '%UNIT_%' UNION
+SELECT      Type,                                                   'CLASS_RWB_ECONOMIA_TEOCRATICA_NISQA_UNITS'
+FROM TypeTags WHERE Tag LIKE 'CLASS_RELIGIOUS_ALL' AND Type LIKE '%UNIT_%';
+
 
 INSERT OR REPLACE INTO UnitAbilities
 (UnitAbilityType,
  Name,
  Description,
  Inactive)
-VALUES      ('ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH',
-             'LOC_ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH_NAME',
-             'LOC_ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH_DESCRIPTION',
-             '1'),
-            ('ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH',
-             'LOC_ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_NAME',
-             'LOC_ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_DESCRIPTION',
+VALUES      ('ABILITY_RWB_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT',
+             'LOC_ABILITY_RWB_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT_NAME',
+             'LOC_ABILITY_RWB_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT_DESCRIPTION',
              '1');
 
 INSERT OR REPLACE INTO Modifiers
-(ModifierId,                                                        ModifierType)
-VALUES      ('RWB_MODIFIER_PILIAKALNIS_COMBAT_STRENGTH',               'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH'),
-            ('RWB_MODIFIER_PILIAKALNIS_RELIGIOUS_STRENGTH',            'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH');
+            (ModifierId,                                                        ModifierType)
+VALUES      ('RWB_MODIFIER_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT',                 'MODIFIER_PLAYER_UNIT_ADJUST_MOVEMENT');
 
 INSERT OR REPLACE INTO ModifierArguments
-(ModifierId,                                                Name,                   Value)
-VALUES      ('RWB_MODIFIER_PILIAKALNIS_COMBAT_STRENGTH',       'Amount',               '3'),
-            ('RWB_MODIFIER_PILIAKALNIS_RELIGIOUS_STRENGTH',    'Amount',               '3');
+            (ModifierId,                                                Name,                   Value)
+VALUES      ('RWB_MODIFIER_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT',         'Amount',               '1');
 
 INSERT OR REPLACE INTO UnitAbilityModifiers
 (UnitAbilityType,                                                   ModifierId)
-VALUES      ('ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH',            'RWB_MODIFIER_PILIAKALNIS_COMBAT_STRENGTH'),
-            ('ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH',         'RWB_MODIFIER_PILIAKALNIS_RELIGIOUS_STRENGTH');
+VALUES      ('ABILITY_RWB_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT',            'RWB_MODIFIER_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT');
 
 INSERT OR REPLACE INTO ModifierStrings
-(ModifierId,                                       Context,           Text)
-VALUES      ('RWB_MODIFIER_PILIAKALNIS_COMBAT_STRENGTH',       'Preview',          'LOC_ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH_BONUS_DESCRIPTION'),
-            ('RWB_MODIFIER_PILIAKALNIS_RELIGIOUS_STRENGTH',    'Preview',          'LOC_ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_BONUS_DESCRIPTION');
+            (ModifierId,                                       Context,           Text)
+VALUES      ('RWB_MODIFIER_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT',       'Preview',          'LOC_ABILITY_RWB_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT_DESCRIPTION');
 
 INSERT OR REPLACE INTO RequirementSets
 (RequirementSetId,                                                   RequirementSetType)
-VALUES      ('REQSET_RWB_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',          'REQUIREMENTSET_TEST_ALL');
+VALUES      ('REQSET_RWB_PLOT_WITHIN_RANGE_OF_HOLY_SITE',          'REQUIREMENTSET_TEST_ANY');
+
+
+CREATE TABLE IF NOT EXISTS RwbHolySiteLikes_ULA
+(
+    DistrictName TEXT
+);
+INSERT OR REPLACE INTO RwbHolySiteLikes_ULA
+        (DistrictName)
+VALUES  ('DISTRICT_HOLY_SITE') UNION
+SELECT  CivUniqueDistrictType FROM
+DistrictReplaces WHERE ReplacesDistrictType IS 'DISTRICT_HOLY_SITE';
 
 INSERT OR REPLACE INTO RequirementSetRequirements
 (RequirementSetId,                                             RequirementId)
-VALUES      ('REQSET_RWB_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',    'RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS');
+SELECT      'REQSET_RWB_PLOT_WITHIN_RANGE_OF_HOLY_SITE',    'RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_'||DistrictName
+FROM RwbHolySiteLikes_ULA;
 
 INSERT OR REPLACE INTO Requirements
 (RequirementId,                                                         RequirementType)
-VALUES      ('RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',    'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES');
+SELECT      'RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_'||DistrictName,    'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES'
+FROM RwbHolySiteLikes_ULA;
 
 INSERT OR REPLACE INTO RequirementArguments
-(RequirementId,                                    Name,               Value)
-VALUES      ('RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',  'DistrictType',     'DISTRICT_RWB_PILIAKALNIS'),
-            ('RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',  'MinRange',         '0'),
-            ('RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',  'MaxRange',         '4');*/
+            (RequirementId,                                    Name,               Value)
+SELECT      'RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_'||DistrictName,  'DistrictType',     DistrictName
+FROM RwbHolySiteLikes_ULA UNION
+SELECT      'RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_'||DistrictName,  'MinRange',         '0'
+FROM RwbHolySiteLikes_ULA UNION
+SELECT      'RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_'||DistrictName,  'MaxRange',         '2'
+FROM RwbHolySiteLikes_ULA;
+DROP TABLE IF EXISTS RwbHolySiteLikes_ULA;

@@ -27,8 +27,8 @@ VALUES
 -----------------------------------------------	
 
 	('en_US',	'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_NAME',	'Economía Teocrática Nisqa'	),
-	('en_US',	'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_DESCRIPTION',		'When you research the civic of a new era for the first time, you gain access to all Economic Policy Cards of this era.[NEWLINE][NEWLINE]Civilian, Religious and Anti-Cavalry units starting their turn within two tiles of Holy Sites receive +1 [ICON_Movement] Movement.'	),
-	('fr_FR',	'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_DESCRIPTION',		'Lorsque vous recherchez un dogme d''une nouvelle ère pour la première fois, vous obtenez l''accès à toutes les Cartes de Doctrines Économiques de cette ère.[NEWLINE][NEWLINE]+1 [ICON_Movement] Mouvement aux unités Civiles, Religieuses ou d''Anti-Cavalerie débutant leur tour à 2 cases ou moins d''un Lieu Saint.'	),
+	('en_US',	'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_DESCRIPTION',		'When you research the civic of a new era for the first time, you gain access to all Economic Policy Cards of this era.[NEWLINE][NEWLINE]Builders, Military Engineers but also Religious and Anti-Cavalry units starting their turn within two tiles of Holy Sites receive +1 [ICON_Movement] Movement.'	),
+	('fr_FR',	'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_DESCRIPTION',		'Lorsque vous recherchez un dogme d''une nouvelle ère pour la première fois, vous obtenez l''accès à toutes les Cartes de Doctrines Économiques de cette ère.[NEWLINE][NEWLINE]+1 [ICON_Movement] Mouvement aux unités Religieuses ou d''Anti-Cavalerie ainsi que les Bâtisseurs et Ingénieurs Militaires, lorsqu''ils débutent leur tour à 2 cases ou moins d''un Lieu Saint.'	),
 
 -----------------------------------------------
 -- Leader Agenda --------------------------------------------------- STILL TO DO STARTING HERE
