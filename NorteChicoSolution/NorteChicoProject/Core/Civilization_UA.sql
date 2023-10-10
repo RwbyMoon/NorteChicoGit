@@ -89,11 +89,13 @@ SELECT      'RWB_BUILD_CHARGE_FROM_ECO_POLICY_AMOUNT_'||a.PolicyType,
 			1
             FROM Policies a WHERE GovernmentSlotType = 'SLOT_ECONOMIC';
 
+
+
 -- +100% cost to Builders
 INSERT OR REPLACE INTO Modifiers
         (ModifierId,                                        ModifierType,                                           SubjectRequirementSetId)
 VALUES  ('RWB_NORTECHICO_BUILDER_PRODUCTION_COST_MALUS',    'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',         null),
-        ('RWB_NORTECHICO_BUILDER_PURCHASE_COST_MALUS',      'MODIFIER_PLAYER_CITIES_ADJUST_UNITS_PURCHASE_COST',    'REQSET_RWB_UNIT_IS_BUILDER');
+        ('RWB_NORTECHICO_BUILDER_PURCHASE_COST_MALUS',      'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST',     null);
 
 -- CANCEL CHARGES
 INSERT OR REPLACE INTO Modifiers
@@ -159,7 +161,8 @@ INSERT OR REPLACE INTO ModifierArguments
 VALUES	('RWB_NORTECHICO_NEGATIVE_MIL_ENGINEER_CHARGE_MALUS',       'Amount',		'-1'),
 		('RWB_NORTECHICO_NEGATIVE_BUILDER_MALUS_CHARGE_MALUS',	    'Amount',		'-2'),
 		('RWB_NORTECHICO_BUILDER_PRODUCTION_COST_MALUS',	        'UnitType',		'UNIT_BUILDER'),
-		('RWB_NORTECHICO_BUILDER_PRODUCTION_COST_MALUS',	        'Amount',		'-75'),
+		('RWB_NORTECHICO_BUILDER_PRODUCTION_COST_MALUS',	        'Amount',		'-90'),
+		('RWB_NORTECHICO_BUILDER_PURCHASE_COST_MALUS',	            'UnitType',		'UNIT_BUILDER'),
 		('RWB_NORTECHICO_BUILDER_PURCHASE_COST_MALUS',	            'Amount',		'-200');
 
 -------------------------------------

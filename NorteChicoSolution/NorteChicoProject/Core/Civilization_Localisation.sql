@@ -20,9 +20,9 @@ VALUES
 
 	('en_US',	'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_NAME',				'Kamachiq Vara Dioskuna'				),
 	('en_US',	'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_DESCRIPTION',	
-	'+1 [ICON_Charges] Build Charge to Builders, Military Engineers and Apaq Allinms when you change policies for every slotted Economic Policy Card in your Government that they haven''t already benefited from. Builders and Military Engineers do not gain bonus Builder Charges anymore from other methods and start at 1 Charge. -75% [ICON_Production] Production toward Builders, which are also 200% more expensive to purchase.'),
+	'+1 [ICON_Charges] Build Charge to Builders, Military Engineers and Apaq Allinms when you change policies for every slotted Economic Policy Card in your Government that they haven''t already benefited from. Builders and Military Engineers do not gain bonus Builder Charges anymore from other methods and start at 1 Charge. -90% [ICON_Production] Production toward Builders, which are also 200% more expensive to purchase.'),
 	('fr_FR',	'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_DESCRIPTION',	
-	'+1 [ICON_Charges] Charge de Construction aux Bâtisseurs, Ingénieurs Militaires et Apaq Allinms lorsque vous changez de doctrines pour chaque Carte de Doctrine Économique dans votre gouvernement de laquelle ils n''ont pas déjà bénéficiés. Les Bâtisseurs et Ingénieurs Militaires ne gagnent pas de Charge de Construction supplémentaires d''aucune autre méthode et commencent à 1 Charge. -75% [ICON_Production] Production envers les Bâtisseurs, qui sont aussi 200% plus cher à acheter.'),
+	'+1 [ICON_Charges] Charge de Construction aux Bâtisseurs, Ingénieurs Militaires et Apaq Allinms lorsque vous changez de doctrines pour chaque Carte de Doctrine Économique dans votre gouvernement de laquelle ils n''ont pas déjà bénéficiés. Les Bâtisseurs et Ingénieurs Militaires ne gagnent pas de Charge de Construction supplémentaires d''aucune autre méthode et commencent à 1 Charge. -90% [ICON_Production] Production envers les Bâtisseurs, qui sont aussi 200% plus chers à acheter.'),
 
 -----------------------------------------------
 -- Civilization Unique Infrastructure

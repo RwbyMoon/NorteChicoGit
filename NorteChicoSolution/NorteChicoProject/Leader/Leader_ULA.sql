@@ -176,6 +176,7 @@ SELECT      Type,                                                   'CLASS_RWB_E
 FROM TypeTags WHERE Tag LIKE 'CLASS_RELIGIOUS_ALL' AND Type LIKE '%UNIT_%';
 
 
+
 INSERT OR REPLACE INTO UnitAbilities
 (UnitAbilityType,
  Name,
