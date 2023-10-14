@@ -1,6 +1,6 @@
 -- Huenca : +3 Faith, +3 Great Prophet Points per Turn.
 -- Sunken Plaza : +3 Culture. +1 Culture +1 Tourism for every Great Works in this city, doubled for Great Works of Music.
--- Pirámide : +3 Housing. +1 Gold +1 Production per Citizen in this city.
+-- Pirámide : +3 Housing. +0.5 Gold +0.5 Production per Citizen in this city.
 
 
 ---------------------------------------------------------------------------------------------------------------
@@ -24,7 +24,6 @@ INSERT OR REPLACE INTO Buildings
          PrereqDistrict,
          Description,
          Housing,
-         PurchaseYield,
          Maintenance,
          --TraitType,
          AdvisorType)
@@ -37,7 +36,6 @@ VALUES	('BUILDING_RWB_NORTECHICO_HUENCA',						-- BuildingType
           'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA',
           'LOC_BUILDING_RWB_NORTECHICO_HUENCA_DESCRIPTION',		-- Description
           0,
-          'YIELD_GOLD',
           4,										-- Maintenance
           --'TRAIT_CIVILIZATION_NO_PLAYER',	-- TraitType
           'ADVISOR_RELIGIOUS'),
@@ -49,7 +47,6 @@ VALUES	('BUILDING_RWB_NORTECHICO_HUENCA',						-- BuildingType
            'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA',
            'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_DESCRIPTION',		-- Description
            0,
-           'YIELD_GOLD',
            4,										-- Maintenance
            --'TRAIT_CIVILIZATION_NO_PLAYER',	-- TraitType
            'ADVISOR_CULTURE'),
@@ -62,7 +59,6 @@ VALUES	('BUILDING_RWB_NORTECHICO_HUENCA',						-- BuildingType
            'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA',
            'LOC_BUILDING_RWB_NORTECHICO_PIRAMIDE_DESCRIPTION',		-- Description
            3,
-           'YIELD_GOLD',
            4,										-- Maintenance
            --'TRAIT_CIVILIZATION_NO_PLAYER',	-- TraitType
            'ADVISOR_GENERIC');
@@ -94,13 +90,13 @@ VALUES      ('MODIFIER_PLAYER_ADJUST_VALID_BUILDING','COLLECTION_OWNER','EFFECT_
 ---------------------------------------------------------------------------------------------------------------
 -- +1 Culture per GW
 INSERT OR REPLACE INTO Modifiers
-        (ModifierId,                                        ModifierType,                                                    SubjectRequirementSetId)
-SELECT   'RWB_NORTECHICO_BONUS_CULTURE_'||a.GreatWorkObjectType,  'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',          'REQSET_RWB_CITY_HAS_SUNKEN_PLAZA'
+        (ModifierId,                                                ModifierType                                                    )
+SELECT   'RWB_NORTECHICO_BONUS_CULTURE_'||a.GreatWorkObjectType,    'MODIFIER_SINGLE_CITY_ADJUST_GREATWORK_YIELD'              
 FROM GreatWorkObjectTypes a;
 -- +1 Additionnal Culture per GW of Music
 INSERT OR REPLACE INTO Modifiers
-(ModifierId,                                        ModifierType,                                                    SubjectRequirementSetId)
-VALUES             ('RWB_NORTECHICO_BONUS_ADDITIONNAL_CULTURE_GREATWORKOBJECT_MUSIC',  'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD',      'REQSET_RWB_CITY_HAS_SUNKEN_PLAZA');
+(ModifierId,                                        ModifierType)
+VALUES             ('RWB_NORTECHICO_BONUS_ADDITIONNAL_CULTURE_GREATWORKOBJECT_MUSIC',  'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD');
 -- arguments : GreatWorkObjectType (ex : GREATWORKOBJECT_WRITING) | YieldType (ex : YIELD_GOLD) | YieldChange (ex : 4)
 
 
@@ -113,6 +109,11 @@ VALUES              ('RWB_NORTECHICO_GOLD_PER_POPULATION',              'MODIFIE
                     ('RWB_NORTECHICO_PRODUCTION_PER_POPULATION',        'MODIFIER_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION');
 -- arguments : Amount & YieldType
 
+-- -40%Prod per building already present
+INSERT OR REPLACE INTO Modifiers
+                    (ModifierId,                                                                    ModifierType)
+SELECT              'RWB_NORTECHICO_CIUDAD_'||BuildingType||'_MALUS_PER_CIUDAD_BUILDING',        'MODIFIER_SINGLE_CITY_ADJUST_BUILDING_PRODUCTION'
+FROM Buildings WHERE PrereqDistrict IS 'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA';
 
 -- Building accessibility
 /*INSERT OR REPLACE INTO Modifiers
@@ -139,7 +140,18 @@ INSERT OR REPLACE INTO ModifierArguments
             (ModifierId,                                                        Name,                           Value)
 VALUES      ('RWB_NORTECHICO_BONUS_ADDITIONNAL_CULTURE_GREATWORKOBJECT_MUSIC',  'GreatWorkObjectType',          'GREATWORKOBJECT_MUSIC'),
             ('RWB_NORTECHICO_BONUS_ADDITIONNAL_CULTURE_GREATWORKOBJECT_MUSIC',  'YieldType',                    'YIELD_CULTURE'),
-            ('RWB_NORTECHICO_BONUS_ADDITIONNAL_CULTURE_GREATWORKOBJECT_MUSIC',  'YieldChange',                  1);
+            ('RWB_NORTECHICO_BONUS_ADDITIONNAL_CULTURE_GREATWORKOBJECT_MUSIC',  'YieldChange',                  2);
+
+
+-- -40%Prod per building already present
+INSERT OR REPLACE INTO ModifierArguments
+            (ModifierId,                                                                                Name,                           Value)
+SELECT      'RWB_NORTECHICO_CIUDAD_'||BuildingType||'_MALUS_PER_CIUDAD_BUILDING',             'Amount',                       '-40'
+FROM Buildings WHERE PrereqDistrict IS 'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA' UNION           
+SELECT      'RWB_NORTECHICO_CIUDAD_'||BuildingType||'_MALUS_PER_CIUDAD_BUILDING',             'BuildingType',                 BuildingType
+FROM Buildings WHERE PrereqDistrict IS 'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA';
+
+
 
 /*INSERT OR REPLACE INTO ModifierArguments
             (ModifierId,                                                        Name,                           Value)
@@ -169,10 +181,29 @@ VALUES      ('DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA',   'RWB_NORTECHICO_ACCESS_
 ---------------------------------------------------------------------------------------------------------------
 -- TraitModifiers
 ---------------------------------------------------------------------------------------------------------------
+-- +1 Gold & Prod per Pop
 INSERT OR REPLACE INTO BuildingModifiers
             (BuildingType,                                  ModifierId) 
 VALUES      ('BUILDING_RWB_NORTECHICO_PIRAMIDE',            'RWB_NORTECHICO_GOLD_PER_POPULATION'),
-            ('BUILDING_RWB_NORTECHICO_PIRAMIDE',            'RWB_NORTECHICO_PRODUCTION_PER_POPULATION');
+            ('BUILDING_RWB_NORTECHICO_PIRAMIDE',            'RWB_NORTECHICO_PRODUCTION_PER_POPULATION'),
+-- +1 Additionnal Culture per GW of Music
+            ('BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA',        'RWB_NORTECHICO_BONUS_ADDITIONNAL_CULTURE_GREATWORKOBJECT_MUSIC');
+
+-- +1 Culture per GW
+INSERT OR REPLACE INTO BuildingModifiers
+            (BuildingType,                                  ModifierId)
+SELECT      'BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA',         'RWB_NORTECHICO_BONUS_CULTURE_'||a.GreatWorkObjectType
+FROM GreatWorkObjectTypes a;
+
+-- -40%Prod per building already present
+INSERT OR REPLACE INTO BuildingModifiers
+                    (BuildingType,                                  ModifierId)
+SELECT              'BUILDING_RWB_NORTECHICO_PIRAMIDE',             'RWB_NORTECHICO_CIUDAD_PIRAMIDE'||BuildingType||'_MALUS_PER_CIUDAD_BUILDING'
+FROM Buildings WHERE PrereqDistrict IS 'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA' UNION
+SELECT              'BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA',         'RWB_NORTECHICO_CIUDAD_'||BuildingType||'_MALUS_PER_CIUDAD_BUILDING'
+FROM Buildings WHERE PrereqDistrict IS 'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA' UNION
+SELECT              'BUILDING_RWB_NORTECHICO_HUENCA',               'RWB_NORTECHICO_CIUDAD_'||BuildingType||'_MALUS_PER_CIUDAD_BUILDING'
+FROM Buildings WHERE PrereqDistrict IS 'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA';
 
 ---------------------------------------------------------------------------------------------------------------
 -- BuildingModifiers
@@ -181,6 +212,12 @@ INSERT OR REPLACE INTO BuildingModifiers
 (BuildingType,                                  ModifierId)
 SELECT  BuildingType,                                   'RWB_NORTE_CHICO_UD_GIVE_POPULATION'
 FROM Buildings WHERE PrereqDistrict IS 'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA';
+
+/*INSERT OR REPLACE INTO BuildingModifiers
+(BuildingType,                                  ModifierId)
+SELECT  BuildingType,                                   'RWB_NORTE_CHICO_UD_GIVE_POPULATION'
+FROM Buildings WHERE PrereqDistrict IS 'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA';*/
+
 
 ---------------------------------------------------------------------------------------------------------------
 -- RequirementSets

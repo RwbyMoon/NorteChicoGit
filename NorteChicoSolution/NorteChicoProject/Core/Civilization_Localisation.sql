@@ -31,31 +31,34 @@ VALUES
     -- Ciudad Sagrada
 	('en_US',	'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_NAME',				'Ciudad Sagrada'								),
 	('en_US',	'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_DESCRIPTION',
-	'Unique district of Norte Chico that cannot be placed adjacent to the city center, used for stability and growth endeavors. It possesses 3 unique buildings (the Sunken Plaza, the Pirámide and the Huenca), buildable in any order.[NEWLINE][NEWLINE]One of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds".[NEWLINE][NEWLINE]+1 [ICON_Citizen] Population upon construction of this District and for every of its Buildings.[NEWLINE][NEWLINE]Great Prophets may found a religion on a Ciudad Sagrada instead of a Holy Site.'	),
+	'Unique district of Norte Chico used for population growth and generating [Icon_FAITH] Faith from adjacent improvements. It possesses 3 unique buildings (the Sunken Plaza, the Pirámide and the Huenca), buildable in any order.[NEWLINE][NEWLINE]For each of these buildings finished in a city, -45% [ICON_Production] Production toward those remaining, which are also 100% more expensive to purchase. These buildings do not grant Era Score for their first completion.[NEWLINE][NEWLINE]+1 [ICON_Citizen] Population upon construction of this District and for every of its Buildings.[NEWLINE][NEWLINE]Great Prophets may found a religion on a Ciudad Sagrada instead of a Holy Site.'	),
 	('fr_FR',	'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_DESCRIPTION',
-	'Destiné à des fins de stabilisation de ville et de croissance, ce quartier exclusif du peuple de Norte Chico dispose de 3 bâtiments uniques (la Place Submergée, la Pirámide et le Huenca), constructible dans n''importe quel ordre.[NEWLINE][NEWLINE]Un seul de ces bâtiments peut être construit dans chaque Ciudad Sagrada une fois le dogme "Premier Empire" a été recherché, le second à "Théologie" et le dernier à "Guildes".[NEWLINE][NEWLINE]+1 [ICON_Citizen] Population lors de la construction du Quartier et de chacun de ses bâtiments.[NEWLINE][NEWLINE]Les Prophètes Illustres peuvent fonder une religion sur une Ciudad Sagrada au lieu d''un Lieu Saint.'	),
-
+	'Destiné à des fins de croissance et de génération de [Icon_FAITH] Foi grâce aux aménagements adjacents, ce quartier exclusif du peuple de Norte Chico dispose de 3 bâtiments uniques (la Place Submergée, la Pirámide et le Huenca), constructible dans n''importe quel ordre.[NEWLINE][NEWLINE]Pour chacun de ces bâtiments construits dans une ville, -45% [ICON_Production] Production envers ceux restants, qui sont aussi 100% plus chers à acheter.[NEWLINE][NEWLINE]+1 [ICON_Citizen] Population lors de la construction du Quartier et de chacun de ses bâtiments.[NEWLINE][NEWLINE]Les Prophètes Illustres peuvent fonder une religion sur une Ciudad Sagrada au lieu d''un Lieu Saint.'	),
+    -- Improvement Adjacency
+    ('en_US',	'LOC_CIUDAD_SAGRADA_IMPROVEMENT_ADJACENCY_DESCRIPTION',  '+{Amount} [Icon_FAITH] Faith from adjacent improvement'),
+    ('fr_FR',	'LOC_CIUDAD_SAGRADA_IMPROVEMENT_ADJACENCY_DESCRIPTION',  '+{Amount} [Icon_FAITH] Foi par aménagement à proximité'),
+    
     -- Huenca
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_HUENCA_NAME',				'Huenca'								),
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_HUENCA_DESCRIPTION',
-     'Unique building of the Ciudad Sagrada district, useful for religious endeavors. [NEWLINE][NEWLINE]Only one of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds". This building do not grant Era Score for first completion.'	),
+     'Unique building of the Ciudad Sagrada district, useful for religious endeavors. [NEWLINE][NEWLINE]For each finished building of the Ciudad Sagrada in a city, -45% [ICON_Production] Production toward those remaining. This building do not grant Era Score for first completion.'	),
     ('fr_FR',	'LOC_BUILDING_RWB_NORTECHICO_HUENCA_DESCRIPTION',
-     'Bâtiment unique de la Ciudad Sagrada, utile à des fonctions religieuses. [NEWLINE][NEWLINE]Un seul bâtiment de la Ciudad Sagrada peut être construit dans chaque Ciudad Sagrada une fois le dogme "Premier Empire" a été recherché, le second à "Théologie" et le dernier à "Guildes". Ce bâtiment unique ne confère pas de Score d''Ère à la première construction.'	),
+     'Bâtiment unique de la Ciudad Sagrada, utile à des fonctions religieuses. [NEWLINE][NEWLINE]Pour chaque bâtiment de la Ciudad Sagrada construit dans une ville, -45% [ICON_Production] Production envers ceux restants, qui sont aussi 100% plus chers à acheter. Ce bâtiment unique ne confère pas de Score d''Ère à la première construction.'	),
 
     -- Sunken Plaza
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_NAME',		'Sunken Plaza'								),
     ('fr_FR',	'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_NAME',		'Place Submergée'								),
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_DESCRIPTION',
-     'Unique building of the Ciudad Sagrada district, useful for cultural and touristic endeavors. [NEWLINE][NEWLINE]Only one of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds". This building do not grant Era Score for first completion.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture, +1 [ICON_Tourism] Tourism for every [ICON_GreatWork_Landscape] Great Works in this city, doubled for [ICON_GreatWork_Music] Great Works of Music.'	),
+     'Unique building of the Ciudad Sagrada district, useful for cultural and touristic endeavors. [NEWLINE][NEWLINE]For each finished building of the Ciudad Sagrada in a city, -45% [ICON_Production] Production toward those remaining. This building do not grant Era Score for first completion.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture, +1 [ICON_Tourism] Tourism for every [ICON_GreatWork_Landscape] Great Works in this city, doubled for [ICON_GreatWork_Music] Great Works of Music.'	),
     ('fr_FR',	'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_DESCRIPTION',
-     'Bâtiment unique de la Ciudad Sagrada, clé pour un apport culturel et touristique. [NEWLINE][NEWLINE]Un seul bâtiment de la Ciudad Sagrada peut être construit dans chaque Ciudad Sagrada une fois le dogme "Premier Empire" a été recherché, le second à "Théologie" et le dernier à "Guildes". Ce bâtiment unique ne confère pas de Score d''Ère à la première construction.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture, +1 [ICON_Tourism] Tourisme pour chaque [ICON_GreatWork_Landscape] Chefs-d''Oeuvres dans la ville, doublé pour les [ICON_GreatWork_Music] Chefs-d''Oeuvres de Musique.'	),
+     'Bâtiment unique de la Ciudad Sagrada, clé pour un apport culturel et touristique. [NEWLINE][NEWLINE]Pour chaque bâtiment de la Ciudad Sagrada construit dans une ville, -45% [ICON_Production] Production envers ceux restants, qui sont aussi 100% plus chers à acheter.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture, +1 [ICON_Tourism] Tourisme pour chaque [ICON_GreatWork_Landscape] Chefs-d''Oeuvres dans la ville, doublé pour les [ICON_GreatWork_Music] Chefs-d''Oeuvres de Musique.'	),
 
     -- Pirámide
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_PIRAMIDE_NAME',			'Pirámide'								),
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_PIRAMIDE_DESCRIPTION',
-     'Unique building of the Ciudad Sagrada district, useful for housing large productive and richer cities. [NEWLINE][NEWLINE]Only one of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds". This building do not grant Era Score for first completion.[NEWLINE][NEWLINE]+0.5 [ICON_Gold] Gold, +0.5 [ICON_Production] Production per [ICON_Citizen] Citizen in this city.'	),
+     'Unique building of the Ciudad Sagrada district, useful for housing large productive and richer cities. [NEWLINE][NEWLINE]For each finished building of the Ciudad Sagrada in a city, -45% [ICON_Production] Production toward those remaining. This building do not grant Era Score for first completion.[NEWLINE][NEWLINE]+0.5 [ICON_Gold] Gold, +0.5 [ICON_Production] Production per [ICON_Citizen] Citizen in this city.'	),
     ('fr_FR',	'LOC_BUILDING_RWB_NORTECHICO_PIRAMIDE_DESCRIPTION',
-     'Bâtiment unique de la Ciudad Sagrada, permettant l''hébergement de villes peuplées productives et plus riches.[NEWLINE][NEWLINE]Un seul bâtiment de la Ciudad Sagrada peut être construit dans chaque Ciudad Sagrada une fois le dogme "Premier Empire" a été recherché, le second à "Théologie" et le dernier à "Guildes". Ce bâtiment unique ne confère pas de Score d''Ère à la première construction.[NEWLINE][NEWLINE]+0.5 [ICON_Gold] Or +0.5 [ICON_Production] Production par [ICON_Citizen] Citoyen dans la ville.'	),
+     'Bâtiment unique de la Ciudad Sagrada, permettant l''hébergement de villes peuplées productives et plus riches.[NEWLINE][NEWLINE]Pour chaque bâtiment de la Ciudad Sagrada construit dans une ville, -45% [ICON_Production] Production envers ceux restants, qui sont aussi 100% plus chers à acheter.[NEWLINE][NEWLINE]+0.5 [ICON_Gold] Or +0.5 [ICON_Production] Production par [ICON_Citizen] Citoyen dans la ville.'	),
 
 -----------------------------------------------
 -- Civilization Unique Unit
@@ -63,9 +66,9 @@ VALUES
 
 	('en_US',	'LOC_UNIT_RWB_APAQALLINM_NAME',	'Apaq Allinm'	),
 	('en_US',	'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION',	 
-	'Unique religious craftsman of Norte Chico, which is a more expensive replacement of the Apostle with +1 Sight having 1 [ICON_Charges] Build Charge, allowing it to build improvements identical to Builders.'	),
+	'Unique religious craftsman of Norte Chico, which is a more expensive replacement of the Apostle with +1 Sight. It has 1 [ICON_Charges] Build Charge, allowing it to build improvements identical to Builders.'	),
 	('en_US',	'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION',	 
-	'Artisan religieux exclusif au peuple de Norte Chico remplaçant l''Apôtre, disposant de +1 Vision et d''1 [ICON_Charges] Charge de Construction, lui permettant de construire des aménagements identiques aux Bâtisseurs.'	),
+	'Artisan religieux exclusif au peuple de Norte Chico remplaçant l''Apôtre mais plus cher à acheter, disposant de +1 Vision. Il dispose d''1 [ICON_Charges] Charge de Construction, lui permettant de construire des aménagements identiques aux Bâtisseurs.'	),
 
 -----------------------------------------------
 -- Rivers

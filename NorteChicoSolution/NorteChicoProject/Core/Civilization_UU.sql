@@ -1,3 +1,6 @@
+-- Unique religious craftsman of Norte Chico, which is a more expensive replacement of the Apostle with +1 Sight. 
+-- It has 1 [ICON_Charges] Build Charge, allowing it to build improvements identical to Builders.
+
 -----------------------------------------------
 -- Types
 -----------------------------------------------	
@@ -12,7 +15,7 @@ VALUES	('TRAIT_CIVILIZATION_RWB_APAQALLINM',	'KIND_TRAIT'	),
 -----------------------------------------------	
 	
 INSERT OR REPLACE INTO Tags
-		(Tag,						Vocabulary		)
+		(Tag,						    Vocabulary		)
 VALUES	('CLASS_RWB_APAQALLINM',		'ABILITY_CLASS'	);
 
 -----------------------------------------------
@@ -83,7 +86,7 @@ SELECT	'UNIT_RWB_APAQALLINM',	-- UnitType
 		'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION', -- Description
 		'TRAIT_CIVILIZATION_RWB_APAQALLINM', -- TraitType
 		BaseMoves,
-		Cost,
+		Cost+100,
 		PurchaseYield,
 		MustPurchase,
 		AdvisorType,
@@ -110,15 +113,6 @@ FROM	Units
 WHERE	UnitType = 'UNIT_APOSTLE';
 
 -----------------------------------------------
--- UnitUpgrades
------------------------------------------------
-		
-INSERT OR REPLACE INTO UnitUpgrades (Unit,	UpgradeUnit)
-SELECT 	'UNIT_RWB_APAQALLINM',	UpgradeUnit
-FROM 	UnitUpgrades
-WHERE	Unit = 'UNIT_APOSTLE';
-
------------------------------------------------
 -- UnitAiInfos
 -----------------------------------------------
 		
@@ -126,7 +120,9 @@ INSERT OR REPLACE INTO UnitAiInfos (UnitType,	AiType)
 SELECT 	'UNIT_RWB_APAQALLINM',		AiType
 FROM 	UnitAiInfos
 WHERE 	UnitType = 'UNIT_APOSTLE';
-		
+
+INSERT OR REPLACE INTO UnitAiInfos (UnitType, AiType) 
+VALUES ('UNIT_RWB_APAQALLINM','UNITAI_BUILD');
 -----------------------------------------------
 -- UnitReplaces
 -----------------------------------------------

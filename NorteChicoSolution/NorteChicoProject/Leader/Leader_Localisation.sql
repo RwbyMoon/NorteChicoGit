@@ -23,6 +23,15 @@ VALUES
 	('fr_FR',	'LOC_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_NAME',  'Dame aux Quatre Tupus'	),
 	
 -----------------------------------------------
+-- Leader Name
+-----------------------------------------------	
+
+	('en_US',	'LOC_ABILITY_RWB_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT_NAME',          'Exaltation'	),
+	('fr_FR',	'LOC_ABILITY_RWB_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT_NAME',          'Exaltation'	),
+	('en_US',	'LOC_ABILITY_RWB_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT_DESCRIPTION',   '+1 [ICON_Movement] when starting its turn within 2 tiles of a Holy Site.'	),
+	('fr_FR',	'LOC_ABILITY_RWB_ECONOMIA_TEOCRATICA_NISQA_MOVEMENT_DESCRIPTION',   '+1 [ICON_Movement] en commençant son tour à 2 cases d''un Lieu Saint.'	),
+	
+-----------------------------------------------
 -- Leader Unique Ability
 -----------------------------------------------	
 

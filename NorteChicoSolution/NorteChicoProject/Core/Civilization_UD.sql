@@ -143,10 +143,27 @@ INSERT OR REPLACE INTO ModifierArguments
             (ModifierId,                                Name,                       Value)
 VALUES      ('RWB_NORTE_CHICO_UD_GIVE_POPULATION',      'Amount',                   1);
 
-
 ---------------------------------------------------------------------------------------------------------------
 -- DistrictModifiers
 ---------------------------------------------------------------------------------------------------------------
 INSERT OR REPLACE INTO DistrictModifiers
         (DistrictType,                                  ModifierId)
 VALUES  ('DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA',      'RWB_NORTE_CHICO_UD_GIVE_POPULATION');
+
+---------------------------------------------------------------------------------------------------------------
+-- Adjacency_YieldChanges
+---------------------------------------------------------------------------------------------------------------
+INSERT OR REPLACE INTO Adjacency_YieldChanges
+            (ID,                                Description,                                                YieldType,              YieldChange,       AdjacentImprovement    )
+SELECT      'Ciudad_'||a.ImprovementType,       'LOC_CIUDAD_SAGRADA_IMPROVEMENT_ADJACENCY_DESCRIPTION',     'YIELD_FAITH',           '2',               a.ImprovementType       
+FROM Improvements a;
+
+---------------------------------------------------------------------------------------------------------------
+-- District_Adjacencies
+---------------------------------------------------------------------------------------------------------------
+INSERT OR REPLACE INTO District_Adjacencies
+            (DistrictType,                                  YieldChangeId) 
+SELECT      'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA',       'Ciudad_'||a.ImprovementType
+FROM Improvements a;
+
+-- for adjacent improvement.

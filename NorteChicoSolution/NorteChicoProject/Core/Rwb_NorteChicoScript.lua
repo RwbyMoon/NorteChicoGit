@@ -60,6 +60,9 @@ for row in GameInfo.Technologies() do
     tTechEras[iTechType] = iEraType
 end
 
+-----------------------------------------------
+-- CHECK POLICY ERAS
+-----------------------------------------------
 tPolicyEras = {}
 tNumPolicies = 0
 for row in GameInfo.Policies() do
