@@ -76,7 +76,10 @@ VALUES
 
 	('en_US',	'LOC_NAMED_RIVER_RWB_FORTALEZA',	'Fortaleza'		),
 	('en_US',	'LOC_NAMED_RIVER_RWB_PATIVILCA',	'Río Pativilca'	),
-	('en_US',	'LOC_NAMED_RIVER_RWB_SUPE',			'Supe'			),
+	('en_US',	'LOC_NAMED_RIVER_RWB_SUPE',			'Río Supe'			),
+	('en_US',	'LOC_NAMED_RIVER_RWB_ICA',			'Ica'			),
+	('en_US',	'LOC_NAMED_RIVER_RWB_SANTA',		'Río Santa'			),
+	('en_US',	'LOC_NAMED_RIVER_RWB_CHUBUT',		'Río Chubut'			),
 	('en_US',	'LOC_NAMED_RIVER_RWB_HUAURA',		'Río Huaura'	),
 
 
@@ -91,58 +94,71 @@ VALUES
 	('en_US',	'LOC_NAMED_LAKE_RWB_LAGO_SALAR_DE_ARIZARO',		'Lago Salar de Arizaro'	),
 
 -----------------------------------------------
+-- Desert
+-----------------------------------------------
+
+	('en_US',	'LOC_NAMED_DESERT_RWB_WAYRA_DE_SECHURA',			'Wayra de Sechura'			),
+
+-----------------------------------------------
 -- Seas
 -----------------------------------------------
 
-	('en_US',	'LOC_NAMED_SEA_RWB_MAR_DE_GRAU',			'Mar de Grau'			),
+    ('en_US',	'LOC_NAMED_SEA_RWB_MAR_DE_GRAU',			'Mar de Grau'			),
 
 -----------------------------------------------
 -- Mountains
 -----------------------------------------------
 
-	('en_US',	'LOC_NAMED_MOUNTAIN_RWB_CORDILLERA_BLANCA',		 'Cordillera Blanca'		),
-	('en_US',	'LOC_NAMED_MOUNTAIN_RWB_CORDILLERA_HUAYHUASH',	 'Cordillera Huayhuash'		),
-	('en_US',	'LOC_NAMED_MOUNTAIN_RWB_CORDILLERA_VILCANOTA',	 'Cordillera Vilcanota'		),
-	('en_US',	'LOC_NAMED_MOUNTAIN_RWB_CORDILLERA_VILCABAMBA',	 'Cordillera Vilcabamba'	),
-	('en_US',	'LOC_NAMED_MOUNTAIN_RWB_CORDILLERA_APOLOBAMBA',	 'Cordillera Apolobamba'	),
+	('en_US',	'LOC_NAMED_MOUNTAIN_RWB_CORDILLERA_ANDES',		    'Cordillera Andes'		),
+	('en_US',	'LOC_NAMED_MOUNTAIN_RWB_CERRO_BLANCO',	            'Cerro Blanco'		),
+	('en_US',	'LOC_NAMED_MOUNTAIN_RWB_CERRO_MORRO_SOLAR',	        'Cerro Morro Solar'		),
+	('en_US',	'LOC_NAMED_MOUNTAIN_RWB_CERRO_EL_TORO',	            'Cerro el Toro'	),
+	('en_US',	'LOC_NAMED_MOUNTAIN_RWB_CERRO_DE_PASCO',	        'Cerro de Pasco'	),
 
 -----------------------------------------------
 -- Volcanoes
 -----------------------------------------------
 
-	('en_US',	'LOC_NAMED_VOLCANO_RWB_HUAYNAPUTINA',	'Huaynaputina'		),
-	('en_US',	'LOC_NAMED_VOLCANO_RWB_YUCAMANE',		'Yucamane'			),
-	('en_US',	'LOC_NAMED_VOLCANO_RWB_TUTUPACA',		'Tutupaca'			),
-	('en_US',	'LOC_NAMED_VOLCANO_RWB_AMPATO',			'Ampato'			),
-	('en_US',	'LOC_NAMED_VOLCANO_RWB_COROPUNA',		'Coropuna'			),
-	('en_US',	'LOC_NAMED_VOLCANO_RWB_SOLIMANA',		'Solimana'			),
-	('en_US',	'LOC_NAMED_VOLCANO_RWB_AUQUIHUATO',		'Auquihuato'		),
-	('en_US',	'LOC_NAMED_VOLCANO_RWB_SABANCAYA',		'Sabancaya'			),
-	('en_US',	'LOC_NAMED_VOLCANO_RWB_SARASARA',		'Sara Sara'			),
-	('en_US',	'LOC_NAMED_VOLCANO_RWB_PURUPURUNI',		'Purupuruni'		),
-	('en_US',	'LOC_NAMED_VOLCANO_RWB_TICSANI',		'Ticsani'			),
-	('en_US',	'LOC_NAMED_VOLCANO_RWB_UBINAS',			'Ubinas'			),
-	('en_US',	'LOC_NAMED_VOLCANO_RWB_MISTI',			'Misti'				),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_BARROSO',	'Volcán Barroso'		),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_CHIMBOTE',	'Volcán Chimbote'			),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_SANPEDRO',	'Volcán San Pedro'			),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_SABANCAYA',	'Volcán Sabancaya'			),
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_HUARMEY',	'Volcán Huarmey'			);
 
 -----------------------------------------------
 -- Cities
 -----------------------------------------------
 
-	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_1',  'San Lorenzo'),
-	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_2',  'La Velta'),
-	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_3',  'Potrero Nuevo'),
-	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_4',  'San Andrés'),
-	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_5',  'Cobata'),
-	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_6',  'Llano del Jicaro'),
-	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_7',  'San Martin Pajapan'),
-	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_8',  'Arroyo Sonso'),
-	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_9',  'Las Limas'),
-	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_10',  'El Manati'),
-	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_11',  'Cascajal'),
-	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_12',  'Jilotepeque'),
-	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_13',  'Pequeno Lorenzo'),
-	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_14',  'Jicaro Nuevo'),
-	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_15',  'Limas del Nuevo'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_1',  'Caral'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_2',  'Huaricanga'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_3',  'Áspero'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_4',  'Vichama'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_5',  'Chupacigarro'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_6',  'Miraya'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_7',  'Lurihuasi'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_8',  'Bandurria'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_9',  'Sechín'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_10',  'Vinto Alto'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_11',  'Allpacoto'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_12',  'Pueblo Nuevo'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_13',  'Cerro Colorado'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_14',  'La Yerba'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_15',  'Huaural'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_16',  'Llapta'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_17',  'Era de Pando'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_18',  'Peñico'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_19',  'Piedra Parada'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_20',  'Huacache'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_21',  'El Molino'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_22',  'Huayto'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_23',  'Upaca'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_24',  'Cerro Blanco'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_25',  'Cerro Colorado'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_26',  'Jaiva'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_27',  'Pando'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_28',  'Liman'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_29',  'Capilla'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_30',  'Capilla'),
 	
 -----------------------------------------------
 -- Citizens
@@ -150,26 +166,26 @@ VALUES
 -- Defines the text strings to be used for the names of citizens by the custom civilization, that were defined in Civilization_Config.sql.
 -----------------------------------------------
 	
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_1',		'Ikal'		),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_2',		'Tanok'		),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_3',		'Kabil'		),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_4',		'Kasakir'	),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_5',		'Irepani'	),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_6',		'Iktan'		),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_7',		'Seneca'	),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_8',		'Tlayolotl'	),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_9',		'Rahui'		),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_10',		'Tsijiari'	),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_1',	'Ajaniame'	),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_2',	'Taiyari'	),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_3',	'Shanarani'	),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_4',	'Erendirani'),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_5',	'Soona'		),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_6',	'Yatzil'	),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_7',	'Nakawe'	),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_8',	'Inda Jani'	),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_9',	'Axochitl'	),
-	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_10',	'Sesasi'	),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_1',	'Asiri'		),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_2',	'Achiq'		),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_3',	'Chawpi'		),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_4',	'Inkill'	),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_5',	'Kallpa'	),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_6',	'Pacha'		),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_7',	'Qoyllor'	),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_8',	'Sumaq'	),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_9',	'Tinku'		),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_MALE_10',	'Yachay'	),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_1',	'Urpi '	),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_2',	'Illary '	),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_3',	'Killa'	),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_4',	'Mayu'),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_5',	'Nayaraq'		),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_6',	'Saywa'	),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_7',	'Chaska'	),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_8',	'Kayara'	),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_9',	'Llaksa'	),
+	('en_US',	'LOC_CITIZEN_RWB_NORTECHICO_FEMALE_10',	'Phallcha'	),
 	
 -----------------------------------------------
 -- Info
@@ -180,9 +196,9 @@ VALUES
 -----------------------------------------------
 
 	('en_US',	'LOC_CIVINFO_RWB_NORTECHICO_LOCATION',		'Mesoamerica'		),
-	('en_US',	'LOC_CIVINFO_RWB_NORTECHICO_SIZE',			'2.3 million km²'	),
-	('en_US',	'LOC_CIVINFO_RWB_NORTECHICO_POPULATION',		'c. 14 million'		),
-	('en_US',	'LOC_CIVINFO_RWB_NORTECHICO_CAPITAL',			'San Lorenzo'		),
+	('en_US',	'LOC_CIVINFO_RWB_NORTECHICO_SIZE',			'c 2.000 km²'	),
+	('en_US',	'LOC_CIVINFO_RWB_NORTECHICO_POPULATION',	'c. 88 thousands'		),
+	('en_US',	'LOC_CIVINFO_RWB_NORTECHICO_CAPITAL',		'Caral'		),
 
 -----------------------------------------------
 -- Civilopedia

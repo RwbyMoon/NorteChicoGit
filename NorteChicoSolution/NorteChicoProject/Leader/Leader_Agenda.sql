@@ -132,7 +132,7 @@ INSERT OR REPLACE INTO ModifierArguments
 			(ModifierId,							Name,							Value												)
 VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'InitialValue',					-5													),
 			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'IncrementValue',				-1													),
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'IncrementTurns',				-10													),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'IncrementTurns',				10													),
 			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'MaxValue',						-25													),
 			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'StatementKey',					'LOC_DIPLO_WARNING_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_ANY'	),
 			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'SimpleModifierDescription',	'LOC_DIPLO_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY'				),
