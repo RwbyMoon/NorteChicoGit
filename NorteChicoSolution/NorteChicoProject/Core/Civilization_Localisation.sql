@@ -64,7 +64,7 @@ VALUES
 -- Civilization Unique Unit
 -----------------------------------------------
 
-	('en_US',	'LOC_UNIT_RWB_APAQALLINM_NAME',	'Apaq Allinm'	),
+	('en_US',	'LOC_UNIT_RWB_APAQALLINM_NAME',	'Apaq Allinmi'	),
 	('en_US',	'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION',	 
 	'Unique religious craftsman of Norte Chico, which is a more expensive replacement of the Apostle with +1 Sight. It has 1 [ICON_Charges] Build Charge, allowing it to build improvements identical to Builders.'	),
 	('en_US',	'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION',	 
@@ -123,7 +123,7 @@ VALUES
 	('en_US',	'LOC_NAMED_VOLCANO_RWB_CHIMBOTE',	'Volcán Chimbote'			),
 	('en_US',	'LOC_NAMED_VOLCANO_RWB_SANPEDRO',	'Volcán San Pedro'			),
 	('en_US',	'LOC_NAMED_VOLCANO_RWB_SABANCAYA',	'Volcán Sabancaya'			),
-	('en_US',	'LOC_NAMED_VOLCANO_RWB_HUARMEY',	'Volcán Huarmey'			);
+	('en_US',	'LOC_NAMED_VOLCANO_RWB_HUARMEY',	'Volcán Huarmey'			),
 
 -----------------------------------------------
 -- Cities
@@ -158,7 +158,7 @@ VALUES
 	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_27',  'Pando'),
 	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_28',  'Liman'),
 	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_29',  'Capilla'),
-	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_30',  'Capilla'),
+	('en_US',	'LOC_CITY_NAME_RWB_NORTECHICO_30',  'Quebrada Viña'),
 	
 -----------------------------------------------
 -- Citizens
@@ -213,33 +213,46 @@ VALUES
 -----------------------------------------------
 
 	('en_US',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_1',		
-	'The Olmecs were the earliest known major Mesoamerican civilization. Following a progressive development in Soconusco, they occupied the tropical lowlands of the modern-day Mexican states of Veracruz and Tabasco. It has been speculated that the Olmecs derived in part from the neighboring Mokaya or Mixe–Zoque cultures.'),	
+	'The Norte Chico civilization, also known as Caral, was one of the oldest civilizations in the Americas, flourishing on the coast of Peru between approximately 3500 BC and 1800 BC. It developed in the Supe Valley, characterized by its arid landscape. Norte Chico is renowned for its pioneering role in the emergence of complex societies in South America, especially from a technical, architectural and societal standpoint.'),	
 	('en_US',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_2',		
-	'The Olmecs flourished during the Mesoamerican formative period, dating roughly from as early as 1500 BCE to about 400 BCE. Pre-Olmec cultures had flourished since about 2500 BCE, but by 1600–1500 BCE, early Olmec culture had emerged, centered on the San Lorenzo Tenochtitlan site near the coast in southeast Veracruz. They were the first Mesoamerican civilization, and laid many of the foundations for the civilizations that followed. Among other "firsts", the Olmec appeared to practice ritual bloodletting and played the Mesoamerican ballgame, hallmarks of nearly all subsequent Mesoamerican societies. The aspect of the Olmecs most familiar now is their artwork, particularly the aptly named "colossal heads". The Olmec civilization was first defined through artifacts which collectors purchased on the pre-Columbian art market in the late 19th century and early 20th century. Olmec artworks are considered among ancient America`s most striking.'),	
+	'It had cotton as a crucial element of their economy and craftsmanship. Archaeological excavations at various sites, particularly at Caral (the site), have unearthed evidence of cotton cultivation, weaving, and textile production. Cotton textiles were essential for their daily life and were likely traded with neighboring cultures. More largely, agriculture played a foundational role, serving both as a source of sustenance and as the linchpin of their trade networks.'),	
 	('en_US',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_3',	
-	'The Olmec heartland is the area in the Gulf lowlands where it expanded after early development in Soconusco, Veracruz. This area is characterized by swampy lowlands punctuated by low hills, ridges, and volcanoes. The Tuxtlas Mountains rise sharply in the north, along the Bay of Campeche. Here, the Olmec constructed permanent city-temple complexes at San Lorenzo Tenochtitlan, La Venta, Tres Zapotes, and Laguna de los Cerros. In this region, the first Mesoamerican civilization emerged and reigned from c. 1400–400 BCE.'),
+	'Craftsmanship was central to the prosperity of the Norte Chico civilization, which exhibited technological advancements that are remarkable. Their creations and technological elements, such as the Chicras building technique, Quipus, and Huancas, represent their ingenuity and adaptability. This is especially surprising since it is a Preceramic culture.'),
 	('en_US',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_4',	
-	'Origins'),
+	'The chicras (or shicras) building technique was a unique method employed by the Norte Chico people. They used plant-fiber sacks filled with stone blocks (of adobe, for example) to construct major structures, particularly temple platforms. This technique provided stability and resilience against natural disasters, creating anti-seismic infrastructures.'),
 	('en_US',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_5',	
-	'The beginnings of Olmec civilization have traditionally been placed between 1400 and 1200 BCE. Past finds of Olmec remains ritually deposited at El Manati shrine (near San Lorenzo) moved this back to at least 1600–1500 BCE. It seems that the Olmec had their roots in early farming cultures of Tabasco, which began between 5100 BCE and 4600 BCE. These shared the same basic food crops and technologies of the later Olmec civilization.'),
+	'However, the culture’s data and numerary consignment was peculiar, as they (as far as we know) created the Quipu system of knots and ropes to do so. It served multiple purposes, including communication, language, finances, mathematics, and data management. This innovative approach exploited agriculture and plants to record and manage information effectively – as the predecessors of their most known users : the  Incas, and not shy of thousands of years before them.'),
 	('en_US',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_6',	
-	'What is today called Olmec first appeared fully within the city of San Lorenzo Tenochtitlan, where distinctive Olmec features occurred around 1400 BCE. The rise of civilization was assisted by the local ecology of well-watered alluvial soil, as well as by the transportation network provided by the Coatzacoalcos River basin. This environment may be compared to that of other ancient centers of civilization: the Nile, Indus, and Yellow River valleys, and Mesopotamia. This highly productive environment encouraged a densely concentrated population, which in turn triggered the rise of an elite class. The elite class created the demand for the production of the symbolic and sophisticated luxury artifacts that define Olmec culture. Many of these luxury artifacts were made from materials such as jade, obsidian, and magnetite, which came from distant locations and suggest that early Olmec elites had access to an extensive trading network in Mesoamerica. The source of the most valued jade was the Motagua River valley in eastern Guatemala, and Olmec obsidian has been traced to sources in the Guatemala highlands, such as El Chayal and San Martin Jilotepeque, or in Puebla, distances ranging from 200 to 400 km (120–250 miles) away, respectively.'),
+	'Massive monoliths known as Huancas were used in Norte Chico for astronomical and belief purposes. They took on various morphologies and functions, serving as representations of sacrality and reflecting animistic beliefs prevalent in the culture. One of the most known of them is the one at Caral, at the top of one of its pyramids, even though they are spread out around most Andean civilizations.'),
 	('en_US',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_7',	
-	'The state of Guerrero, and in particular its early Mezcala culture, seem to have played an important role in the early history of Olmec culture. Olmec-style artifacts tend to appear earlier in some parts of Guerrero than in the Veracruz-Tabasco area. In particular, the relevant objects from the Amuco-Abelino site in Guerrero reveal dates as early as 1530 BCE. The city of Teopantecuanitlan in Guerrero is also relevant in this regard.'),
+	'Caral, a major site of the Norte Chico civilization, is considered a sacred city due to the numerous religious artifacts discovered within it. Religion played a central role in this civilization, exerting cohesion and coercive power. The state established control over its people by focusing on the production and circulation of goods for religious constructions, such as temples, pyramids, atriums, and altars.'),
 	('en_US',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_8',	
-	'La Venta'),
+	'This theoretical theocracy also makes sense with the maintenance of a ceremonial calendar that facilitated temple construction and renovation. In comparison to other preceramic Andean cultures, Caral stood out with its massive architecture, especially in its temples, and its high population density, which were defining features of this ancient civilization.'),
 	('en_US',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_9',	
-	'The first Olmec center, San Lorenzo, was all but abandoned around 900 BCE at about the same time that La Venta rose to prominence. A wholesale destruction of many San Lorenzo monuments also occurred circa 950 BCE, which may indicate an internal uprising or, less likely, an invasion. The latest thinking, however, is that environmental changes may have been responsible for this shift in Olmec centers, with certain important rivers changing course.'),
+	'The Norte Chico civilization engaged in trade between craftsmanship and agricultural products. The archetypal example of the city of Caral traded cotton and fishing nets made of it, contributing to their sustenance. This exchange extended to cultural elements as well, like music instruments made from foreign shells or bones, indicating a thriving culture of trade and cultural exchange.'),
 	('en_US',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_10',	
-	'In any case, following the decline of San Lorenzo, La Venta became the most prominent Olmec center, lasting from 900 BCE until its abandonment around 400 BCE. La Venta sustained the Olmec cultural traditions with spectacular displays of power and wealth. The Great Pyramid was the largest Mesoamerican structure of its time. Even today, after 2500 years of erosion, it rises 34 m (112 ft) above the naturally flat landscape. Buried deep within La Venta lay opulent, labor-intensive "offerings" – 1000 tons of smooth serpentine blocks, large mosaic pavements, and at least 48 separate deposits of polished jade celts, pottery, figurines, and hematite mirrors.'),
-	('en_US',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_11',	
-	'Decline'),
-	('en_US',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_12',	
-	'Scholars have yet to determine the cause of the eventual extinction of the Olmec culture. Between 400 and 350 BCE, the population in the eastern half of the Olmec heartland dropped precipitously, and the area was sparsely inhabited until the 19th century. According to archaeologists, this depopulation was probably the result of "very serious environmental changes that rendered the region unsuited for large groups of farmers", in particular changes to the riverine environment that the Olmec depended upon for agriculture, hunting and gathering, and transportation. These changes may have been triggered by tectonic upheavals or subsidence, or the silting up of rivers due to agricultural practices.'),
-	('en_US',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_13',	
-	'One theory for the considerable population drop during the Terminal Formative period is that the Olmec relocated their settlements due to volcanism, instead of suffering from extinction. Volcanic eruptions during the Early, Late and Terminal Formative periods would have blanketed the lands and forced the Olmec to move their settlements.'),
-	('en_US',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_14',	
-	'Whatever the cause, within a few hundred years of the abandonment of the last Olmec cities, successor cultures became firmly established. The Tres Zapotes site, on the western edge of the Olmec heartland, continued to be occupied well past 400 BCE, but without the hallmarks of the Olmec culture. This post-Olmec culture, often labeled Epi-Olmec, has features similar to those found at Izapa, some 550 km (330 miles) to the southeast.'),
+	'For instance, music held a significant cultural position in Norte Chico. The abundance of foreign materials used in crafting musical instruments suggests both the presence and influence of music. It was not just an art form but also a medium for cultural exchange.'),
+
+	('fr_FR',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_1',		
+	'La civilisation du Norte Chico, également connue sous le nom de Caral, est l''une des plus anciennes civilisations des Amériques. Elle s''est épanouie sur la côte du Pérou entre environ 3500 et 1800 av. Elle s''est développée dans la vallée de Supe, caractérisée par un paysage aride. Le Norte Chico est réputé pour son rôle de pionnier dans l''émergence de sociétés complexes en Amérique du Sud, notamment d''un point de vue technique, architectural et sociétal.'),	
+	('fr_FR',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_2',		
+	'Le coton était un élément essentiel de leur économie et de leur artisanat. Les fouilles archéologiques menées sur différents sites, notamment à Caral (le site), ont mis au jour des traces de culture du coton, de tissage et de production textile. Les textiles de coton étaient essentiels à leur vie quotidienne et faisaient probablement l''objet d''échanges avec les cultures voisines. Plus largement, l''agriculture a joué un rôle fondamental, servant à la fois de source de subsistance et de pivot de leurs réseaux commerciaux.'),	
+	('fr_FR',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_3',	
+	'L''artisanat était au cœur de la prospérité de la civilisation de Norte Chico, qui a fait preuve d''avancées technologiques remarquables. Leurs créations et approches de conception, tels que la technique de construction des Chicras, les Quipus et les Huancas, témoignent de leur ingéniosité et de leur capacité d''adaptation.Ceci est d''autant plus surprenant qu''il s''agit d''une culture précéramique.'),
+	('fr_FR',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_4',	
+	'La technique de construction des chicras (ou shicras) était une méthode unique employée par les habitants de Norte Chico. Ils utilisaient des sacs de fibres végétales remplis de blocs de pierre (d''adobe, par exemple) pour construire des structures importantes, en particulier des plates-formes de temples.'),
+	('fr_FR',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_5',	
+	'Cependant, les données et la consignation numérique de cette culture étaient particulières, puisqu''ils ont (pour autant que nous le sachions) créé le système de nœuds et de cordes Quipu pour ce faire. Ce système avait de multiples fonctions, notamment la communication, le langage, les finances, les mathématiques et la gestion des données.'),
+	('fr_FR',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_6',	
+	'Cette approche innovante a exploité l''agriculture et les plantes pour enregistrer et gérer efficacement les informations, comme l''ont fait les prédécesseurs de leurs utilisateurs les plus connus : les Incas, et non moins de milliers d''années avant eux. Les monolithes massifs connus sous le nom de Huancas étaient utilisés dans le Norte Chico à des fins astronomiques et de croyance. Ils ont pris diverses morphologies et fonctions, servant de représentations de la sacralité et reflétant les croyances animistes qui prévalaient dans la culture.'),
+	('fr_FR',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_7',	
+	'Caral, site majeur de la civilisation du Norte Chico, est considérée comme une ville sacrée en raison des nombreux artefacts religieux qui y ont été découverts. La religion a joué un rôle central dans cette civilisation, exerçant un pouvoir de cohésion et de coercition.'),
+	('fr_FR',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_8',	
+	'Cette théocratie théorique se justifie également par le maintien d''un calendrier cérémoniel qui facilite la construction et la rénovation des temples. Par rapport aux autres cultures précéramiques andines, Caral se distingue par son architecture massive, en particulier dans ses temples, et par sa forte densité de population, qui sont des caractéristiques déterminantes de cette ancienne civilisation.'),
+	('fr_FR',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_9',	
+	'La civilisation du Norte Chico pratiquait le commerce entre l''artisanat et les produits agricoles. L''archétype de la ville de Caral échangeait du coton et des filets de pêche en coton, contribuant ainsi à leur subsistance. Cet échange s''étendait également aux éléments culturels, comme les instruments de musique fabriqués à partir de coquillages ou d''os étrangers, ce qui témoigne d''une culture florissante en matière de commerce et d''échanges culturels.'),
+	('fr_FR',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_NORTECHICO_CHAPTER_HISTORY_PARA_10',	
+	'La musique, par exemple, occupait une place importante dans la culture du Norte Chico. L''abondance de matériaux étrangers utilisés dans la fabrication d''instruments de musique suggère à la fois la présence et l''influence de la musique. Elle n''était pas seulement une forme d''art, mais aussi un moyen d''échange culturel.'),
 
 	-----------------------------------------------
 -- Unique Unit Civilopedia Entry
@@ -256,6 +269,8 @@ VALUES
 -- The total number of paragraphs defined is entirely optional - this can be extended/shortened as required.
 -----------------------------------------------
 
-	('en_US',	'LOC_PEDIA_UNITS_PAGE_UNIT_RWB_NORTECHICO_UU_CHAPTER_HISTORY_PARA_1',  	
-	'The Olmecs first used warfare to expand trade and access to resources. Fighters from the Olmec city of San Lorenzo utilized obsidian-edged weapons. Sleight of hand and nimble of foot, they wore carved masks to intimidate their foes.'	);
+	('en_US',	'LOC_PEDIA_UNITS_PAGE_UNIT_RWB_NORTECHICO_UU_CHAPTER_HISTORY_PARA_1',
+	 'Norte Chico sites held no trace of warmongering nor weaponry -- probably meaning that either war wasn''t something they practiced or there are no traces of it. Whatever the truth is, the civilization of Norte Chico is marked by its two-headed people : Religious and Craftsmen. Apaq Allinmis can be translated as "Bearers of Success", as faith-fueled craftsmen whose presence preaches and spreads good word while helping the common effort toward infrastructures.'	),
+    ('fr_FR',	'LOC_PEDIA_UNITS_PAGE_UNIT_RWB_NORTECHICO_UU_CHAPTER_HISTORY_PARA_1',
+    'Les sites de Norte Chico ne présentent aucune trace de guerre ni d''armement, ce qui signifie probablement que la guerre n''était pas pratiquée ou qu''il n''y a plus aucune trace de celle-ci de traces de guerre. Quoi qu''il en soit, la civilisation du Norte Chico se caractérise par un peuple bicéphale : Les religieux et les artisans. Apaq Allinmis peut se traduire par "Porteurs de Succès", des artisans animés par la foi dont la présence prêche et répand la bonne parole tout en participant à l''effort commun vers les infrastructures locales.'	);
 

@@ -31,7 +31,7 @@ INSERT OR REPLACE INTO Buildings
 -- Huenca
 VALUES	('BUILDING_RWB_NORTECHICO_HUENCA',						-- BuildingType
           'LOC_BUILDING_RWB_NORTECHICO_HUENCA_NAME',			-- BuildingType
-          120,
+          150,
           --'CIVIC_CODE_OF_LAWS',
           'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA',
           'LOC_BUILDING_RWB_NORTECHICO_HUENCA_DESCRIPTION',		-- Description
@@ -42,7 +42,7 @@ VALUES	('BUILDING_RWB_NORTECHICO_HUENCA',						-- BuildingType
 -- Sunken Plaza
           ('BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA',						-- BuildingType
            'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_NAME',			-- BuildingType
-           120,
+           150,
            --'CIVIC_CODE_OF_LAWS',
            'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA',
            'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_DESCRIPTION',		-- Description
@@ -54,7 +54,7 @@ VALUES	('BUILDING_RWB_NORTECHICO_HUENCA',						-- BuildingType
 -- Piramide
           ('BUILDING_RWB_NORTECHICO_PIRAMIDE',						-- BuildingType
            'LOC_BUILDING_RWB_NORTECHICO_PIRAMIDE_NAME',			-- BuildingType
-           120,
+           150,
            --'CIVIC_CODE_OF_LAWS',
            'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA',
            'LOC_BUILDING_RWB_NORTECHICO_PIRAMIDE_DESCRIPTION',		-- Description
@@ -100,6 +100,11 @@ VALUES             ('RWB_NORTECHICO_BONUS_ADDITIONNAL_CULTURE_GREATWORKOBJECT_MU
 -- arguments : GreatWorkObjectType (ex : GREATWORKOBJECT_WRITING) | YieldType (ex : YIELD_GOLD) | YieldChange (ex : 4)
 
 
+
+-- faire un modifier avec MODIFIER_PLAYER_CITIES_ADJUST_ALL_PROJECTS_PRODUCTION à donner en traittype
+-- REQSET SUB
+-- REQ à faire : REQUIREMENT_CITY_HAS_BUILDING
+-- arg: BuildingType : BUILDING_RWB_NORTECHICO_HUENCA
 
 
 -- +1 Gold & Prod per Pop
