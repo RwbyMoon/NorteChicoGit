@@ -46,7 +46,7 @@ VALUES
 	('en_US',	'LOC_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS_NAME',	'Steward of the Sacred City'	),
 	('en_US',	'LOC_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS_DESCRIPTION',	'Will try to build up large and productive cities with religious infrastructure. Considers trading allies with appreciation in addition to those sharing the same amount of holy investment, but dislikes those with a large standing army and even more those warmongering with it.'	),
 	('fr_FR',	'LOC_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS_NAME',	'Intendante de la Cité Sacrée'	),
-	('fr_FR',	'LOC_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS_DESCRIPTION',	'Essaie de construire des grandes villes productives disposant d''infrastructure religieuse. Considère avec appréciation ceux qui envoient des routes commerciales vers ses villes ainsi que ceux égalant son investissement religieux, mais n''apprécie pas les dirigeants avec une grande force militaire et encore moins ceux en guerre.'	),
+	('fr_FR',	'LOC_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS_DESCRIPTION',	'Essaie de construire des grandes villes productives disposant d''infrastructure religieuse. Considère avec appréciation ceux qui envoient des routes commerciales vers ses villes ainsi que ceux égalant son investissement religieux, mais n''apprécie pas les dirigeants avec une grande force militaire et encore moins ceux aussi en guerre.'	),
 	
 	('en_US',	'LOC_DIPLO_KUDO_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_ANY',	'(You have religious infrastructure and are trading with them.)'	),
 	('en_US',	'LOC_DIPLO_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',	'me happi'	),

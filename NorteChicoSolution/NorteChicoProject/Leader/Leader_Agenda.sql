@@ -71,7 +71,7 @@ VALUES 		('LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	'AGENDA_RWB_LADY_OF_THE_FOUR_TUPU
 
 INSERT OR REPLACE INTO ExclusiveAgendas
 			(AgendaOne,				AgendaTwo					)
-VALUES 		('AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',	'AGENDA_INDUSTRIALIST'		);
+VALUES 		('AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',	'AGENDA_POPULOUS'		);
 
 -----------------------------------------------
 -- TraitModifiers
