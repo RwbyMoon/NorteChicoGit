@@ -38,6 +38,11 @@ VALUES		(
 -----------------------------------------------
 -- NamedRivers
 -----------------------------------------------
+CREATE TABLE IF NOT EXISTS NamedRivers 
+    (
+        NamedRiverType TEXT,
+        Name TEXT
+    );
 
 REPLACE INTO NamedRivers
 		(NamedRiverType,								Name											)
@@ -52,6 +57,11 @@ VALUES	('NAMED_RIVER_RWB_FORTALEZA',					'LOC_NAMED_RIVER_RWB_FORTALEZA'					),
 -----------------------------------------------
 -- NamedRiverCivilizations
 -----------------------------------------------
+CREATE TABLE IF NOT EXISTS NamedRiverCivilizations
+(
+    CivilizationType TEXT,
+    NamedRiverType TEXT
+);
 
 INSERT INTO NamedRiverCivilizations
 		(CivilizationType,								NamedRiverType									)
@@ -66,6 +76,11 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',					'NAMED_RIVER_RWB_FORTALEZA'						),
 -----------------------------------------------
 -- NamedLakes
 -----------------------------------------------
+CREATE TABLE IF NOT EXISTS NamedLakes
+(
+    NamedLakeType TEXT,
+    Name TEXT
+);
 
 REPLACE INTO NamedLakes
 		(NamedLakeType,									Name											)
@@ -78,6 +93,11 @@ VALUES	('NAMED_LAKE_RWB_WINAYMARKA',					'LOC_NAMED_LAKE_RWB_WINAYMARKA'					),
 -----------------------------------------------
 -- NamedLakeCivilizations
 -----------------------------------------------
+CREATE TABLE IF NOT EXISTS NamedLakeCivilizations
+(
+    CivilizationType TEXT,
+    NamedLakeType TEXT
+);
 
 INSERT INTO NamedLakeCivilizations
 		(CivilizationType,								NamedLakeType									)
@@ -91,14 +111,24 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',					'NAMED_LAKE_LAKE_TITIQAQA'						),
 -----------------------------------------------
 -- NamedSeas
 -----------------------------------------------
+CREATE TABLE IF NOT EXISTS NamedSeas
+(
+    NamedSeaType TEXT,
+    Name TEXT
+);
 
-REPLACE INTO NamedSea
+REPLACE INTO NamedSeas
 		(NamedSeaType,									Name											)
 VALUES	('NAMED_SEA_RWB_MAR_DE_GRAU',					'LOC_NAMED_SEA_RWB_MAR_DE_GRAU'					);
 
 -----------------------------------------------
 -- NamedSeaCivilizations
 -----------------------------------------------
+CREATE TABLE IF NOT EXISTS NamedSeaCivilizations
+(
+    CivilizationType TEXT,
+    NamedSeaType TEXT
+);
 
 INSERT INTO NamedSeaCivilizations
 		(CivilizationType,								NamedSeaType									)
@@ -107,6 +137,11 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',					'NAMED_SEA_RWB_MAR_DE_GRAU'						);
 -----------------------------------------------
 -- NamedDesert
 -----------------------------------------------
+CREATE TABLE IF NOT EXISTS NamedDeserts
+(
+    NamedDesertType TEXT,
+    Name TEXT
+);
 
 REPLACE INTO NamedDeserts
         (NamedDesertType,								Name											)
@@ -115,6 +150,11 @@ VALUES	('NAMED_DESERT_SECHURA',		            'LOC_NAMED_DESERT_RWB_WAYRA_DE_SECH
 -----------------------------------------------
 -- NamedDesertCivilizations
 -----------------------------------------------
+CREATE TABLE IF NOT EXISTS NamedDesertCivilizations
+(
+    CivilizationType TEXT,
+    NamedDesertType TEXT
+);
 
 INSERT INTO NamedDesertCivilizations
 		(CivilizationType,								NamedDesertType									)
@@ -124,6 +164,11 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',					'NAMED_DESERT_ATACAMA'							),
 -----------------------------------------------
 -- NamedMountains
 -----------------------------------------------
+CREATE TABLE IF NOT EXISTS NamedMountains
+(
+    NamedMountainType TEXT,
+    Name TEXT
+);
 
 REPLACE INTO NamedMountains
 		(NamedMountainType,								Name											)
@@ -136,6 +181,11 @@ VALUES	('NAMED_MOUNTAIN_RWB_CORDILLERA_ANDES',		    'LOC_NAMED_MOUNTAIN_RWB_CORD
 -----------------------------------------------
 -- NamedMountainCivilizations
 -----------------------------------------------
+CREATE TABLE IF NOT EXISTS NamedMountainCivilizations
+(
+    CivilizationType TEXT,
+    NamedMountainType TEXT
+);
 
 INSERT INTO NamedMountainCivilizations
 		(CivilizationType,								NamedMountainType								)
@@ -148,6 +198,11 @@ VALUES	('CIVILIZATION_RWB_NORTECHICO',					'NAMED_MOUNTAIN_RWB_CORDILLERA_ANDES'
 -----------------------------------------------
 -- NamedVolcanoes
 -----------------------------------------------
+CREATE TABLE IF NOT EXISTS NamedVolcanoes
+(
+    NamedVolcanoType TEXT,
+    Name TEXT
+);
 
 REPLACE INTO NamedVolcanoes
 		(NamedVolcanoType,								Name											)
@@ -160,14 +215,19 @@ VALUES	('NAMED_VOLCANO_RWB_BARROSO',					'LOC_NAMED_VOLCANO_RWB_BARROSO'				),
 -----------------------------------------------
 -- NamedVolcanoCivilizations
 -----------------------------------------------
+CREATE TABLE IF NOT EXISTS NamedVolcanoCivilizations
+(
+    CivilizationType TEXT,
+    NamedVolcanoType TEXT
+);
 
 INSERT INTO NamedVolcanoCivilizations
 		(CivilizationType,								NamedVolcanoType							)
-VALUES	('CIVILIZATION_RWB_NORTECHICO',					'LOC_NAMED_VOLCANO_RWB_BARROSO'				),
-		('CIVILIZATION_RWB_NORTECHICO',					'LOC_NAMED_VOLCANO_RWB_CHIMBOTE'			),
-		('CIVILIZATION_RWB_NORTECHICO',					'LOC_NAMED_VOLCANO_RWB_SANPEDRO'			),
-		('CIVILIZATION_RWB_NORTECHICO',					'LOC_NAMED_VOLCANO_RWB_SABANCAYA'			),
-		('CIVILIZATION_RWB_NORTECHICO',					'LOC_NAMED_VOLCANO_RWB_HUARMEY'				);
+VALUES	('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_BARROSO'				),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_CHIMBOTE'			),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_SANPEDRO'			),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_SABANCAYA'			),
+		('CIVILIZATION_RWB_NORTECHICO',					'NAMED_VOLCANO_RWB_HUARMEY'				);
 
 --------
 ---MC---

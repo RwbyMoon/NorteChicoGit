@@ -71,7 +71,7 @@ VALUES	('TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA',    'RWB_NORTECHICO_NEGA
 -----------------------------------------------
 -- Modifiers
 -----------------------------------------------
--- BONUS CHARGES (these 3 are the core ones I've seen and anticipated)
+-- BONUS CHARGES
 INSERT OR REPLACE INTO Modifiers
             (ModifierId,
              ModifierType,
@@ -97,7 +97,7 @@ INSERT OR REPLACE INTO Modifiers
 VALUES  ('RWB_NORTECHICO_BUILDER_PRODUCTION_COST_MALUS',    'MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION',         null),
         ('RWB_NORTECHICO_BUILDER_PURCHASE_COST_MALUS',      'MODIFIER_PLAYER_CITIES_ADJUST_UNIT_PURCHASE_COST',     null);
 
--- CANCEL CHARGES
+-- CANCEL CHARGES (these 3 are the core ones I've seen and anticipated)
 INSERT OR REPLACE INTO Modifiers
 (ModifierId,
  ModifierType,
@@ -126,6 +126,11 @@ SELECT      a.PolicyType,
             'RWB_BUILD_CHARGE_FROM_ECO_POLICY_AMOUNT_'||a.PolicyType
 FROM Policies a WHERE GovernmentSlotType = 'SLOT_ECONOMIC';
 
+CREATE TABLE IF NOT EXISTS GovernorPromotionModifiers
+(
+    GovernorPromotionType TEXT,
+    ModifierId         TEXT
+);
 
 -- Governors (these 3 are the core ones I've seen and anticipated for the cancel)
 INSERT OR REPLACE INTO GovernorPromotionModifiers
