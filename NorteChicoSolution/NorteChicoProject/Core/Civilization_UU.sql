@@ -7,8 +7,8 @@
 	
 INSERT OR REPLACE INTO Types
 		(Type,									Kind			)
-VALUES	('TRAIT_CIVILIZATION_RWB_APAQALLINM',	'KIND_TRAIT'	),
-		('UNIT_RWB_APAQALLINM',					'KIND_UNIT'		);
+VALUES	('TRAIT_CIVILIZATION_RWB_APAQALLINMI',	'KIND_TRAIT'	),
+		('UNIT_RWB_NORTECHICO_APAQALLINMI',					'KIND_UNIT'		);
 
 -----------------------------------------------
 -- Tags
@@ -16,7 +16,7 @@ VALUES	('TRAIT_CIVILIZATION_RWB_APAQALLINM',	'KIND_TRAIT'	),
 	
 INSERT OR REPLACE INTO Tags
 		(Tag,						    Vocabulary		)
-VALUES	('CLASS_RWB_APAQALLINM',		'ABILITY_CLASS'	);
+VALUES	('CLASS_RWB_APAQALLINMI',		'ABILITY_CLASS'	);
 
 -----------------------------------------------
 -- TypeTags
@@ -24,10 +24,10 @@ VALUES	('CLASS_RWB_APAQALLINM',		'ABILITY_CLASS'	);
 
 INSERT OR REPLACE INTO TypeTags
 		(Type,						Tag						)
-VALUES	('UNIT_RWB_APAQALLINM',		'CLASS_RWB_APAQALLINM'	);
+VALUES	('UNIT_RWB_NORTECHICO_APAQALLINMI',		'CLASS_RWB_APAQALLINMI'	);
 
 INSERT OR REPLACE INTO TypeTags (Type,		Tag)
-SELECT 	'UNIT_RWB_APAQALLINM',	Tag
+SELECT 	'UNIT_RWB_NORTECHICO_APAQALLINMI',	Tag
 FROM 	TypeTags
 WHERE 	Type = 'UNIT_APOSTLE';
 
@@ -37,7 +37,7 @@ WHERE 	Type = 'UNIT_APOSTLE';
 		
 INSERT OR REPLACE INTO Traits
 		(TraitType,								Name,								Description								)
-VALUES	('TRAIT_CIVILIZATION_RWB_APAQALLINM',	'LOC_UNIT_RWB_APAQALLINM_NAME',		'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION'	);
+VALUES	('TRAIT_CIVILIZATION_RWB_APAQALLINMI',	'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_NAME',		'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_DESCRIPTION'	);
 
 -----------------------------------------------
 -- CivilizationTraits
@@ -45,7 +45,7 @@ VALUES	('TRAIT_CIVILIZATION_RWB_APAQALLINM',	'LOC_UNIT_RWB_APAQALLINM_NAME',		'L
 		
 INSERT OR REPLACE INTO CivilizationTraits
 		(CivilizationType,				TraitType								)
-VALUES	('CIVILIZATION_RWB_NORTECHICO',		'TRAIT_CIVILIZATION_RWB_APAQALLINM'		);
+VALUES	('CIVILIZATION_RWB_NORTECHICO',		'TRAIT_CIVILIZATION_RWB_APAQALLINMI'		);
 
 -----------------------------------------------
 -- Units
@@ -81,10 +81,10 @@ INSERT OR REPLACE INTO Units	(
         PseudoYieldType,
         TrackReligion
 		)
-SELECT	'UNIT_RWB_APAQALLINM',	-- UnitType
-		'LOC_UNIT_RWB_APAQALLINM_NAME',	-- Name
-		'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION', -- Description
-		'TRAIT_CIVILIZATION_RWB_APAQALLINM', -- TraitType
+SELECT	'UNIT_RWB_NORTECHICO_APAQALLINMI',	-- UnitType
+		'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_NAME',	-- Name
+		'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_DESCRIPTION', -- Description
+		'TRAIT_CIVILIZATION_RWB_APAQALLINMI', -- TraitType
 		BaseMoves,
 		Cost+100,
 		PurchaseYield,
@@ -105,7 +105,7 @@ SELECT	'UNIT_RWB_APAQALLINM',	-- UnitType
         CostProgressionModel,
         CostProgressionParam1,
         InitialLevel,
-        NumRandomChoices,
+        3,
         CanTrain,
         PseudoYieldType,
         TrackReligion
@@ -117,21 +117,21 @@ WHERE	UnitType = 'UNIT_APOSTLE';
 -----------------------------------------------
 		
 INSERT OR REPLACE INTO UnitAiInfos (UnitType,	AiType)
-SELECT 	'UNIT_RWB_APAQALLINM',		AiType
+SELECT 	'UNIT_RWB_NORTECHICO_APAQALLINMI',		AiType
 FROM 	UnitAiInfos
 WHERE 	UnitType = 'UNIT_APOSTLE';
 
 INSERT OR REPLACE INTO UnitAiInfos (UnitType, AiType) 
-VALUES ('UNIT_RWB_APAQALLINM','UNITAI_BUILD');
+VALUES ('UNIT_RWB_NORTECHICO_APAQALLINMI','UNITAI_BUILD');
 -----------------------------------------------
 -- UnitReplaces
 -----------------------------------------------
 		
 INSERT OR REPLACE INTO UnitReplaces
 		(CivUniqueUnitType,		ReplacesUnitType	)
-VALUES	('UNIT_RWB_APAQALLINM',	'UNIT_APOSTLE'		);
+VALUES	('UNIT_RWB_NORTECHICO_APAQALLINMI',	'UNIT_APOSTLE'		);
 
 INSERT OR REPLACE INTO Improvement_ValidBuildUnits
         (ImprovementType,					UnitType		)
-SELECT 	ImprovementType,				    'UNIT_RWB_APAQALLINM'
+SELECT 	ImprovementType,				    'UNIT_RWB_NORTECHICO_APAQALLINMI'
 FROM Improvement_ValidBuildUnits WHERE UnitType IS 'UNIT_BUILDER';

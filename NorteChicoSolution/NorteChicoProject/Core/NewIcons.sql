@@ -19,7 +19,7 @@
 -- IconsPerColumn: This defines the number of icons there are along the entire height of the atlas file. The total height of the DDS file should be equal to IconSize x IconsPerColumn. If you are creating every icon as a separate file, the value here will always be 1.
 -- Filename: Again, fairly self-explanatory. This should be the complete, case-sensitive name of the DDS file that pertains to the graphic for that entry. All files referenced here must be located in the root of the Textures folder.
 
--- A quick note on the ICON_ATLAS_RWB_APAQALLINM atlas. I've left this in here, configured in this way, to illustrate how to use multi-icon atlases. In this example, each WerejaguarAtlasXXX.dds file has two icons - the Unique Unit icon and Unique Unit portrait. We'll describe further down how we differentiate to the game which should be used for which function through the IconDefinitions section.
+-- A quick note on the ICON_ATLAS_RWB_APAQALLINMI atlas. I've left this in here, configured in this way, to illustrate how to use multi-icon atlases. In this example, each WerejaguarAtlasXXX.dds file has two icons - the Unique Unit icon and Unique Unit portrait. We'll describe further down how we differentiate to the game which should be used for which function through the IconDefinitions section.
 
 -- Please note: I have included a sample configuration for the ICON_ATLAS_COLOSSAL_HEAD but you may note that this is not referenced in the IconDefinitions. The ICON_COLOSSAL_HEAD exists in the base-game and therefore this is just to illustrate which icon-sizes are required for an Improvement.
 -----------------------------------------------
@@ -46,15 +46,15 @@ VALUES	('ICON_ATLAS_RWB_NORTECHICO',					22,	 		1,				1,					'OlmecAtlas22.dds'	
 		('ICON_ATLAS_RWB_LADY_OF_THE_FOUR_TUPUS',				80,	 		1,				1,					'PoNgbeIcon80.dds'			),
 		('ICON_ATLAS_RWB_LADY_OF_THE_FOUR_TUPUS',				256,	 	1,				1,					'PoNgbeIcon256.dds'			),
 		
-		('ICON_ATLAS_RWB_APAQALLINM',			22,			2,				1,					'WerejaguarAtlas22.dds'		),
-		('ICON_ATLAS_RWB_APAQALLINM',			32,			2,				1,					'WerejaguarAtlas32.dds'		),
-		('ICON_ATLAS_RWB_APAQALLINM',			38,			2,				1,					'WerejaguarAtlas38.dds'		),
-		('ICON_ATLAS_RWB_APAQALLINM',			50,			2,				1,					'WerejaguarAtlas50.dds'		),
-		('ICON_ATLAS_RWB_APAQALLINM',			70,			2,				1,					'WerejaguarAtlas70.dds'		),
-		('ICON_ATLAS_RWB_APAQALLINM',			80,			2,				1,					'WerejaguarAtlas80.dds'		),
-		('ICON_ATLAS_RWB_APAQALLINM',			95,			2,				1,					'WerejaguarAtlas95.dds'		),
-		('ICON_ATLAS_RWB_APAQALLINM',			200,		2,				1,					'WerejaguarAtlas200.dds'	),
-		('ICON_ATLAS_RWB_APAQALLINM',			256,		2,				1,					'WerejaguarAtlas256.dds'	),
+		('ICON_ATLAS_RWB_APAQALLINMI',			22,			2,				1,					'WerejaguarAtlas22.dds'		),
+		('ICON_ATLAS_RWB_APAQALLINMI',			32,			2,				1,					'WerejaguarAtlas32.dds'		),
+		('ICON_ATLAS_RWB_APAQALLINMI',			38,			2,				1,					'WerejaguarAtlas38.dds'		),
+		('ICON_ATLAS_RWB_APAQALLINMI',			50,			2,				1,					'WerejaguarAtlas50.dds'		),
+		('ICON_ATLAS_RWB_APAQALLINMI',			70,			2,				1,					'WerejaguarAtlas70.dds'		),
+		('ICON_ATLAS_RWB_APAQALLINMI',			80,			2,				1,					'WerejaguarAtlas80.dds'		),
+		('ICON_ATLAS_RWB_APAQALLINMI',			95,			2,				1,					'WerejaguarAtlas95.dds'		),
+		('ICON_ATLAS_RWB_APAQALLINMI',			200,		2,				1,					'WerejaguarAtlas200.dds'	),
+		('ICON_ATLAS_RWB_APAQALLINMI',			256,		2,				1,					'WerejaguarAtlas256.dds'	),
 		
 		('ICON_ATLAS_COLOSSAL_HEAD',			38,			1,				1,					'ColossalHead38.dds'		),
 		('ICON_ATLAS_COLOSSAL_HEAD',			40,			1,				1,					'ColossalHead40.dds'		),
@@ -68,12 +68,12 @@ VALUES	('ICON_ATLAS_RWB_NORTECHICO',					22,	 		1,				1,					'OlmecAtlas22.dds'	
 
 -- With the IconTextureAtlases defined, we now tie each Atlas to a specific icon-type.
 
--- The icon Name is defined in the table below and the Atlas tells the game where to pull the graphic from. The Index field directs the game to the right portion of the file, should there be more than one icon. The Index is an integer value in the form of an array - starting from 0, with icons numbered from left-to-right, row-by-row. In this way, we use the ICON_ATLAS_RWB_APAQALLINM Atlas, which has two icons in a single file, to drive the display of two distinct in-game icons.
+-- The icon Name is defined in the table below and the Atlas tells the game where to pull the graphic from. The Index field directs the game to the right portion of the file, should there be more than one icon. The Index is an integer value in the form of an array - starting from 0, with icons numbered from left-to-right, row-by-row. In this way, we use the ICON_ATLAS_RWB_APAQALLINMI Atlas, which has two icons in a single file, to drive the display of two distinct in-game icons.
 -----------------------------------------------
 
 INSERT OR REPLACE INTO IconDefinitions
 		(Name,										Atlas,							'Index'				)
 VALUES	('ICON_CIVILIZATION_RWB_NORTECHICO',				'ICON_ATLAS_RWB_NORTECHICO',			0					),
 		('ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',					'ICON_ATLAS_RWB_LADY_OF_THE_FOUR_TUPUS',		0					),
-		('ICON_UNIT_RWB_APAQALLINM_PORTRAIT',		'ICON_ATLAS_RWB_APAQALLINM',		0					),
-		('ICON_UNIT_RWB_APAQALLINM',					'ICON_ATLAS_RWB_APAQALLINM',		1					);
+		('ICON_UNIT_RWB_NORTECHICO_APAQALLINMI_PORTRAIT',		'ICON_ATLAS_RWB_APAQALLINMI',		0					),
+		('ICON_UNIT_RWB_NORTECHICO_APAQALLINMI',					'ICON_ATLAS_RWB_APAQALLINMI',		1					);

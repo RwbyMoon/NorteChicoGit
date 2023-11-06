@@ -1,4 +1,4 @@
--- Unique cheap district that cannot be placed adjacent to the city center, used for stability and growth endeavors. It possesses 3 unique buildings (the Sunken Plaza, the Pirámide and the Huenca), buildable in any order.
+-- Unique cheap district that cannot be placed adjacent to the city center, used for stability and growth endeavors. It possesses 3 unique buildings (the Sunken Plaza, the Pirámide and the HUANCA), buildable in any order.
 -- One of these buildings can be built in each Ciudad Sagrada once the civic "Early Empire" has been researched, a second on "Theology" and the last on "Guilds".
 -- +1 Population upon construction of this District and for every of its Buildings.
 -- Great Prophets may found a religion on a Ciudad Sagrada instead of a Holy Site.
@@ -74,7 +74,7 @@ INSERT OR REPLACE INTO Districts
 VALUES	('DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA',						-- DistrictType
           'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_NAME',				-- Name
           null,
-          'CIVIC_STATE_WORKFORCE',
+          'CIVIC_CRAFTSMANSHIP',
           0,
           'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_DESCRIPTION',		-- Description
           27,										-- Cost
@@ -101,7 +101,7 @@ VALUES	('DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA',						-- DistrictType
           0,
           1,
           1,
-          3,
+          2,
           0,
           null,
           -1,

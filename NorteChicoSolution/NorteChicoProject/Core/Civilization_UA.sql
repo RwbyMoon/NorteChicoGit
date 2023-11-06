@@ -209,7 +209,7 @@ VALUES	('RWB_NORTECHICO_IS_NORTECHICO_REQUIREMENT', 			            'Civilization
     	('RWB_NORTECHICO_IS_LADY_OF_THE_FOUR_TUPUS_REQUIREMENT', 			'LeaderType',			    'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS'	),
     	('RWB_NORTECHICO_UNIT_IS_BUILDER',			 			            'UnitType',			        'UNIT_BUILDER'	),
     	('RWB_NORTECHICO_UNIT_IS_MILITARY_ENGINEER', 			            'UnitType',			        'UNIT_MILITARY_ENGINEER'	),
-    	('RWB_NORTECHICO_UNIT_IS_APAQALLINM',		 			            'UnitType',			        'UNIT_RWB_APAQALLINM'	);
+    	('RWB_NORTECHICO_UNIT_IS_APAQALLINM',		 			            'UnitType',			        'UNIT_RWB_NORTECHICO_APAQALLINMI'	);
 
 -------------------------------------
 -- Table Dropping (Trashcan)

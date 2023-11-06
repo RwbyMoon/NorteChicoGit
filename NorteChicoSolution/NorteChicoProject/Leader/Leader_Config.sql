@@ -13,24 +13,24 @@
 -- Please note: this is commented-out, as this example is only compatible with Gathering Storm and above. I've left this in as an example.
 -----------------------------------------------
 
---INSERT OR REPLACE INTO Players (CivilizationType, CivilizationName, CivilizationIcon, CivilizationAbilityName, CivilizationAbilityDescription, CivilizationAbilityIcon, LeaderType, LeaderName, LeaderIcon, LeaderAbilityName, LeaderAbilityDescription, LeaderAbilityIcon)
---VALUES	(	
+INSERT OR REPLACE INTO Players (CivilizationType, CivilizationName, CivilizationIcon, CivilizationAbilityName, CivilizationAbilityDescription, CivilizationAbilityIcon, LeaderType, LeaderName, LeaderIcon, LeaderAbilityName, LeaderAbilityDescription, LeaderAbilityIcon)
+VALUES	(	
 		-- Civilization
---		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
---		'LOC_CIVILIZATION_RWB_NORTECHICO_NAME', -- CivilizationName
---		'ICON_CIVILIZATION_RWB_NORTECHICO', -- CivilizationIcon
---		'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_NAME', -- CivilizationAbilityName
---		'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_DESCRIPTION', -- CivilizationAbilityDescription
---		'ICON_CIVILIZATION_RWB_NORTECHICO', -- CivilizationAbilityIcon
+		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
+		'LOC_CIVILIZATION_RWB_NORTECHICO_NAME', -- CivilizationName
+		'ICON_CIVILIZATION_RWB_NORTECHICO', -- CivilizationIcon
+		'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_NAME', -- CivilizationAbilityName
+		'LOC_TRAIT_CIVILIZATION_RWB_KAMACHIQ_VARA_DIOSKUNA_DESCRIPTION', -- CivilizationAbilityDescription
+		'ICON_CIVILIZATION_RWB_NORTECHICO', -- CivilizationAbilityIcon
 		
 		-- Leader
---		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
---		'LOC_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_NAME', -- LeaderName
---		'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderIcon (Portrait)
---		'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_NAME', -- LeaderAbilityName
---		'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_DESCRIPTION', -- LeaderAbilityDescription
---		'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS' -- LeaderAbilityIcon
---		);
+		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
+		'LOC_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_NAME', -- LeaderName
+		'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderIcon (Portrait)
+		'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_NAME', -- LeaderAbilityName
+		'LOC_TRAIT_LEADER_RWB_ECONOMIA_TEOCRATICA_NISQA_DESCRIPTION', -- LeaderAbilityDescription
+		'ICON_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS' -- LeaderAbilityIcon
+		);
 
 -----------------------------------------------
 -- Players (Rise & Fall)
@@ -98,27 +98,27 @@ VALUES	(
 -- As above, I have commented-out this section as this template requires the Gathering Storm expansion.
 -----------------------------------------------
 
---INSERT OR REPLACE INTO PlayerItems
---		(CivilizationType, LeaderType, Type, Icon, Name, Description, SortIndex	)
---VALUES	(
---		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
---		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
---		'UNIT_RWB_APAQALLINM', -- Type
---		'ICON_UNIT_RWB_APAQALLINM', -- Icon
---		'LOC_UNIT_RWB_APAQALLINM_NAME', -- Name
---		'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION', -- Description
---		10	-- SortIndex
---		),
---		
---		(
---		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
---		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
---		'IMPROVEMENT_COLOSSAL_HEAD', -- Type
---		'ICON_IMPROVEMENT_COLOSSAL_HEAD', -- Icon
---		'LOC_IMPROVEMENT_OLMEC_COLOSSAL_HEAD_NAME', -- Name
---		'LOC_IMPROVEMENT_OLMEC_COLOSSAL_HEAD_DESCRIPTION', -- Description
---		20 -- SortIndex
---		);
+INSERT OR REPLACE INTO PlayerItems
+		(CivilizationType, LeaderType, Type, Icon, Name, Description, SortIndex	)
+VALUES	(
+		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
+		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
+		'UNIT_RWB_NORTECHICO_APAQALLINMI', -- Type
+		'ICON_UNIT_RWB_NORTECHICO_APAQALLINMI', -- Icon
+		'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_NAME', -- Name
+		'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_DESCRIPTION', -- Description
+		10	-- SortIndex
+		),
+		
+		(
+		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
+		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
+		'IMPROVEMENT_COLOSSAL_HEAD', -- Type
+		'ICON_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA', -- Icon
+		'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_NAME', -- Name
+		'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_DESCRIPTION', -- Description
+		20 -- SortIndex
+		);
 		
 -----------------------------------------------
 -- PlayerItems (Rise & Fall)
@@ -136,10 +136,10 @@ VALUES	(
               'Players:Expansion1_Players', -- Domain
               'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
               'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
-              'UNIT_RWB_APAQALLINM', -- Type
-              'ICON_UNIT_RWB_APAQALLINM', -- Icon
-              'LOC_UNIT_RWB_APAQALLINM_NAME', -- Name
-              'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION', -- Description
+              'UNIT_RWB_NORTECHICO_APAQALLINMI', -- Type
+              'ICON_UNIT_RWB_NORTECHICO_APAQALLINMI', -- Icon
+              'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_NAME', -- Name
+              'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_DESCRIPTION', -- Description
               10	-- SortIndex
           ),
 
@@ -148,7 +148,7 @@ VALUES	(
               'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
               'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
               'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA', -- Type
-              'ICON_IMPROVEMENT_COLOSSAL_HEAD', -- Icon
+              'ICON_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA', -- Icon
               'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_NAME', -- Name
               'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_DESCRIPTION', -- Description
               20 -- SortIndex
@@ -168,10 +168,10 @@ VALUES	(
 		'Players:Expansion2_Players', -- Domain
 		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
 		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
-		'UNIT_RWB_APAQALLINM', -- Type
-		'ICON_UNIT_RWB_APAQALLINM', -- Icon
-		'LOC_UNIT_RWB_APAQALLINM_NAME', -- Name
-		'LOC_UNIT_RWB_APAQALLINM_DESCRIPTION', -- Description
+		'UNIT_RWB_NORTECHICO_APAQALLINMI', -- Type
+		'ICON_UNIT_RWB_NORTECHICO_APAQALLINMI', -- Icon
+		'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_NAME', -- Name
+		'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_DESCRIPTION', -- Description
 		10	-- SortIndex
 		),
 		
@@ -180,7 +180,7 @@ VALUES	(
 		'CIVILIZATION_RWB_NORTECHICO', -- CivilizationType
 		'LEADER_RWB_LADY_OF_THE_FOUR_TUPUS', -- LeaderType
 		'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA', -- Type
-		'ICON_IMPROVEMENT_COLOSSAL_HEAD', -- Icon
+		'ICON_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA', -- Icon
 		'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_NAME', -- Name
 		'LOC_DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA_DESCRIPTION', -- Description
 		20 -- SortIndex

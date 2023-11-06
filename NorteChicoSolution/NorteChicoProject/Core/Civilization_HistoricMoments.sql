@@ -17,5 +17,5 @@
 -----------------------------------------------
 INSERT OR REPLACE INTO MomentIllustrations
 		(MomentIllustrationType,					MomentDataType,					GameDataType,						            Texture	)
-VALUES	('MOMENT_ILLUSTRATION_UNIQUE_UNIT',			'MOMENT_DATA_UNIT',				'UNIT_RWB_APAQALLINM',				            'null.dds'	),
+VALUES	('MOMENT_ILLUSTRATION_UNIQUE_UNIT',			'MOMENT_DATA_UNIT',				'UNIT_RWB_NORTECHICO_APAQALLINMI',				            'null.dds'	),
 		('MOMENT_ILLUSTRATION_UNIQUE_DISTRICT',	    'MOMENT_DATA_DISTRICT',		    'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA',		'null.dds'	);
