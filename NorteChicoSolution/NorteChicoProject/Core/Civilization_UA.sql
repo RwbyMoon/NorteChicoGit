@@ -118,7 +118,7 @@ VALUES    ('RWB_NORTECHICO_NEGATIVE_BUILDER_MALUS_CHARGE_MALUS',    'MODIFIER_PL
 -----------------------------------------------
 -- X-Modifiers
 -----------------------------------------------
--- EcoPolicy BuildCharge Scaling
+-- BONUS CHARGES
 INSERT OR REPLACE INTO PolicyModifiers
 (PolicyType,
  ModifierId)
@@ -148,17 +148,28 @@ FROM TraitModifiers a, Rwb_Builder_ChargeSources_UA b WHERE a.ModifierId LIKE b.
 -----------------------------------------------
 -- ModifierArguments
 -----------------------------------------------
-
+-- EcoPolicy BuildCharge
 INSERT OR REPLACE INTO	ModifierArguments
 		(ModifierId,												        Name,							Value)
 SELECT  'RWB_BUILD_CHARGE_FROM_ECO_POLICY_AMOUNT_'||a.PolicyType,			'Amount',						1										
 FROM Policies a WHERE GovernmentSlotType = 'SLOT_ECONOMIC';
 
--- CANCEL CHARGES
+
+-- CANCEL CHARGES FOR NUMERICAL VALUES
 INSERT OR REPLACE INTO ModifierArguments
-        (ModifierId,										Name,		    Value)
+                (ModifierId,										Name,		    Value)
 SELECT 'RWB_NORTECHICO_NEGATIVE_'||a.ModifierId,           'Amount',	    Value-Value*2
-FROM Rwb_Builder_ChargeSources_UA a, ModifierArguments b WHERE b.ModifierId LIKE a.ModifierId AND b.Value IS NOT 0;
+FROM Rwb_Builder_ChargeSources_UA a, ModifierArguments b WHERE b.ModifierId LIKE a.ModifierId AND b.ModifierId NOT LIKE '%BUILD_CHARGE_FROM_ECO_POLICY%' AND b.Value IS NOT 0;
+
+-- remove the 0 ones, to avoid any bugs for the part after
+DELETE FROM ModifierArguments
+WHERE ModifierArguments.Value = 0 AND ModifierId LIKE 'RWB_NORTECHICO_NEGATIVE_%';
+
+-- part for the governors, since it needs special attention
+INSERT OR REPLACE INTO ModifierArguments
+                (ModifierId,										Name,		                Value)
+SELECT 'RWB_NORTECHICO_NEGATIVE_'||b.ModifierId,           'ModifierId',	        'RWB_NORTECHICO_NEGATIVE_'||c.Value
+FROM Rwb_Builder_ChargeSources_UA a, GovernorPromotionModifiers b, ModifierArguments c WHERE b.ModifierId LIKE a.ModifierId AND c.ModifierId LIKE a.ModifierId;
 
 -- CHARGE MALUSES
 INSERT OR REPLACE INTO ModifierArguments

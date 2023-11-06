@@ -1,6 +1,12 @@
+--Will try to build up large and productive cities with religious infrastructure. Considers trading allies with appreciation in addition to those sharing the same amount of holy investment, but dislikes those with a large standing army and even more those warmongering with it.
+
 /*
-	Leader Agendas
-	Authors: MC
+DO large & productive cities
+DO holy sites
+++ Trading allies
+++ holy sites
+- high standing army
+- warmonger
 */
 
 -----------------------------------------------
@@ -70,8 +76,8 @@ VALUES 		('LEADER_RWB_LADY_OF_THE_FOUR_TUPUS',	'AGENDA_RWB_LADY_OF_THE_FOUR_TUPU
 -----------------------------------------------
 
 INSERT OR REPLACE INTO ExclusiveAgendas
-			(AgendaOne,				AgendaTwo					)
-VALUES 		('AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',	'AGENDA_POPULOUS'		);
+			(AgendaOne,				                AgendaTwo					)
+VALUES 		('AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',	'AGENDA_STANDING_ARMY'		);
 
 -----------------------------------------------
 -- TraitModifiers
@@ -81,10 +87,22 @@ VALUES 		('AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',	'AGENDA_POPULOUS'		);
 -- We'll flesh these out further in the sections below - but the general principle is that we will modify the 'happiness' value dependent on certain circumstances. This has the effect of adjusting the leader's opinion of you, over time, depending on the factors stipulated by the Requirement Sets.
 -----------------------------------------------
 
+/*
+DO large & productive cities
+DO holy sites
+++ Trading allies
+++ holy sites
+- high standing army
+- warmonger
+*/
+
 INSERT OR REPLACE INTO TraitModifiers
-			(TraitType,						ModifierId								)
-VALUES		('TRAIT_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',		'AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY'	),
-			('TRAIT_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',		'AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY'		);
+			(TraitType,						                ModifierId								)
+VALUES		('TRAIT_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',		'AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY'	                    ),
+			('TRAIT_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',		'AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HOLY_BUILDER'		                ),
+			('TRAIT_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',		'AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY'		                ),
+			('TRAIT_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',		'AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER'		                    ),
+			('TRAIT_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',		'AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY_PLUS_WARMONGER'		);
 		
 -----------------------------------------------
 -- Modifiers
@@ -95,9 +113,12 @@ VALUES		('TRAIT_AGENDA_RWB_LADY_OF_THE_FOUR_TUPUS',		'AGENDA_MODIFIER_RWB_LADY_O
 -----------------------------------------------
 
 INSERT OR REPLACE INTO Modifiers	
-			(ModifierId,								ModifierType,									SubjectRequirementSetId			)
-VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',		'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',	'REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY'		),
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',		'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',	'REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY'		);
+			(ModifierId,								                                ModifierType,									      OwnerRequirementSetId,      SubjectRequirementSetId			)
+VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                'MODIFIER_PLAYER_DIPLOMACY_TRADE_RELATIONS',	      'ON_TURN_STARTED',          'PLAYER_IS_MAJOR_CIV_KNOWN_30_TURNS'		                ),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HOLY_BUILDER',	                'MODIFIER_PLAYER_DIPLOMACY_AGENDA_END_TO_SUFFERING',  'ON_TURN_STARTED',          'PLAYER_IS_MAJOR_CIV_KNOWN_10_TURNS'		                ),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',	            'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',	      null,                       'REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY'		                ),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',	                'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',	      null,                       'REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER'		                    ),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY_PLUS_WARMONGER',	'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',	      null,                       'REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY_PLUS_WARMONGER'		);
 
 -----------------------------------------------	
 -- ModifierStrings
@@ -107,9 +128,12 @@ VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',		'MODIFIER_PLAYER
 -- It is recommended not to amend these entries, except to ensure the ModifierId values match the ones you are configuring.
 -----------------------------------------------	
 INSERT OR REPLACE INTO ModifierStrings
-			(ModifierId,								Context,	Text								)
-VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',		'Sample',	'LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL'	),
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',		'Sample',	'LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL'	);
+			(ModifierId,								                                Context,	    Text								)
+VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                'Sample',	    'LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL'	),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HOLY_BUILDER',	                'Sample',	    'LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL'	),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',	            'Sample',	    'LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL'	),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',	                'Sample',	    'LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL'	),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY_PLUS_WARMONGER',	'Sample',	    'LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL'	);
 
 -----------------------------------------------
 -- ModifierArguments
@@ -129,20 +153,40 @@ VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',		'Sample',	'LOC_T
 -----------------------------------------------
 
 INSERT OR REPLACE INTO ModifierArguments
-			(ModifierId,							Name,							Value												)
-VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'InitialValue',					-5													),
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'IncrementValue',				-1													),
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'IncrementTurns',				10													),
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'MaxValue',						-25													),
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'StatementKey',					'LOC_DIPLO_WARNING_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_ANY'	),
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'SimpleModifierDescription',	'LOC_DIPLO_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY'				),
+			(ModifierId,							                                        Name,							            Value												)
+VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                    'TradeBonus',					            2													),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                    'NoTradePenalty',				            0	),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                    'BonusPerRoute',				            true	),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                    'OnlyInboundTrade',				            true	),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                    'StatementKey',					            'LOC_DIPLO_WARNING_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_TRADE'	),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                    'SimpleModifierDescription',	            'LOC_DIPLO_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADE'				),
 	
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',	'InitialValue',					5													),
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',	'IncrementValue',				1													),
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',	'IncrementTurns',				10													),
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',	'MaxValue',						12													),
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',	'StatementKey',					'LOC_DIPLO_KUDO_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_ANY'		),
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',	'SimpleModifierDescription',	'LOC_DIPLO_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY'				);
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HOLY_BUILDER',	                    'TargetHolySitePercentage',					50													),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HOLY_BUILDER',	                    'DisappointingHolySitePercentage',			25													),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HOLY_BUILDER',	                    'TargetLargeCityPercentage',				100													),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HOLY_BUILDER',	                    'DisappointingLargeCityPercentage',			0													),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HOLY_BUILDER',	                    'MaxPositiveModifier',						6													),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HOLY_BUILDER',	                    'MaxNegativeModifier',						-6													),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HOLY_BUILDER',	                    'StatementKey',					            'LOC_DIPLO_KUDO_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_HOLYBUILDER'		),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HOLY_BUILDER',	                    'SimpleModifierDescription',	            'LOC_DIPLO_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HOLYBUILDER'				),
+
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',	                'InitialValue',					            7													),
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',	                'IncrementValue',				            1													),
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',	                'IncrementTurns',				            10													),
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',	                'MaxValue',						            12													),
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',	                'StatementKey',					            'LOC_DIPLO_KUDO_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_ARMY'		),
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',	                'SimpleModifierDescription',	            'LOC_DIPLO_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_ARMY'				),
+            
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',	                    'InitialValue',					            -10													),
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',	                    'IncrementValue',				            1													),
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',	                    'IncrementTurns',				            10													),
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',	                    'MaxValue',						            0													),
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',	                    'StatementKey',					            'LOC_DIPLO_KUDO_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_WAR'		),
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',	                    'SimpleModifierDescription',	            'LOC_DIPLO_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WAR'				),
+            
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY_PLUS_WARMONGER',	    'InitialValue',					            -4													),
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY_PLUS_WARMONGER',	    'StatementKey',					            'LOC_DIPLO_KUDO_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_WAR_PLUS_ARMY'		),
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY_PLUS_WARMONGER',	    'SimpleModifierDescription',	            'LOC_DIPLO_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WAR_PLUS_ARMY'				);
 			
 -----------------------------------------------
 -- RequirementSets
@@ -158,9 +202,10 @@ VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'InitialValue',		
 -----------------------------------------------
 
 INSERT OR REPLACE INTO RequirementSets
-			(RequirementSetId,				RequirementSetType			)
-VALUES		('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'REQUIREMENTSET_TEST_ALL'	),
-			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',		'REQUIREMENTSET_TEST_ALL'	);
+			(RequirementSetId,				                                    RequirementSetType			)
+VALUES		('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',                 'REQUIREMENTSET_TEST_ALL'	),
+			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',                     'REQUIREMENTSET_TEST_ALL'	),
+			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY_PLUS_WARMONGER',  'REQUIREMENTSET_TEST_ALL'	);
 
 -----------------------------------------------
 -- RequirementSetRequirements
@@ -178,11 +223,16 @@ VALUES		('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'REQUIREMENTSET_TEST_ALL'	
 -----------------------------------------------
 
 INSERT OR REPLACE INTO RequirementSetRequirements
-			(RequirementSetId,				RequirementId						)
-VALUES		('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'REQUIRES_MAJOR_CIV_OPPONENT'		),
-			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'REQUIRES_MET_10_TURNS_AGO'			),
-			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_UNHAPPY',	'REQUIRES_HAS_LOW_FAITH'			),
-			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',		'REQUIRES_MAJOR_CIV_OPPONENT'		),
-			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',		'REQUIRES_MET_10_TURNS_AGO'			),
-			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',		'REQUIRES_HAS_HIGH_CULTURE'			),
-			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_HAPPY',		'REQUIRES_HAS_HIGH_SCIENCE'			);
+			(RequirementSetId,				                                        RequirementId						        )
+VALUES		('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',		                'REQUIRES_MAJOR_CIV_OPPONENT'		        ),
+			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',		                'REQUIRES_MET_10_TURNS_AGO'			        ),
+			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',		                'REQUIRES_HAS_HIGH_STANDING_ARMY'			),
+			
+			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',		                    'REQUIRES_MAJOR_CIV_OPPONENT'		        ),
+			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',		                    'REQUIRES_MET_10_TURNS_AGO'			        ),
+			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',		                    'REQUIRES_PLAYER_DECLARED_WAR'			    ),
+			
+			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY_PLUS_WARMONGER',		'REQUIRES_MAJOR_CIV_OPPONENT'		        ),
+			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY_PLUS_WARMONGER',		'REQUIRES_MET_10_TURNS_AGO'			        ),
+			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY_PLUS_WARMONGER',		'REQUIRES_HAS_HIGH_STANDING_ARMY'			),
+			('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY_PLUS_WARMONGER',		'REQUIRES_PLAYER_DECLARED_WAR'			    );
