@@ -6,30 +6,32 @@
 -----------------------------------------------	
 	
 INSERT OR REPLACE INTO Types
-		(Type,									Kind			)
-VALUES	('TRAIT_CIVILIZATION_RWB_APAQALLINMI',	'KIND_TRAIT'	),
-		('UNIT_RWB_NORTECHICO_APAQALLINMI',					'KIND_UNIT'		);
+		    (Type,									            Kind			)
+VALUES	    ('TRAIT_CIVILIZATION_RWB_APAQALLINMI',	            'KIND_TRAIT'	),
+		    ('UNIT_RWB_NORTECHICO_APAQALLINMI',					'KIND_UNIT'		);
 
 -----------------------------------------------
 -- Tags
 -----------------------------------------------	
 	
 INSERT OR REPLACE INTO Tags
-		(Tag,						    Vocabulary		)
-VALUES	('CLASS_RWB_APAQALLINMI',		'ABILITY_CLASS'	);
+		    (Tag,						    Vocabulary		)
+VALUES	    ('CLASS_RWB_APAQALLINMI',		'ABILITY_CLASS'	);
 
 -----------------------------------------------
 -- TypeTags
 -----------------------------------------------		
 
 INSERT OR REPLACE INTO TypeTags
-		(Type,						Tag						)
-VALUES	('UNIT_RWB_NORTECHICO_APAQALLINMI',		'CLASS_RWB_APAQALLINMI'	);
+		    (Type,						            Tag						)
+VALUES	    ('UNIT_RWB_NORTECHICO_APAQALLINMI',		'CLASS_RWB_APAQALLINMI'	);
 
-INSERT OR REPLACE INTO TypeTags (Type,		Tag)
-SELECT 	'UNIT_RWB_NORTECHICO_APAQALLINMI',	Tag
-FROM 	TypeTags
-WHERE 	Type = 'UNIT_APOSTLE';
+INSERT OR REPLACE INTO TypeTags 
+            (Type,		                        Tag)
+VALUES 	    ('UNIT_RWB_NORTECHICO_APAQALLINMI',	'CLASS_RWB_APAQALLINMI'),
+     	    ('UNIT_RWB_NORTECHICO_APAQALLINMI',	'CLASS_LANDCIVILIAN'),
+     	    ('UNIT_RWB_NORTECHICO_APAQALLINMI',	'CLASS_RELIGIOUS'),
+     	    ('UNIT_RWB_NORTECHICO_APAQALLINMI',	'CLASS_RELIGIOUS_ALL');
 
 -----------------------------------------------
 -- Traits
