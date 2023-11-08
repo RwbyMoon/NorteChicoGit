@@ -66,10 +66,27 @@ VALUES
 
 	('en_US',	'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_NAME',	'Apaq Allinmi'	),
 	('en_US',	'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_DESCRIPTION',	 
-	'Unique religious craftsman of Norte Chico, which is a more expensive replacement of the Apostle with +1 Sight. It has 1 [ICON_Charges] Build Charge, allowing it to build improvements identical to Builders.'	),
+	'Unique religious craftsman of Norte Chico, which is an expensive replacement of the Apostle with +1 Sight and +5 [ICON_Religion] Religious Strength, which also heals at the end of every turn. It is unable to spread religion, but it has 1 [ICON_Charges] Build Charge, allowing it to build improvements identical to Builders.'	),
 	('fr_FR',	'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_DESCRIPTION',	 
-	'Artisan religieux exclusif au peuple de Norte Chico remplaçant l''Apôtre mais plus cher à acheter, disposant de +1 Vision. Il dispose d''1 [ICON_Charges] Charge de Construction, lui permettant de construire des aménagements identiques aux Bâtisseurs.'	),
+	'Artisan religieux unique du peuple de Norte Chico, qui est un remplacement coûteux de l''Apôtre avec +1 Vision et +5 [ICON_Religion] Puissance Religieuse, qui se soigne également à la fin de chaque tour. Il ne peut pas propager sa religion, mais il dispose d''1 [ICON_Charges] Charge de construction, ce qui lui permet de construire des aménagements identiques à ceux des Bâtisseurs.'	),
+    
+	('en_US',	'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_DESCRIPTION_VANILLA',	 
+	'Unique religious craftsman of Norte Chico, which is an expensive replacement of the Apostle with +1 Sight, which also heals at the end of every turn. It only has 1 religion spread charge, but it has 1 [ICON_Charges] Build Charge, allowing it to build improvements identical to Builders.'	),
+	('fr_FR',	'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_DESCRIPTION',	 
+	'Artisan religieux unique du peuple de Norte Chico, qui est un remplacement coûteux de l''Apôtre avec +1 Vision, qui se soigne également à la fin de chaque tour. Il ne dispose que d''1 Charge de propagation de sa religion, mais dispose d''1 [ICON_Charges] Charge de construction, ce qui lui permet de construire des aménagements identiques à ceux des Bâtisseurs.'	),
+    
+    ('en_US',	'LOC_ABILITY_RWB_NORTE_CHICO_APAQALLINMI_NO_SPREAD_NAME',	 
+	'Hermetism'	),
+	('fr_FR',	'LOC_ABILITY_RWB_NORTE_CHICO_APAQALLINMI_NO_SPREAD_NAME',	 
+	'Hermétisme'	),
 
+    ('en_US',	'LOC_ABILITY_RWB_NORTE_CHICO_APAQALLINMI_NO_SPREAD_DESCRIPTION',
+     'Cannot spread religion directly.'),
+    ('fr_FR',	'LOC_ABILITY_RWB_NORTE_CHICO_APAQALLINMI_NO_SPREAD_DESCRIPTION',
+     'Ne peut propager sa religion directement'),
+-- see end of file for special description for vanilla & R&F versions
+    
+    
 -----------------------------------------------
 -- Rivers
 -----------------------------------------------
@@ -297,4 +314,3 @@ VALUES
 	 'ddd'	),
     ('fr_FR',	'LOC_PEDIA_BUILDINGS_PAGE_UNIT_RWB_NORTECHICO_HUANCA_CHAPTER_HISTORY_PARA_1',
     'ddd'	);
-
