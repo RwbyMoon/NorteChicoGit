@@ -95,8 +95,22 @@ FROM GreatWorkObjectTypes a;
 -- +1 Additionnal Culture per GW of Music
 INSERT OR REPLACE INTO Modifiers
 (ModifierId,                                        ModifierType)
-VALUES             ('RWB_NORTECHICO_BONUS_ADDITIONNAL_CULTURE_GREATWORKOBJECT_MUSIC',  'MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD');
+VALUES             ('RWB_NORTECHICO_BONUS_ADDITIONNAL_CULTURE_GREATWORKOBJECT_MUSIC',  'MODIFIER_SINGLE_CITY_ADJUST_GREATWORK_YIELD');
 -- arguments : GreatWorkObjectType (ex : GREATWORKOBJECT_WRITING) | YieldType (ex : YIELD_GOLD) | YieldChange (ex : 4)
+
+
+--
+-- +15% Tourism on GWs
+INSERT OR REPLACE INTO Modifiers
+(ModifierId,                                                ModifierType                                                    )
+SELECT   'RWB_NORTECHICO_BONUS_TOURISM_'||a.GreatWorkObjectType,    'MODIFIER_SINGLE_CITY_ADJUST_TOURISM'
+FROM GreatWorkObjectTypes a;
+-- +15% Tourism on GW of Music
+INSERT OR REPLACE INTO Modifiers
+(ModifierId,                                        ModifierType)
+VALUES             ('RWB_NORTECHICO_BONUS_ADDITIONNAL_TOURISM_GREATWORKOBJECT_MUSIC',  'MODIFIER_SINGLE_CITY_ADJUST_TOURISM');
+
+-- MODIFIER_SINGLE_CITY_ADJUST_TOURISM
 
 -- +25% production towards city project
 INSERT OR REPLACE INTO Modifiers
@@ -135,13 +149,25 @@ SELECT   'RWB_NORTECHICO_BONUS_CULTURE_'||a.GreatWorkObjectType,'YieldType',    
 FROM GreatWorkObjectTypes a UNION
 SELECT   'RWB_NORTECHICO_BONUS_CULTURE_'||a.GreatWorkObjectType,'YieldChange',              1
 FROM GreatWorkObjectTypes a;
-
 -- +1 Additionnal Culture per GW of Music
 INSERT OR REPLACE INTO ModifierArguments
             (ModifierId,                                                        Name,                           Value)
 VALUES      ('RWB_NORTECHICO_BONUS_ADDITIONNAL_CULTURE_GREATWORKOBJECT_MUSIC',  'GreatWorkObjectType',          'GREATWORKOBJECT_MUSIC'),
             ('RWB_NORTECHICO_BONUS_ADDITIONNAL_CULTURE_GREATWORKOBJECT_MUSIC',  'YieldType',                    'YIELD_CULTURE'),
             ('RWB_NORTECHICO_BONUS_ADDITIONNAL_CULTURE_GREATWORKOBJECT_MUSIC',  'YieldChange',                  2);
+
+-- +15% Tourism on GWs
+INSERT OR REPLACE INTO ModifierArguments
+            (ModifierId,                                                Name,                       Value)
+SELECT   'RWB_NORTECHICO_BONUS_TOURISM_'||a.GreatWorkObjectType,        'GreatWorkObjectType',      a.GreatWorkObjectType
+FROM GreatWorkObjectTypes a UNION
+SELECT   'RWB_NORTECHICO_BONUS_TOURISM_'||a.GreatWorkObjectType,        'ScalingFactor',            115
+FROM GreatWorkObjectTypes a;
+-- +15% Tourism on GW of Music
+INSERT OR REPLACE INTO ModifierArguments
+            (ModifierId,                                                        Name,                           Value)
+VALUES      ('RWB_NORTECHICO_BONUS_ADDITIONNAL_TOURISM_GREATWORKOBJECT_MUSIC',  'GreatWorkObjectType',          'GREATWORKOBJECT_MUSIC'),
+            ('RWB_NORTECHICO_BONUS_ADDITIONNAL_TOURISM_GREATWORKOBJECT_MUSIC',  'ScalingFactor',                115);
 
 -- +25% production towards city project
 INSERT OR REPLACE INTO ModifierArguments
@@ -194,13 +220,22 @@ INSERT OR REPLACE INTO BuildingModifiers
 VALUES      ('BUILDING_RWB_NORTECHICO_PIRAMIDE',            'RWB_NORTECHICO_GOLD_PER_POPULATION'),
             ('BUILDING_RWB_NORTECHICO_PIRAMIDE',            'RWB_NORTECHICO_PRODUCTION_PER_POPULATION'),
 -- +1 Additionnal Culture per GW of Music
-            ('BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA',        'RWB_NORTECHICO_BONUS_ADDITIONNAL_CULTURE_GREATWORKOBJECT_MUSIC');
+            ('BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA',        'RWB_NORTECHICO_BONUS_ADDITIONNAL_CULTURE_GREATWORKOBJECT_MUSIC'),
+-- +15% Tourism on GW of Music
+            ('BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA',        'RWB_NORTECHICO_BONUS_ADDITIONNAL_TOURISM_GREATWORKOBJECT_MUSIC');
+
 
 -- +1 Culture per GW
 INSERT OR REPLACE INTO BuildingModifiers
             (BuildingType,                                  ModifierId)
 SELECT      'BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA',         'RWB_NORTECHICO_BONUS_CULTURE_'||a.GreatWorkObjectType
 FROM GreatWorkObjectTypes a;
+-- +15% Tourism on GWs
+INSERT OR REPLACE INTO BuildingModifiers
+(BuildingType,                                  ModifierId)
+SELECT      'BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA',         'RWB_NORTECHICO_BONUS_TOURISM_'||a.GreatWorkObjectType
+FROM GreatWorkObjectTypes a;
+
 
 -- -40%Prod per building already present
 INSERT OR REPLACE INTO BuildingModifiers
@@ -212,10 +247,12 @@ FROM Buildings WHERE PrereqDistrict IS 'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA' 
 SELECT              'BUILDING_RWB_NORTECHICO_HUANCA',               'RWB_NORTECHICO_CIUDAD_'||BuildingType||'_MALUS_PER_CIUDAD_BUILDING'
 FROM Buildings WHERE PrereqDistrict IS 'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA';
 
+
 INSERT OR REPLACE INTO BuildingModifiers
 (BuildingType,                                  ModifierId)
 SELECT  BuildingType,                                   'RWB_NORTE_CHICO_UD_GIVE_POPULATION'
 FROM Buildings WHERE PrereqDistrict IS 'DISTRICT_RWB_NORTECHICO_CIUDAD_SAGRADA';
+
 
 INSERT OR REPLACE INTO BuildingModifiers
 (BuildingType,									ModifierId)
