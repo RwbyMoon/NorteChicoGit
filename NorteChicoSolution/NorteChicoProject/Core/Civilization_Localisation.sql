@@ -69,10 +69,11 @@ VALUES
 	'Unique religious craftsman of Norte Chico, which is an expensive replacement of the Apostle with +1 Sight and +5 [ICON_Religion] Religious Strength, which also heals at the end of every turn. It is unable to spread religion, but it has 1 [ICON_Charges] Build Charge, allowing it to build improvements identical to Builders.'	),
 	('fr_FR',	'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_DESCRIPTION',	 
 	'Artisan religieux unique du peuple de Norte Chico, qui est un remplacement coûteux de l''Apôtre avec +1 Vision et +5 [ICON_Religion] Puissance Religieuse, qui se soigne également à la fin de chaque tour. Il ne peut pas propager sa religion, mais il dispose d''1 [ICON_Charges] Charge de construction, ce qui lui permet de construire des aménagements identiques à ceux des Bâtisseurs.'	),
-    
+   
+-- Vanilla & R&F variants
 	('en_US',	'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_DESCRIPTION_VANILLA',	 
 	'Unique religious craftsman of Norte Chico, which is an expensive replacement of the Apostle with +1 Sight, which also heals at the end of every turn. It only has 1 religion spread charge, but it has 1 [ICON_Charges] Build Charge, allowing it to build improvements identical to Builders.'	),
-	('fr_FR',	'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_DESCRIPTION',	 
+	('fr_FR',	'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_DESCRIPTION_VANILLA',	 
 	'Artisan religieux unique du peuple de Norte Chico, qui est un remplacement coûteux de l''Apôtre avec +1 Vision, qui se soigne également à la fin de chaque tour. Il ne dispose que d''1 Charge de propagation de sa religion, mais dispose d''1 [ICON_Charges] Charge de construction, ce qui lui permet de construire des aménagements identiques à ceux des Bâtisseurs.'	),
     
     ('en_US',	'LOC_ABILITY_RWB_NORTE_CHICO_APAQALLINMI_NO_SPREAD_NAME',	 
@@ -83,8 +84,17 @@ VALUES
     ('en_US',	'LOC_ABILITY_RWB_NORTE_CHICO_APAQALLINMI_NO_SPREAD_DESCRIPTION',
      'Cannot spread religion directly.'),
     ('fr_FR',	'LOC_ABILITY_RWB_NORTE_CHICO_APAQALLINMI_NO_SPREAD_DESCRIPTION',
-     'Ne peut propager sa religion directement'),
--- see end of file for special description for vanilla & R&F versions
+     'Ne peut propager sa religion directement.'), 
+    
+    ('en_US',	'LOC_ABILITY_RWB_NORTE_CHICO_APAQALLINMI_HEAL_EVERY_TURN_NAME',	 
+	'Faithful Craftsman'	),
+	('fr_FR',	'LOC_ABILITY_RWB_NORTE_CHICO_APAQALLINMI_HEAL_EVERY_TURN_NAME',	 
+	'Fidèle Artisan'	),
+
+    ('en_US',	'LOC_ABILITY_RWB_NORTE_CHICO_APAQALLINMI_HEAL_EVERY_TURN_DESCRIPTION',
+     'Heals at the end of every turn.'),
+    ('fr_FR',	'LOC_ABILITY_RWB_NORTE_CHICO_APAQALLINMI_HEAL_EVERY_TURN_DESCRIPTION',
+     'Se soigne à la fin de chaque tour.'),
     
     
 -----------------------------------------------
@@ -287,10 +297,11 @@ VALUES
 -----------------------------------------------
 
 	('en_US',	'LOC_PEDIA_UNITS_PAGE_UNIT_RWB_NORTECHICO_APAQALLINMI_CHAPTER_HISTORY_PARA_1',
-	 'Norte Chico sites held no trace of warmongering nor weaponry -- probably meaning that either war wasn''t something they practiced or there are no traces of it. Whatever the truth is, the civilization of Norte Chico is marked by its two-headed people : Religious and Craftsmen. Apaq Allinmis can be translated as "Bearers of Success", as faith-fueled craftsmen whose presence preaches and spreads good word while helping the common effort toward infrastructures.'	),
+	'Norte Chico sites held no trace of warmongering nor weaponry -- probably meaning that either war wasn''t something they practiced or there are no traces of it. Whatever the truth is, the civilization of Norte Chico is marked by its two-headed people : Religious and Craftsmen. Apaq Allinmis can be translated as "Bearers of Success", as faith-fueled craftsmen whose presence preaches and spreads good word while helping the common effort toward infrastructures.'	),
     ('fr_FR',	'LOC_PEDIA_UNITS_PAGE_UNIT_RWB_NORTECHICO_APAQALLINMI_CHAPTER_HISTORY_PARA_1',
     'Les sites de Norte Chico ne présentent aucune trace de guerre ni d''armement, ce qui signifie probablement que la guerre n''était pas pratiquée ou qu''il n''y a plus aucune trace de celle-ci de traces de guerre. Quoi qu''il en soit, la civilisation du Norte Chico se caractérise par un peuple bicéphale : Les religieux et les artisans. Apaq Allinmis peut se traduire par "Porteurs de Succès", des artisans animés par la foi dont la présence prêche et répand la bonne parole tout en participant à l''effort commun vers les infrastructures locales.'	),
 	
+    -- UD lore
 	('en_US',	'LOC_PEDIA_DISTRICTS_PAGE_RWB_NORTECHICO_CIUDAD_SAGRADA_CHAPTER_HISTORY_PARA_1',
 	 'ddd'	),
 	('en_US',	'LOC_PEDIA_DISTRICTS_PAGE_RWB_NORTECHICO_CIUDAD_SAGRADA_CHAPTER_HISTORY_PARA_2',
@@ -299,17 +310,20 @@ VALUES
     'ddd'	),
     ('fr_FR',	'LOC_PEDIA_DISTRICTS_PAGE_RWB_NORTECHICO_CIUDAD_SAGRADA_CHAPTER_HISTORY_PARA_2',
     'ddd'	),
-	
+
+    -- UB1 lore
 	('en_US',	'LOC_PEDIA_BUILDINGS_PAGE_UNIT_RWB_NORTECHICO_SUNKEN_PLAZA_CHAPTER_HISTORY_PARA_1',
 	 'ddd'	),
     ('fr_FR',	'LOC_PEDIA_BUILDINGS_PAGE_UNIT_RWB_NORTECHICO_SUNKEN_PLAZA_CHAPTER_HISTORY_PARA_1',
     'ddd'	),
-	
+
+    -- UB2 lore
 	('en_US',	'LOC_PEDIA_BUILDINGS_PAGE_UNIT_RWB_NORTECHICO_PIRAMIDE_CHAPTER_HISTORY_PARA_1',
 	 'ddd'	),
     ('fr_FR',	'LOC_PEDIA_BUILDINGS_PAGE_UNIT_RWB_NORTECHICO_PIRAMIDE_CHAPTER_HISTORY_PARA_1',
     'ddd'	),
-	
+
+    -- UB3 lore
 	('en_US',	'LOC_PEDIA_BUILDINGS_PAGE_UNIT_RWB_NORTECHICO_HUANCA_CHAPTER_HISTORY_PARA_1',
 	 'ddd'	),
     ('fr_FR',	'LOC_PEDIA_BUILDINGS_PAGE_UNIT_RWB_NORTECHICO_HUANCA_CHAPTER_HISTORY_PARA_1',

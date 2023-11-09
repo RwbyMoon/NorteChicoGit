@@ -30,8 +30,13 @@ VALUES 	    ('UNIT_RWB_NORTECHICO_APAQALLINMI',	                'CLASS_RWB_APAQA
      	    ('UNIT_RWB_NORTECHICO_APAQALLINMI',	                'CLASS_LANDCIVILIAN'),
      	    ('UNIT_RWB_NORTECHICO_APAQALLINMI',	                'CLASS_RELIGIOUS'),
      	    ('UNIT_RWB_NORTECHICO_APAQALLINMI',	                'CLASS_RELIGIOUS_SPREAD'),
-     	    ('UNIT_RWB_NORTECHICO_APAQALLINMI',	                'CLASS_RELIGIOUS_ALL'),
-     	    ('ABILITY_RWB_NORTE_CHICO_APAQALLINMI_NO_SPREAD',	'CLASS_RWB_APAQALLINMI');
+     	    ('UNIT_RWB_NORTECHICO_APAQALLINMI',	                'CLASS_RELIGIOUS_ALL');
+
+INSERT OR REPLACE INTO TypeTags
+			(Type,		                                        Tag)
+SELECT	    'ABILITY_RWB_NORTE_CHICO_APAQALLINMI_NO_SPREAD',	'CLASS_RWB_APAQALLINMI'
+WHERE EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE ModifierType = 'MODIFIER_ALL_UNITS_DISABLE_OPERATION');
+
 
 -----------------------------------------------
 -- Traits
@@ -105,7 +110,7 @@ SELECT	'UNIT_RWB_NORTECHICO_APAQALLINMI',	-- UnitType
         LaunchInquisition,
         ReligiousStrength+5,
         ReligionEvictPercent,
-        4,
+        3,
         CostProgressionModel,
         CostProgressionParam1,
         InitialLevel,
@@ -117,15 +122,15 @@ FROM	Units
 WHERE	UnitType = 'UNIT_APOSTLE';
 
 UPDATE Units SET SpreadCharges = 1, ReligiousStrength = ReligiousStrength-5 WHERE UnitType LIKE 'UNIT_RWB_NORTECHICO_APAQALLINMI'
-AND NOT EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE EffectType = 'EFFECT_CHANGE_UNIT_OPERATION_AVAILABILITY');
+AND NOT EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE ModifierType = 'MODIFIER_ALL_UNITS_DISABLE_OPERATION');
 
 UPDATE Traits SET Description = 'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_DESCRIPTION_VANILLA'
 WHERE TraitType LIKE 'TRAIT_CIVILIZATION_RWB_APAQALLINMI'
-  AND NOT EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE EffectType = 'EFFECT_CHANGE_UNIT_OPERATION_AVAILABILITY');
+AND NOT EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE ModifierType = 'MODIFIER_ALL_UNITS_DISABLE_OPERATION');
 
 UPDATE Units SET Description = 'LOC_UNIT_RWB_NORTECHICO_APAQALLINMI_DESCRIPTION_VANILLA'
 WHERE UnitType LIKE 'UNIT_RWB_NORTECHICO_APAQALLINMI'
-  AND NOT EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE EffectType = 'EFFECT_CHANGE_UNIT_OPERATION_AVAILABILITY');
+AND NOT EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE ModifierType = 'MODIFIER_ALL_UNITS_DISABLE_OPERATION');
 
 
 -----------------------------------------------
@@ -155,51 +160,77 @@ FROM Improvement_ValidBuildUnits WHERE UnitType IS 'UNIT_BUILDER';
 -----------------------------------------------
 -- DynamicModifiers
 -----------------------------------------------
+-- No Spread
 INSERT OR REPLACE INTO DynamicModifiers
             (ModifierType,                                          CollectionType,     EffectType)
 SELECT      'MODIFIER_SINGLE_UNIT_CHANGE_OPERATION_AVAILABILITY',  'COLLECTION_OWNER', 'EFFECT_CHANGE_UNIT_OPERATION_AVAILABILITY'
-WHERE EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE EffectType = 'EFFECT_CHANGE_UNIT_OPERATION_AVAILABILITY');
+WHERE EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE ModifierType = 'MODIFIER_ALL_UNITS_DISABLE_OPERATION');
 
 -----------------------------------------------
 -- Modifiers
 -----------------------------------------------
+-- No Spread
 INSERT OR REPLACE INTO Modifiers
             (ModifierId,                        ModifierType) 
 SELECT       'RWB_APAQ_NO_SPREAD',              'MODIFIER_SINGLE_UNIT_CHANGE_OPERATION_AVAILABILITY'
-WHERE EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE EffectType = 'EFFECT_CHANGE_UNIT_OPERATION_AVAILABILITY');
+WHERE EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE ModifierType = 'MODIFIER_ALL_UNITS_DISABLE_OPERATION');
+
+-- Heal every turns, Mamluk style
+INSERT OR REPLACE INTO Modifiers
+             (ModifierId,                        ModifierType)
+VALUES       ('RWB_APAQ_HEAL_EVERY_TURN',              'MODIFIER_PLAYER_UNIT_GRANT_HEAL_AFTER_ACTION');
 
 -----------------------------------------------
 -- ModifierArguments
 -----------------------------------------------
+-- No Spread
 INSERT OR REPLACE INTO ModifierArguments
             (ModifierId,                    Name,               Value) 
 SELECT      'RWB_APAQ_NO_SPREAD',          'Available',        'false'
-WHERE EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE EffectType = 'EFFECT_CHANGE_UNIT_OPERATION_AVAILABILITY');
-
+WHERE EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE ModifierType = 'MODIFIER_ALL_UNITS_DISABLE_OPERATION');
 INSERT OR REPLACE INTO ModifierArguments
 (ModifierId,                    Name,               Value)
 SELECT      'RWB_APAQ_NO_SPREAD',          'OperationType',    'UNITOPERATION_SPREAD_RELIGION'
-WHERE EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE EffectType = 'EFFECT_CHANGE_UNIT_OPERATION_AVAILABILITY');
+WHERE EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE ModifierType = 'MODIFIER_ALL_UNITS_DISABLE_OPERATION');
 
 -----------------------------------------------
 -- Types
 -----------------------------------------------
+-- No Spread
 INSERT INTO Types
             (Type,										                Kind)
 SELECT	     'ABILITY_RWB_NORTE_CHICO_APAQALLINMI_NO_SPREAD',			'KIND_ABILITY'
-WHERE EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE EffectType = 'EFFECT_CHANGE_UNIT_OPERATION_AVAILABILITY');
+WHERE EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE ModifierType = 'MODIFIER_ALL_UNITS_DISABLE_OPERATION');
+
+-- Heal every turns, Mamluk style
+INSERT INTO Types
+            (Type,										                Kind)
+VALUES      ('ABILITY_RWB_NORTE_CHICO_APAQALLINMI_HEAL_EVERY_TURNS',	'KIND_ABILITY');
 
 -----------------------------------------------
 -- UnitAbilities
 -----------------------------------------------
+-- No Spread
 INSERT INTO UnitAbilities
             (UnitAbilityType,							                Name,										Description)
 SELECT	    'ABILITY_RWB_NORTE_CHICO_APAQALLINMI_NO_SPREAD',			'LOC_ABILITY_RWB_NORTE_CHICO_APAQALLINMI_NO_SPREAD_NAME',	'LOC_ABILITY_RWB_NORTE_CHICO_APAQALLINMI_NO_SPREAD_DESCRIPTION'
-WHERE EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE EffectType = 'EFFECT_CHANGE_UNIT_OPERATION_AVAILABILITY');
+WHERE EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE ModifierType = 'MODIFIER_ALL_UNITS_DISABLE_OPERATION');
+
+-- Heal every turns, Mamluk style
+INSERT INTO UnitAbilities
+            (UnitAbilityType,							                Name,										                        Description)
+VALUES      ('ABILITY_RWB_NORTE_CHICO_APAQALLINMI_HEAL_EVERY_TURNS',    'LOC_ABILITY_RWB_NORTE_CHICO_APAQALLINMI_HEAL_EVERY_TURN_NAME',     'LOC_ABILITY_RWB_NORTE_CHICO_APAQALLINMI_HEAL_EVERY_TURN_DESCRIPTION');
+
 -----------------------------------------------
 --  UnitAbilityModifiers
 -----------------------------------------------
+-- No Spread
 INSERT INTO UnitAbilityModifiers
             (UnitAbilityType,							                ModifierId)
 SELECT	    'ABILITY_RWB_NORTE_CHICO_APAQALLINMI_NO_SPREAD',			'RWB_APAQ_NO_SPREAD'
-WHERE EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE EffectType = 'EFFECT_CHANGE_UNIT_OPERATION_AVAILABILITY');
+WHERE EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE ModifierType = 'MODIFIER_ALL_UNITS_DISABLE_OPERATION');
+
+-- Heal every turns, Mamluk style
+INSERT INTO UnitAbilityModifiers
+            (UnitAbilityType,							                ModifierId)
+VALUES      ('ABILITY_RWB_NORTE_CHICO_APAQALLINMI_HEAL_EVERY_TURNS',    'RWB_APAQ_HEAL_EVERY_TURN');

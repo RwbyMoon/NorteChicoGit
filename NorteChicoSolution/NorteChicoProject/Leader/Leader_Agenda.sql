@@ -137,28 +137,17 @@ VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	            
 
 -----------------------------------------------
 -- ModifierArguments
-
--- The below entries define the variables required by the MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER that we leveraged earlier.
-
--- Together, these values trigger an immediate (and then turn-by-turn) adjustment of a leader's attitude towards an opponent. The values should be used as follows:
-
--- InitialValue: the initial adjustment made once the Modifier is triggered.
--- IncrementValue: the amount to adjust the value upon each increment.
--- IncrementTurns: the number of turns to pass before the next increment.
--- MaxValue: the threshold/limit value that can be reached through increments via this Modifier.
-
--- In all cases, the values adjust the leader's attitude in the case where the requirements are continuously met. Effectively, the leader will become happy/unhappy with you if you satisfy the criteria specified (in the Requirement Sets code, further down) and then get progressively happier/unhappier until they hit the limit. If the conditions stop being met, at some point, the leader's attitude will stay as it is and if the criteria are met again, the process will restart.
-
--- The values used here are just examples. It is worth exploring the existing Agendas (via Agendas.xml) to get a sense of the types of values used by the game, for balance purposes.
 -----------------------------------------------
 
 INSERT OR REPLACE INTO ModifierArguments
 			(ModifierId,							                                        Name,							            Value												)
 VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                    'TradeBonus',					            2													),
 			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                    'NoTradePenalty',				            0	),
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                    'BonusPerRoute',				            true	),
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                    'OnlyInboundTrade',				            true	),
-			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                    'StatementKey',					            'LOC_DIPLO_WARNING_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_TRADE'	),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                    'BonusPerRoute',				            'true'	),
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                    'OnlyInboundTrade',				            'true'	),
+			-- Explanation in parenthesis
+			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                    'StatementKey',					            'LOC_DIPLO_KUDO_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_TRADE'	),
+			-- Formal description (modifier)
 			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	                    'SimpleModifierDescription',	            'LOC_DIPLO_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADE'				),
 	
 			('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_HOLY_BUILDER',	                    'TargetHolySitePercentage',					50													),
@@ -174,31 +163,22 @@ VALUES		('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_TRADING_ALLY',	            
             ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',	                'IncrementValue',				            1													),
             ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',	                'IncrementTurns',				            10													),
             ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',	                'MaxValue',						            12													),
-            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',	                'StatementKey',					            'LOC_DIPLO_KUDO_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_ARMY'		),
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',	                'StatementKey',					            'LOC_DIPLO_WARNING_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_ARMY'		),
             ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',	                'SimpleModifierDescription',	            'LOC_DIPLO_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_ARMY'				),
             
             ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',	                    'InitialValue',					            -10													),
             ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',	                    'IncrementValue',				            1													),
-            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',	                    'IncrementTurns',				            10													),
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',	                    'IncrementTurns',				            5													),
             ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',	                    'MaxValue',						            0													),
-            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',	                    'StatementKey',					            'LOC_DIPLO_KUDO_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_WAR'		),
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',	                    'StatementKey',					            'LOC_DIPLO_WARNING_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_WAR'		),
             ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WARMONGER',	                    'SimpleModifierDescription',	            'LOC_DIPLO_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WAR'				),
             
             ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY_PLUS_WARMONGER',	    'InitialValue',					            -4													),
-            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY_PLUS_WARMONGER',	    'StatementKey',					            'LOC_DIPLO_KUDO_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_WAR_PLUS_ARMY'		),
+            ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY_PLUS_WARMONGER',	    'StatementKey',					            'LOC_DIPLO_WARNING_LEADER_RWB_LADY_OF_THE_FOUR_TUPUS_REASON_WAR_PLUS_ARMY'		),
             ('AGENDA_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY_PLUS_WARMONGER',	    'SimpleModifierDescription',	            'LOC_DIPLO_MODIFIER_RWB_LADY_OF_THE_FOUR_TUPUS_WAR_PLUS_ARMY'				);
 			
 -----------------------------------------------
 -- RequirementSets
-
--- RequirementSets define the test criteria to verify whether a particular RequirementSetId returns 'true' (and therefore the code reliant on it is executed) or 'false' (and therefore is not).
-
--- The two values I am aware of for RequirementSetType are:
-
--- REQUIREMENTSET_TEST_ALL: Every listed criteria must return 'true' for an overall value of 'true'
--- REQUIREMENTSET_TEST_ANY: Any one listed criteria must return 'true' for an overall value of 'true'
-
--- In this section, we are specifying two different Requirement Sets - which set up the conditions to trigger either an UNHAPPY or HAPPY change to the leader's attitude.
 -----------------------------------------------
 
 INSERT OR REPLACE INTO RequirementSets
@@ -209,17 +189,6 @@ VALUES		('REQSET_RWB_LADY_OF_THE_FOUR_TUPUS_STANDING_ARMY',                 'REQ
 
 -----------------------------------------------
 -- RequirementSetRequirements
-
--- Finally, we put together a number of criteria for each of the Requirement Sets. In this case, we are leveraging existing RequirementId values from the base-game.
-
--- For each RequirementSetId, we use some common values:
-
--- REQUIRES_MAJOR_CIV_OPPONENT: This stipulates that the opposition leader must be a major civilization.
--- REQUIRES_MET_10_TURNS_AGO: This stipulates that the civilizations must have been known to each other for at least 10 turns.
-
--- We then leverage a variation of RequirementId entries. In the case of the UNHAPPY reaction, we use REQUIRES_HAS_LOW_FAITH as our custom leader dislikes civilizations with low levels of Faith. For the HAPPY reaction, our custom leader expects the civilization to have both high Culture (REQUIRES_HAS_HIGH_CULTURE) and high Science (REQUIRES_HAS_HIGH_SCIENCE).
-
--- There are plenty of existing diplomacy-affecting requirements that can be found in Agendas.xml - I would recommend taking a look there and piecing together a personality for your custom leader accordingly.
 -----------------------------------------------
 
 INSERT OR REPLACE INTO RequirementSetRequirements
