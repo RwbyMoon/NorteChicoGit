@@ -41,7 +41,7 @@ VALUES
     -- Huanca
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_HUANCA_NAME',				'Huanca'								),
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_HUANCA_DESCRIPTION',
-     'Unique building of the Ciudad Sagrada district, useful for religious endeavors. [NEWLINE][NEWLINE]For each finished building of the Ciudad Sagrada in a city, -45% [ICON_Production] Production toward those remaining. This building do not grant Era Score for first completion.[NEWLINE][NEWLINE]This city gains +35% [ICON_Production] Production towards city projects.'	),
+     'Unique building of the Ciudad Sagrada district, useful for religious endeavors. [NEWLINE][NEWLINE]For each finished building of the Ciudad Sagrada in a city, -45% [ICON_Production] Production toward those remaining. This building does not grant Era Score for first completion.[NEWLINE][NEWLINE]This city gains +35% [ICON_Production] Production towards city projects.'	),
     ('fr_FR',	'LOC_BUILDING_RWB_NORTECHICO_HUANCA_DESCRIPTION',
      'Bâtiment unique de la Ciudad Sagrada, utile à des fonctions religieuses. [NEWLINE][NEWLINE]Pour chaque bâtiment de la Ciudad Sagrada construit dans une ville, -45% [ICON_Production] Production envers ceux restants. Ce bâtiment unique ne confère pas de Score d''Ère à la première construction.[NEWLINE][NEWLINE]Cette ville gagne +35% [ICON_Production] Production envers les projets de ville.'	),
 
@@ -49,14 +49,14 @@ VALUES
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_NAME',		'Sunken Plaza'								),
     ('fr_FR',	'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_NAME',		'Place Submergée'								),
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_DESCRIPTION',
-     'Unique building of the Ciudad Sagrada district, useful for cultural and touristic endeavors. [NEWLINE][NEWLINE]For each finished building of the Ciudad Sagrada in a city, -45% [ICON_Production] Production toward those remaining. This building do not grant Era Score for first completion.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture and +15% [ICON_Tourism] Tourism for every [ICON_GreatWork_Landscape] Great Works in this city, doubled for [ICON_GreatWork_Music] Great Works of Music.'	),
+     'Unique building of the Ciudad Sagrada district, useful for cultural and touristic endeavors. [NEWLINE][NEWLINE]For each finished building of the Ciudad Sagrada in a city, -45% [ICON_Production] Production toward those remaining. This building does not grant Era Score for first completion.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture and +15% [ICON_Tourism] Tourism for every [ICON_GreatWork_Landscape] Great Works in this city, doubled for [ICON_GreatWork_Music] Great Works of Music.'	),
     ('fr_FR',	'LOC_BUILDING_RWB_NORTECHICO_SUNKEN_PLAZA_DESCRIPTION',
      'Bâtiment unique de la Ciudad Sagrada, clé pour un apport culturel et touristique. [NEWLINE][NEWLINE]Pour chaque bâtiment de la Ciudad Sagrada construit dans une ville, -45% [ICON_Production] Production envers ceux restants. Ce bâtiment unique ne confère pas de Score d''Ère à la première construction.[NEWLINE][NEWLINE]+1 [ICON_Culture] Culture et +15% [ICON_Tourism] Tourisme pour les [ICON_GreatWork_Landscape] Chefs-d''Oeuvres dans la ville, doublé pour les [ICON_GreatWork_Music] Chefs-d''Oeuvres de Musique.'	),
 
     -- Pirámide
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_PIRAMIDE_NAME',			'Pirámide'								),
     ('en_US',	'LOC_BUILDING_RWB_NORTECHICO_PIRAMIDE_DESCRIPTION',
-     'Unique building of the Ciudad Sagrada district, useful for housing large productive and richer cities. [NEWLINE][NEWLINE]For each finished building of the Ciudad Sagrada in a city, -45% [ICON_Production] Production toward those remaining. This building do not grant Era Score for first completion.[NEWLINE][NEWLINE]+1.5 [ICON_Gold] Gold and +0.75 [ICON_Production] Production per [ICON_Citizen] Citizen in this city.'	),
+     'Unique building of the Ciudad Sagrada district, useful for housing large productive and richer cities. [NEWLINE][NEWLINE]For each finished building of the Ciudad Sagrada in a city, -45% [ICON_Production] Production toward those remaining. This building does not grant Era Score for first completion.[NEWLINE][NEWLINE]+1.5 [ICON_Gold] Gold and +0.75 [ICON_Production] Production per [ICON_Citizen] Citizen in this city.'	),
     ('fr_FR',	'LOC_BUILDING_RWB_NORTECHICO_PIRAMIDE_DESCRIPTION',
      'Bâtiment unique de la Ciudad Sagrada, permettant l''hébergement de villes peuplées productives et plus riches.[NEWLINE][NEWLINE]Pour chaque bâtiment de la Ciudad Sagrada construit dans une ville, -45% [ICON_Production] Production envers ceux restants. Ce bâtiment unique ne confère pas de Score d''Ère à la première construction.[NEWLINE][NEWLINE]+1.5 [ICON_Gold] Or et +0.75 [ICON_Production] Production par [ICON_Citizen] Citoyen dans la ville.'	),
 
