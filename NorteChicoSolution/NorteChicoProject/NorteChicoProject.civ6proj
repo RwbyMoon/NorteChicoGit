@@ -21,7 +21,7 @@
     <ModProperties>
       <CustomProperties xmlns="" />
     </ModProperties>
-    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="NewAction"><Properties><LoadOrder>10000</LoadOrder></Properties><File>Core/Civilization_Config.sql</File><File>Leader/Leader_Core.sql</File><File>Core/Civilization_UA.sql</File><File>Core/Civilization_UD.sql</File><File>Core/Civilization_UB.sql</File><File>Core/Civilization_UU.sql</File><File>Leader/Leader_ULA.sql</File><File>Leader/Leader_Agenda.sql</File><File>Leader/Leader_Screens.sql</File><File>Core/Civilization_HistoricMoments.sql</File></UpdateDatabase><UpdateColors id="NewAction"><File>Core/Civilization_Colors.sql</File><File>Leader/Leader_Colors.sql</File></UpdateColors><UpdateText id="NewAction"><File>Core/Civilization_Localisation.sql</File><File>Leader/Leader_Localisation.sql</File></UpdateText><UpdateIcons id="NewAction"><File>Core/NewIcons.sql</File></UpdateIcons><UpdateArt id="NewAction"><File>(Mod Art Dependency File)</File></UpdateArt><AddGameplayScripts id="NewAction"><File>Core/Rwb_NorteChicoScript.lua</File></AddGameplayScripts></InGameActions>]]></InGameActionData>
+    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="NewAction"><Properties><LoadOrder>10000</LoadOrder></Properties><File>Core/Civilization_Config.sql</File><File>Leader/Leader_Core.sql</File><File>Core/Civilization_UA.sql</File><File>Core/Civilization_UD.sql</File><File>Core/Civilization_UB.sql</File><File>Core/Civilization_UU.sql</File><File>Leader/Leader_ULA.sql</File><File>Leader/Leader_Agenda.sql</File><File>Leader/Leader_Screens.sql</File><File>Core/Civilization_HistoricMoments.sql</File><File>Leader/Leader_Support.sql</File></UpdateDatabase><UpdateColors id="NewAction"><File>Core/Civilization_Colors.sql</File><File>Leader/Leader_Colors.sql</File></UpdateColors><UpdateText id="NewAction"><File>Core/Civilization_Localisation.sql</File><File>Leader/Leader_Localisation.sql</File></UpdateText><UpdateIcons id="NewAction"><File>Core/NewIcons.sql</File></UpdateIcons><UpdateArt id="NewAction"><File>(Mod Art Dependency File)</File></UpdateArt><AddGameplayScripts id="NewAction"><File>Core/Rwb_NorteChicoScript.lua</File></AddGameplayScripts></InGameActions>]]></InGameActionData>
     <FrontEndActionData><![CDATA[<FrontEndActions><UpdateDatabase id="NewAction"><File>Leader/Leader_Config.sql</File></UpdateDatabase><UpdateText id="NewAction"><File>Core/Civilization_Localisation.sql</File><File>Leader/Leader_Localisation.sql</File></UpdateText><UpdateColors id="NewAction"><File>Core/Civilization_Colors.sql</File><File>Leader/Leader_Colors.sql</File></UpdateColors><UpdateArt id="NewAction"><File>(Mod Art Dependency File)</File></UpdateArt><UpdateIcons id="NewAction"><File>Core/NewIcons.sql</File></UpdateIcons></FrontEndActions>]]></FrontEndActionData>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
@@ -77,6 +77,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Leader\Leader_Screens.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Leader\Leader_Support.sql">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Leader\Leader_ULA.sql">
